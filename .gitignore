@@ -13,3 +13,4 @@ External/GHUnit/*
 *.swp
 *.swo
 *.xcuserstate
+Pods
