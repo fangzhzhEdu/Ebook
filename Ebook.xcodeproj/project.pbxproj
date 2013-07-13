@@ -23,6 +23,11 @@
 		6C4EA0DA178D8F8F0076E9AC /* NewsstandArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C4EA0D8178D8F8E0076E9AC /* NewsstandArtwork.png */; };
 		6C4EA0DB178D8F8F0076E9AC /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C4EA0D9178D8F8F0076E9AC /* iTunesArtwork.png */; };
 		6C4EA0E8178D944C0076E9AC /* memo.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6C4EA0E7178D944B0076E9AC /* memo.txt */; };
+		6CBDED2417916113000FCEE3 /* Icon-newsstand.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CBDED2117916113000FCEE3 /* Icon-newsstand.png */; };
+		6CBDED2517916113000FCEE3 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CBDED2217916113000FCEE3 /* Icon.png */; };
+		6CBDED2617916113000FCEE3 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CBDED2317916113000FCEE3 /* Icon@2x.png */; };
+		6CBDED281791615A000FCEE3 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CBDED271791615A000FCEE3 /* Icon.png */; };
+		6CBDED2A17916164000FCEE3 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CBDED2917916164000FCEE3 /* Icon@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +62,11 @@
 		6C4EA0E5178D93AD0076E9AC /* PressPlusInHouse-Info.plist.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = "PressPlusInHouse-Info.plist.xml"; path = "lohas/PressPlusInHouse-Info.plist.xml"; sourceTree = "<group>"; };
 		6C4EA0E6178D93AD0076E9AC /* ResourceRules.plist.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = ResourceRules.plist.xml; path = lohas/ResourceRules.plist.xml; sourceTree = "<group>"; };
 		6C4EA0E7178D944B0076E9AC /* memo.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = memo.txt; sourceTree = "<group>"; };
+		6CBDED2117916113000FCEE3 /* Icon-newsstand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-newsstand.png"; sourceTree = "<group>"; };
+		6CBDED2217916113000FCEE3 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		6CBDED2317916113000FCEE3 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		6CBDED271791615A000FCEE3 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../Icon.png; sourceTree = "<group>"; };
+		6CBDED2917916164000FCEE3 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "../Icon@2x.png"; sourceTree = "<group>"; };
 		7EAA0ADEBB704C6B83DBFEF5 /* Pods/Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -107,10 +117,9 @@
 		6C4EA0B8178D8D950076E9AC /* Ebook */ = {
 			isa = PBXGroup;
 			children = (
+				6CBDED1F1791601E000FCEE3 /* icon */,
 				6C4EA0DC178D93670076E9AC /* tempfile */,
 				6C4EA0CA178D8D950076E9AC /* MainStoryboard_iPhone.storyboard */,
-				6C4EA0D8178D8F8E0076E9AC /* NewsstandArtwork.png */,
-				6C4EA0D9178D8F8F0076E9AC /* iTunesArtwork.png */,
 				6C4EA0CD178D8D950076E9AC /* MainStoryboard_iPad.storyboard */,
 				6C4EA0D0178D8D950076E9AC /* ViewController.h */,
 				6C4EA0D1178D8D950076E9AC /* ViewController.m */,
@@ -123,15 +132,14 @@
 		6C4EA0B9178D8D950076E9AC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6CBDED2917916164000FCEE3 /* Icon@2x.png */,
+				6CBDED271791615A000FCEE3 /* Icon.png */,
 				6C4EA0C1178D8D950076E9AC /* AppDelegate.h */,
 				6C4EA0C2178D8D950076E9AC /* AppDelegate.m */,
 				6C4EA0BA178D8D950076E9AC /* Ebook-Info.plist */,
 				6C4EA0BB178D8D950076E9AC /* InfoPlist.strings */,
-				6C4EA0BE178D8D950076E9AC /* main.m */,
 				6C4EA0C0178D8D950076E9AC /* Ebook-Prefix.pch */,
-				6C4EA0C4178D8D950076E9AC /* Default.png */,
-				6C4EA0C6178D8D950076E9AC /* Default@2x.png */,
-				6C4EA0C8178D8D950076E9AC /* Default-568h@2x.png */,
+				6C4EA0BE178D8D950076E9AC /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -151,6 +159,21 @@
 				6C4EA0E6178D93AD0076E9AC /* ResourceRules.plist.xml */,
 			);
 			name = tempfile;
+			sourceTree = "<group>";
+		};
+		6CBDED1F1791601E000FCEE3 /* icon */ = {
+			isa = PBXGroup;
+			children = (
+				6CBDED2117916113000FCEE3 /* Icon-newsstand.png */,
+				6CBDED2217916113000FCEE3 /* Icon.png */,
+				6CBDED2317916113000FCEE3 /* Icon@2x.png */,
+				6C4EA0D8178D8F8E0076E9AC /* NewsstandArtwork.png */,
+				6C4EA0D9178D8F8F0076E9AC /* iTunesArtwork.png */,
+				6C4EA0C4178D8D950076E9AC /* Default.png */,
+				6C4EA0C6178D8D950076E9AC /* Default@2x.png */,
+				6C4EA0C8178D8D950076E9AC /* Default-568h@2x.png */,
+			);
+			name = icon;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,6 +238,11 @@
 				6C4EA0DA178D8F8F0076E9AC /* NewsstandArtwork.png in Resources */,
 				6C4EA0DB178D8F8F0076E9AC /* iTunesArtwork.png in Resources */,
 				6C4EA0E8178D944C0076E9AC /* memo.txt in Resources */,
+				6CBDED2417916113000FCEE3 /* Icon-newsstand.png in Resources */,
+				6CBDED2517916113000FCEE3 /* Icon.png in Resources */,
+				6CBDED2617916113000FCEE3 /* Icon@2x.png in Resources */,
+				6CBDED281791615A000FCEE3 /* Icon.png in Resources */,
+				6CBDED2A17916164000FCEE3 /* Icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

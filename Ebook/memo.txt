@@ -2,8 +2,6 @@ lohas used lib :
 
 
 https://github.com/pandamonia/BlocksKit
-
-
 https://github.com/robbiehanson/CocoaLumberjack
 https://github.com/gmoledina/GMGridView
 https://github.com/kstenerud/KSReachability
