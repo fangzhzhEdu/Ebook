@@ -17,17 +17,12 @@ git clone https://github.com/m1entus/WCAlertView.git
 git clone https://github.com/nicklockwood/iCarousel.git
 git clone https://github.com/atgreen/libffi.git
 
-https://github.com/AlexBarinov/UIBubbleTableView.git
 
+git clone https://github.com/AlexBarinov/UIBubbleTableView.git
 git clone https://github.com/samsoffes/sscatalog.git
-
-https://github.com/Redth/PushSharp.git
-
-https://github.com/TheRealKerni/HockeyKit
-
-https://github.com/pkluz/PKRevealController
-
-https://github.com/steipete/PSStackedView
-
-https://github.com/ptshih/PSCollectionView
-https://github.com/sobri909/MGBox2
+git clone https://github.com/Redth/PushSharp.git
+git clone https://github.com/TheRealKerni/HockeyKit.git
+git clone https://github.com/pkluz/PKRevealController.git
+git clone https://github.com/steipete/PSStackedView.git
+git clone https://github.com/ptshih/PSCollectionView.git
+git clone https://github.com/sobri909/MGBox2.git
