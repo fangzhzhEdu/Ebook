@@ -7,7 +7,11 @@
 //
 
 #import "AboutViewController.h"
-
+#import "MGScrollView.h"
+#import "MGTableBoxStyled.h"
+#import "MGLineStyled.h"
+#import "PhotoBox.h"
+#import "config.h"
 @interface AboutViewController ()
 
 @end
@@ -26,8 +30,57 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    
+    
+  
+//    UIColor *bgColor = [UIColor colorWithPatternImage: [UIImage imageNamed:@"backgroudtexture"]];
+    //                        UIView *myView = [[UIView alloc] initWithFrame:CGRectMake(0,0,320,480)];
+    //                        [myView setBackGroundColor:bgColor];
+//    [ self.view setBackgroundColor:bgColor];
+    
+    
+    
+    MGScrollView *scroller = [MGScrollView scrollerWithSize:self.view.bounds.size];
+    [self.view  addSubview:scroller];
+    
+//    [scroller setBackgroundColor: bgColor];
+    
+    
+//    
+    UIImageView *bgImgView = [[UIImageView alloc] initWithFrame:CGRectMake(0,0,320,480)];
+    [bgImgView setImage:[UIImage imageNamed:@"backgroundtexture"]];
+    [self.view  addSubview:bgImgView];
+    [self.view sendSubviewToBack:bgImgView];
+    
+ 
+    UIImage *add = [UIImage imageNamed:@"background"];
+    UIImageView *addView = [[UIImageView alloc] initWithImage:add];
+    addView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin
+    | UIViewAutoresizingFlexibleRightMargin
+    | UIViewAutoresizingFlexibleBottomMargin
+    | UIViewAutoresizingFlexibleLeftMargin;
+    addView.contentMode = UIViewContentModeScaleToFill ;
+    
+    MGBox *box = [MGBox boxWithSize:(CGSize){310, 560}];
+    box.leftMargin = box.topMargin =0.1;
+    //    addView.bounds = CGRectMake(0, 0, 100,100);
+    
+    addView.frame = CGRectMake(0,0 , 310, 460);
+    
+    
+    [box addSubview:addView];
+    
+    [scroller.boxes addObject: box];
+ 
+    [box  layoutWithSpeed:0.3 completion:nil];
+    [scroller layoutWithSpeed:0.3 completion:nil];
+    
+    // scroll
+
+     [scroller scrollToView:box withMargin:8];
+    
 }
+
 
 - (void)didReceiveMemoryWarning
 {

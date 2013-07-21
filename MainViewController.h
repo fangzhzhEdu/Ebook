@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <IIViewDeckController.h>
 
-@interface MainViewController : IIViewDeckController
+@interface MainViewController : UIViewController //IIViewDeckController
+@property (weak, nonatomic) IBOutlet UIView *pageContainer;
 
 @end
