@@ -9,6 +9,7 @@
 #ifndef Ebook_config_h
 #define Ebook_config_h
 
+#define HEADBAR_HEIGHT         44
 #define TOTAL_IMAGES           28
 #define IPHONE_INITIAL_IMAGES  3
 #define IPAD_INITIAL_IMAGES    11
@@ -29,6 +30,6 @@
 #define IPAD_LANDSCAPE_GRID    (CGSize){390, 0}
 #define IPAD_TABLES_GRID       (CGSize){624, 0}
 
-#define HEADER_FONT            [UIFont fontWithName:@"HelveticaNeue" size:18]
+#define HEADER_FONT            [UIFont fontWithName:@"HelveticaNeue" size:16]
 
 #endif

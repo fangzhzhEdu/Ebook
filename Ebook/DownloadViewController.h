@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 
-@interface DownloadViewController : UIViewController
+
+@interface DownloadViewController : BaseViewController
 
 @end

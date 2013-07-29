@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface PageReadViewController : UIViewController
+#import "BaseViewController.h"
+@interface PageReadViewController : BaseViewController
 
 @end

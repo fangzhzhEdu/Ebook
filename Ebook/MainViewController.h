@@ -11,5 +11,6 @@
 
 @interface MainViewController : UIViewController //IIViewDeckController
 @property (weak, nonatomic) IBOutlet UIView *pageContainer;
+@property (weak, nonatomic) IBOutlet UIView *topbarView;
 
 @end

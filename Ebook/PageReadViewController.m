@@ -13,6 +13,7 @@
 #import "MGTableBoxStyled.h"
 #import "MGLineStyled.h"
 #import <MGLine.h>
+#import "config.h"
 @interface PageReadViewController ()
 
 @end
@@ -31,17 +32,25 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [super addHeadBarButton];
 	
-    MGScrollView *scroller = [MGScrollView scrollerWithSize:self.view.bounds.size];
-    [self.view addSubview:scroller];
+//    MGScrollView *scroller = [MGScrollView scrollerWithSize:self.view.bounds.size];
+//    [self.view addSubview:scroller];
     
+    CGSize scrollerSize = CGSizeMake(self.view.bounds.size.width , self.view.bounds.size.height-HEADBAR_HEIGHT);
+    
+    
+    MGScrollView *scroller = [MGScrollView scrollerWithSize:scrollerSize];
+    scroller.frame = CGRectMake(0,HEADBAR_HEIGHT+10 , 320,self.view.size.height - HEADBAR_HEIGHT);
+    [self.view  addSubview:scroller];
+ 
     
     MGBox *grid = [MGBox boxWithSize:self.view.bounds.size];
     grid.contentLayoutMode = MGLayoutGridStyle;
     [scroller.boxes addObject:grid];
     
     
-    UIImage *add = [UIImage imageNamed:@"p1"];
+    UIImage *add = [UIImage imageNamed:@"page-1"];
     UIImageView *addView = [[UIImageView alloc] initWithImage:add];
     addView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin
     | UIViewAutoresizingFlexibleRightMargin
@@ -49,13 +58,13 @@
     | UIViewAutoresizingFlexibleLeftMargin;
     addView.contentMode = UIViewContentModeScaleToFill ;
     
-    MGBox *box = [MGBox boxWithSize:(CGSize){340, 460}];
+   
+    
+    addView.frame = CGRectMake(0,0 ,300,460);
+    
+    MGBox *box = [MGBox boxWithSize:(CGSize){300, 460}];
     box.leftMargin = box.topMargin = 10;
     //    addView.bounds = CGRectMake(0, 0, 100,100);
-    
-    addView.frame = CGRectMake(0,0 , 340, 460);
-    
-    
     [box addSubview:addView];
     
     [grid.boxes addObject: box];
@@ -113,7 +122,7 @@
         
     
     
-    [grid.boxes addObject:[self createBox:@"p2"]] ;
+    [grid.boxes addObject:[self createBox:@"page-2"]] ;
     
     
     
@@ -139,11 +148,11 @@
     | UIViewAutoresizingFlexibleLeftMargin;
     addView.contentMode = UIViewContentModeScaleToFill ;
     
-    MGBox *box = [MGBox boxWithSize:(CGSize){340, 460}];
+    MGBox *box = [MGBox boxWithSize:(CGSize){300, 460}];
     box.leftMargin = box.topMargin = 10;
     //    addView.bounds = CGRectMake(0, 0, 100,100);
     
-    addView.frame = CGRectMake(0,0 , 340, 460);
+    addView.frame = CGRectMake(0,0 , 300, 460);
     
     
     [box addSubview:addView];

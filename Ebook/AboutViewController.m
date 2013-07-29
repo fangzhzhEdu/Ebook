@@ -12,6 +12,7 @@
 #import "MGLineStyled.h"
 #import "PhotoBox.h"
 #import "config.h"
+#import "MGButton.h"
 @interface AboutViewController ()
 
 @end
@@ -31,7 +32,7 @@
 {
     [super viewDidLoad];
     
-    
+    [super addHeadBarButton];
   
 //    UIColor *bgColor = [UIColor colorWithPatternImage: [UIImage imageNamed:@"backgroudtexture"]];
     //                        UIView *myView = [[UIView alloc] initWithFrame:CGRectMake(0,0,320,480)];
@@ -39,21 +40,24 @@
 //    [ self.view setBackgroundColor:bgColor];
     
     
+    CGSize scrollerSize = CGSizeMake(self.view.bounds.size.width , self.view.bounds.size.height-HEADBAR_HEIGHT);
     
-    MGScrollView *scroller = [MGScrollView scrollerWithSize:self.view.bounds.size];
+    
+    MGScrollView *scroller = [MGScrollView scrollerWithSize:scrollerSize];
+    scroller.frame = CGRectMake(0,HEADBAR_HEIGHT+8 , 320,self.view.size.height - HEADBAR_HEIGHT);
     [self.view  addSubview:scroller];
     
 //    [scroller setBackgroundColor: bgColor];
     
     
 //    
-    UIImageView *bgImgView = [[UIImageView alloc] initWithFrame:CGRectMake(0,0,320,480)];
-    [bgImgView setImage:[UIImage imageNamed:@"backgroundtexture"]];
-    [self.view  addSubview:bgImgView];
-    [self.view sendSubviewToBack:bgImgView];
+//    UIImageView *bgImgView = [[UIImageView alloc] initWithFrame:CGRectMake(0,0,320,480)];
+//    [bgImgView setImage:[UIImage imageNamed:@"backgroundtexture"]];
+//    [self.view  addSubview:bgImgView];
+//    [self.view sendSubviewToBack:bgImgView];
     
  
-    UIImage *add = [UIImage imageNamed:@"background"];
+    UIImage *add = [UIImage imageNamed:@"p-about"];
     UIImageView *addView = [[UIImageView alloc] initWithImage:add];
     addView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin
     | UIViewAutoresizingFlexibleRightMargin
@@ -81,7 +85,11 @@
     
 }
 
-
+-(void) leftButtonClick {
+    
+    [self.navigationController popViewControllerAnimated:YES];
+    
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

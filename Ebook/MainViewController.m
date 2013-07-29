@@ -15,6 +15,7 @@
 #import "AboutViewController.h"
 #import "IssueViewController.h"
 #import "MZDayPicker.h"
+#import "MGButton.h"
 @interface MainViewController ()
 
 @end
@@ -42,12 +43,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-//    
-//    self.navigationItem.leftBarButtonItem= [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"infobutton"]
+    
+//    self.navigationItem.leftBarButtonItem= [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"btn-info"]
 //                                            style:UIBarButtonItemStyleBordered                    target:self action:@selector(showAbout)];
-    
-    
-    
+//    
+//    self.navigationItem.rightBarButtonItem= [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"btn-read"]
+//                                                                            style:UIBarButtonItemStylePlain                    target:self action:@selector(showIssues)];
+//    
+//    
     
     self.navigationItem.leftBarButtonItem= [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks
                                                                             target:self action:@selector(showAbout)];
@@ -55,6 +58,10 @@
                                                                              style:UIBarButtonItemStylePlain
                                                                             target:self
                                                                             action:@selector(showIssues)];
+    
+    
+    
+    
    UIImageView *logo = [[UIImageView alloc ] initWithImage:[UIImage imageNamed:@"logo-100x44"]];
     logo.contentMode =UIViewContentModeScaleToFill ; 
     logo.frame = CGRectMake(0, 0, 100, 44);
@@ -70,25 +77,77 @@
      self.navigationController.navigationBar.tintColor = [UIColor lightGrayColor];
     
 //    self.navigationController.navigationBar.barStyle =UIBarStyleBlack;
-    //    [self addHead];
     
+    
+    
+    
+//    [self addHeadBar];
+    [self addHeadBarButton];
+ 
     [self addBox];
     
 
 }
--(void) addHead
+-(void) addHeadBar
 {
     MGTableBoxStyled *headbar = MGTableBoxStyled.box;
-    [self.view addSubview:headbar];
+    [self.topbarView  addSubview:headbar];
     
     // header
-    MGLineStyled *head1 = [MGLineStyled lineWithLeft:@"关于" right:[UIImage imageNamed :@"sharebutton"] size: (CGSize){304, 44}];
+    MGLineStyled *head1 = [MGLineStyled lineWithLeft:[UIImage imageNamed :@"btn-info"] right:[UIImage imageNamed :@"btn-read"] size: (CGSize){320, 50}]; //sharebutton
     [headbar.topLines addObject:head1];
+    head1.middleItems = (id) [UIImage imageNamed:@"logo-100x44"];
     head1.font = HEADER_FONT;
     head1.borderStyle = MGBorderNone ;
-
+    [headbar  layoutWithSpeed:0.3 completion:nil];
+    
+    headbar.onTap = ^{
+       
+        [self showIssues];
+   };
+    
+   
     
 }
+-(void) addHeadBarButton
+{
+    MGTableBoxStyled *headbar = [MGTableBoxStyled boxWithSize:(CGSize){320,44 }];
+    [self.topbarView  addSubview:headbar];
+    
+    // header
+//    MGLineStyled *head1 = [MGLineStyled lineWithLeft:[UIImage imageNamed :@"btn-info"] right:[UIImage imageNamed :@"btn-read"] size: (CGSize){320, 50}]; //sharebutton
+//    
+    MGButton *b1 = [[MGButton alloc] initWithFrame:CGRectMake(0, 0,24, 24)];
+    [b1 setBackgroundImage:[UIImage imageNamed :@"btn-info"]   forState: UIControlStateNormal ];
+   
+   [b1 addTarget:self action:@selector(showAbout) forControlEvents:UIControlEventTouchUpInside];
+    
+    MGButton *b2 = [[MGButton alloc] initWithFrame:CGRectMake(0, 0, 100, 44)];
+    [b2 setBackgroundImage:[UIImage imageNamed :@"logo-100x44"]   forState: UIControlStateNormal ];
+    
+    MGButton *b3 = [[MGButton alloc] initWithFrame:CGRectMake(0, 0, 68, 24)];
+    [b3 setBackgroundImage:[UIImage imageNamed :@"btn-read"]   forState: UIControlStateNormal ];
+//    b3.onTap =^{
+//        [self showIssues];
+//    };
+//
+    [b3 addTarget:self action:@selector(showIssues) forControlEvents:UIControlEventTouchUpInside];
+    
+    
+    MGLineStyled *head1= [MGLineStyled lineWithSize: (CGSize){320, 50}];
+    head1.leftItems =(id) b1;
+    head1.middleItems =(id) b2;
+    head1.rightItems = (id)b3;
+    [headbar.topLines addObject:head1];
+   
+    [headbar  layoutWithSpeed:0.3 completion:nil];
+    
+   
+    
+    
+}
+
+
 -(void) addBox
 {
     CGSize scrollerSize = CGSizeMake(self.view.bounds.size.width , self.view.bounds.size.height-65);
@@ -117,7 +176,7 @@
     
     
     
-    UIImage *add = [UIImage imageNamed:@"p1"];
+    UIImage *add = [UIImage imageNamed:@"p1-cover"];
     UIImageView *addView = [[UIImageView alloc] initWithImage:add];
     addView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin
     | UIViewAutoresizingFlexibleRightMargin
@@ -125,11 +184,13 @@
     | UIViewAutoresizingFlexibleLeftMargin;
     addView.contentMode = UIViewContentModeScaleToFill ;
     
-    MGBox *box = [MGBox boxWithSize:(CGSize){320, 460}];
+    
+    
+    MGBox *box = [MGBox boxWithSize:(CGSize){320, 180}];
     box.leftMargin = box.topMargin = 0;
     //    addView.bounds = CGRectMake(0, 0, 100,100);
     
-    addView.frame = CGRectMake(0,0 , 320, 460);
+    addView.frame = CGRectMake(0,0 , 320, 180);
     
     
     [box addSubview:addView];
@@ -150,13 +211,27 @@
     MGTableBoxStyled *section = MGTableBoxStyled.box;
     [table2.boxes addObject:section];
     
-    // header
-    MGLineStyled *head1 = [MGLineStyled lineWithLeft:@"今夏会遇到什么关卡" right:[UIImage imageNamed :@"sharebutton"] size: (CGSize){304, 44}];
-    [section.topLines addObject:head1];
-     head1.font = HEADER_FONT;
-    head1.borderStyle = MGBorderNone ;
     
-    id waffle1 = @"五月刊 蔬食大专题 \n\n如果要画一只鸟和一个人的话，你会如何构图？ （1）一个人正看着笼中的鸟 个人正追着飞走的鸟 停留在一个人的肩上或手上（4）一个人正向飞远的鸟招手 人和鸟之间似乎没什么衔接点，这表示你对幸福似乎没什么特别的感觉。现在的你相当的淡然，或许你的幸福，只有你自己知道。; " ;
+//    MGLineStyled *head11 = [MGLineStyled lineWithLeft:@"银联信用卡享四季酒店三重礼"  right:[UIImage imageNamed :@"btn-link"]  size: (CGSize){304, 44}];
+//    head11.font = HEADER_FONT;
+//    head11.borderStyle = MGBorderNone ;
+//    
+    
+    // header
+    MGLineStyled *head1 = [MGLineStyled lineWithLeft:[UIImage imageNamed :@"listone"]  right:[UIImage imageNamed :@"btn-link"]  size: (CGSize){304, 44}];
+    head1.font = HEADER_FONT;
+    head1.middleItems = (id)@"银联信用卡享四季酒店三重礼";
+    head1.middleTextColor =[UIColor blueColor];
+    head1.borderStyle = MGBorderNone ;
+    [section.topLines addObject:head1];
+    
+    
+   
+
+    
+    
+    
+    id waffle1 = @"一、活动对象  \n　　工银银联信用卡（卡号以62开头,卡面有“银联”标识，下同）持卡人  \n二、活动时间  　　\n 2013年7月1日到2013年9月30日 \n三、 活动内容" ;
     
     // stuff
     MGLineStyled *waf1 = [MGLineStyled multilineWithText:waffle1 font:nil width:304
@@ -234,6 +309,7 @@
 
 - (void)viewDidUnload {
     [self setPageContainer:nil];
+    [self setTopbarView:nil];
     [super viewDidUnload];
 }
 @end
