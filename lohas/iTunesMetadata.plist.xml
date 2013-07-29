@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>copyright</key>
+	<string>Modern Media Co., Ltd. </string>
+	<key>softwareVersionExternalIdentifiers</key>
+	<array>
+		<integer>6171318</integer>
+		<integer>7634245</integer>
+		<integer>7971281</integer>
+		<integer>8168837</integer>
+		<integer>8611043</integer>
+		<integer>11172980</integer>
+		<integer>11611219</integer>
+		<integer>12932648</integer>
+		<integer>13274694</integer>
+		<integer>14321446</integer>
+		<integer>14831065</integer>
+		<integer>15011681</integer>
+	</array>
+	<key>product-type</key>
+	<string>ios-app</string>
+	<key>software-type</key>
+	<string>newsstand</string>
+	<key>kind</key>
+	<string>software</string>
+	<key>bundleDisplayName</key>
+	<string>LOHAS 乐活</string>
+	<key>genre</key>
+	<string>生活</string>
+	<key>softwareIcon57x57URL</key>
+	<string>http://a789.phobos.apple.com/us/r1000/077/Purple2/v4/38/dc/9c/38dc9c81-7045-1317-2efa-485cf63bcd1b/Icon.png</string>
+	<key>s</key>
+	<integer>143465</integer>
+	<key>itemId</key>
+	<integer>498941101</integer>
+	<key>softwareIconNeedsShine</key>
+	<false/>
+	<key>playlistName</key>
+	<string>LOHAS 乐活</string>
+	<key>softwareVersionBundleId</key>
+	<string>com.iweeklyapp.LOHAS</string>
+	<key>softwareVersionExternalIdentifier</key>
+	<integer>15011681</integer>
+	<key>versionRestrictions</key>
+	<integer>16843008</integer>
+	<key>com.apple.iTunesStore.downloadInfo</key>
+	<dict>
+		<key>etags</key>
+		<dict>
+			<key>media</key>
+			<string>"f5ed93bb7e5de0873459c1bb87597ab4:1365463238"</string>
+		</dict>
+		<key>accountInfo</key>
+		<dict>
+			<key>AccountSocialEnabled</key>
+			<false/>
+			<key>AccountSource</key>
+			<string>device</string>
+			<key>AccountServiceTypes</key>
+			<integer>0</integer>
+			<key>AccountStoreFront</key>
+			<string>143465-19,15</string>
+			<key>AccountURLBagType</key>
+			<string>production</string>
+			<key>AccountAvailableServiceTypes</key>
+			<integer>0</integer>
+			<key>AccountKind</key>
+			<integer>0</integer>
+			<key>AppleID</key>
+			<string>openkava@gmail.com</string>
+			<key>CreditDisplayString</key>
+			<string></string>
+			<key>DSPersonID</key>
+			<integer>1171202164</integer>
+		</dict>
+		<key>purchaseDate</key>
+		<string>2013-06-21T13:46:36Z</string>
+		<key>artworkAssetFilename</key>
+		<string>5422498728225902260.jpg</string>
+		<key>mediaAssetFilename</key>
+		<string>-5241465607334026889..app</string>
+	</dict>
+	<key>itemName</key>
+	<string>LOHAS 乐活</string>
+	<key>rating</key>
+	<dict>
+		<key>rank</key>
+		<integer>300</integer>
+		<key>content</key>
+		<string>偶尔或轻微的 成人或性暗示主题 and 偶尔或轻微的 烟酒或毒品相关内容</string>
+		<key>system</key>
+		<string>itunes-games</string>
+		<key>label</key>
+		<string>12+</string>
+	</dict>
+	<key>drmVersionNumber</key>
+	<integer>0</integer>
+	<key>bundleVersion</key>
+	<string>1546</string>
+	<key>UIRequiredDeviceCapabilities</key>
+	<dict>
+		<key>armv7</key>
+		<true/>
+	</dict>
+	<key>fileExtension</key>
+	<string>.app</string>
+	<key>genreId</key>
+	<integer>6012</integer>
+	<key>artistId</key>
+	<integer>453405029</integer>
+	<key>asset-info</key>
+	<dict>
+		<key>flavor</key>
+		<string>10:purple</string>
+		<key>file-size</key>
+		<integer>8119594</integer>
+	</dict>
+	<key>releaseDate</key>
+	<string>2012-03-12T22:20:59Z</string>
+	<key>artistName</key>
+	<string>Modern Mobile Digital Media Company Limited</string>
+	<key>playlistArtistName</key>
+	<string>Modern Mobile Digital Media Company Limited</string>
+	<key>bundleShortVersionString</key>
+	<string>2.1</string>
+	<key>softwareSupportedDeviceIds</key>
+	<array>
+		<integer>9</integer>
+		<integer>4</integer>
+		<integer>2</integer>
+	</array>
+	<key>vendorId</key>
+	<integer>647011</integer>
+</dict>
+</plist>
