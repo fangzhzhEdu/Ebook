@@ -150,7 +150,6 @@
 		6CD38C1F17A67B4A003A79F3 /* year.json in Resources */ = {isa = PBXBuildFile; fileRef = 6CD38C1B17A67B4A003A79F3 /* year.json */; };
 		6CD38C2017A67B4A003A79F3 /* list.json in Resources */ = {isa = PBXBuildFile; fileRef = 6CD38C1C17A67B4A003A79F3 /* list.json */; };
 		6CD38C2117A67B4A003A79F3 /* settings.json in Resources */ = {isa = PBXBuildFile; fileRef = 6CD38C1D17A67B4A003A79F3 /* settings.json */; };
-		6CD38C2217A67B4A003A79F3 /* old.json in Resources */ = {isa = PBXBuildFile; fileRef = 6CD38C1E17A67B4A003A79F3 /* old.json */; };
 		6CD38C3B17A67B60003A79F3 /* logo-200x88.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CD38C2317A67B60003A79F3 /* logo-200x88.png */; };
 		6CD38C3C17A67B60003A79F3 /* p1.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CD38C2417A67B60003A79F3 /* p1.png */; };
 		6CD38C3D17A67B60003A79F3 /* logo-100x44.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CD38C2517A67B60003A79F3 /* logo-100x44.png */; };
@@ -1068,7 +1067,6 @@
 				6CD38C1F17A67B4A003A79F3 /* year.json in Resources */,
 				6CD38C2017A67B4A003A79F3 /* list.json in Resources */,
 				6CD38C2117A67B4A003A79F3 /* settings.json in Resources */,
-				6CD38C2217A67B4A003A79F3 /* old.json in Resources */,
 				6CD38C3B17A67B60003A79F3 /* logo-200x88.png in Resources */,
 				6CD38C3C17A67B60003A79F3 /* p1.png in Resources */,
 				6CD38C3D17A67B60003A79F3 /* logo-100x44.png in Resources */,
