@@ -15,6 +15,7 @@
 #import "MGButton.h"
 #import "PageReadViewController.h"
 
+#import "PageRead2ViewController.h"
 #import "PageRead3ViewController.h"
 @interface IssueViewController ()
 
@@ -62,17 +63,50 @@
     int initialImages = 24 ;
     for (int i = 1; i <= initialImages; i++) {
         
-        MGBox *box = [self createBox:@"z2"];
+        MGBox *box = [self createBox:@"issue"];
      //  box.sizingMode = MGResizingShrinkWrap;
         [photosGrid.boxes addObject:box] ;
-        
+        box.tag = i ;
+        __weak MGBox *_box =box ;
         box.onTap = ^{
             
-            NSLog(@"you tapped my box!");
-//            [self performSegueWithIdentifier:@"pagedetail" sender:self];
             
-            PageReadViewController *v=[[PageReadViewController alloc] init];
-            [self.navigationController pushViewController:v animated:YES];
+//            NSLog(@"you tapped my box!");
+//            [self performSegueWithIdentifier:@"pagedetail" sender:self];
+            if (_box.tag == 1) {
+                NSLog(@"you tapped my box: 1 !");
+                PageReadViewController *v=[[PageReadViewController alloc] init];
+                [self.navigationController pushViewController:v animated:YES];
+                
+                
+                
+                
+            }
+            if (_box.tag == 2) {
+                NSLog(@"you tapped my box: 2 !");
+                
+                UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard_iPhone" bundle:nil];
+                PageRead2ViewController *v  = [storyboard instantiateViewControllerWithIdentifier:@"PageRead2ViewController"];
+                
+                [self.navigationController pushViewController:v animated:YES];
+
+                
+                
+            }
+            if (_box.tag == 3) {
+                NSLog(@"you tapped my box: 3");
+                
+                
+                UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard_iPhone" bundle:nil];
+                PageRead3ViewController *v  = [storyboard instantiateViewControllerWithIdentifier:@"PageRead3ViewController"];
+                
+                [self.navigationController pushViewController:v animated:YES];
+                
+                
+                
+                
+                
+            }
             
         };
        
@@ -82,7 +116,7 @@
           }
     
   
-    
+    [photosGrid layoutWithSpeed:0.3 completion:nil];
    [scroller layoutWithSpeed:0.3 completion:nil];
     
     
@@ -107,11 +141,59 @@
     
     addView.frame = CGRectMake(0,0 , 90, 128);
     
-    
+        
     [box addSubview:addView];
+    
+         
     
     return box ;
 }
+
+-(MGBox*) createBox2:(NSString*) imageName
+{
+    
+    UIImage *add = [UIImage imageNamed:imageName];
+    UIImageView *addView = [[UIImageView alloc] initWithImage:add];
+    addView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin
+    | UIViewAutoresizingFlexibleRightMargin
+    | UIViewAutoresizingFlexibleBottomMargin
+    | UIViewAutoresizingFlexibleLeftMargin;
+    addView.contentMode = UIViewContentModeScaleToFill ;
+    
+    MGBox *box = [MGBox boxWithSize:(CGSize){90, 188}];
+    box.leftMargin = box.topMargin = 1;
+    //    box.rightMargin =10;
+    //    box.bottomMargin =10 ;
+    //    addView.bounds = CGRectMake(0, 0, 100,100);
+    
+    addView.frame = CGRectMake(0,0 , 80, 108);
+    
+     CGSize rowSize1 = (CGSize){90, 128};
+     CGSize rowSize2 = (CGSize){90, 15};
+    
+//    [box addSubview:addView];
+    
+     MGTableBoxStyled *section = [MGTableBoxStyled boxWithSize:(CGSize){90, 188}];
+    
+     MGLineStyled *head0 = [MGLineStyled lineWithLeft: nil   right:nil size:rowSize1];
+    head0.middleItems = (id) add  ;
+    [section.topLines addObject:head0];
+ 
+    
+     MGLineStyled *head1 = [MGLineStyled lineWithLeft:nil  right:nil size:rowSize2];
+    head1.font = HEADER_FONT;
+    head1.middleItems = (id)@"碧海蓝天 夏日倾城\n   2013/第二期";
+    head1.middleTextColor =[UIColor blueColor];
+    head1.borderStyle = MGBorderNone ;
+    [section.topLines addObject:head1];
+    
+    //[box.boxes addObject:section];
+    
+    
+    return section ;
+}
+
+
 -(void) addHeadBarButton
 {
     MGTableBoxStyled *headbar = [MGTableBoxStyled boxWithSize:(CGSize){320,44 }];

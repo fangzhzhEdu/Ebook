@@ -44,7 +44,7 @@
     MGTableBoxStyled *headbar = [MGTableBoxStyled boxWithSize:(CGSize){320,44 }];
     [self.view  addSubview:headbar];
     
-    MGLineStyled *head1= [MGLineStyled lineWithSize: (CGSize){320, 50}];
+    MGLineStyled *head1= [MGLineStyled lineWithSize: (CGSize){320, 44}];
 // header
     //    MGLineStyled *head1 = [MGLineStyled lineWithLeft:[UIImage imageNamed :@"btn-info"] right:[UIImage imageNamed :@"btn-read"] size: (CGSize){320, 50}]; //sharebutton
     //

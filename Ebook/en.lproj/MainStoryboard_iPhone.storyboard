@@ -72,13 +72,17 @@
                                     <segment title="Second"/>
                                 </segments>
                             </segmentedControl>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" id="Nlf-rg-zu0">
+                                <rect key="frame" x="157" y="323" width="38" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SQq-4t-3xC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1946" y="-1354"/>
+            <point key="canvasLocation" x="-2130" y="-362"/>
         </scene>
         <!--Share View Controller-->
         <scene sceneID="dFz-Kg-bOq">
@@ -100,7 +104,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yRw-xF-eNr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1916" y="-572"/>
+            <point key="canvasLocation" x="-2100" y="420"/>
         </scene>
         <!--About View Controller - 关于我们-->
         <scene sceneID="5">
@@ -163,7 +167,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gmL-oC-Qf1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2532" y="-1341"/>
+            <point key="canvasLocation" x="-2472" y="-1333"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="QLx-eN-J2s">
@@ -179,7 +183,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tLB-ak-O1e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4010" y="-1256"/>
+            <point key="canvasLocation" x="-4034" y="-1333"/>
         </scene>
         <!--Box Test View Controller-->
         <scene sceneID="JGB-Fl-xvK">
@@ -285,11 +289,21 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="uiC-9i-mlV">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="528"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="01" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RK6-Dr-5mO">
+                                        <rect key="frame" x="278" y="115" width="42" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                             </scrollView>
                             <view contentMode="scaleToFill" id="qXm-ka-eRU" customClass="MCPagerView">
-                                <rect key="frame" x="-6" y="410" width="332" height="94"/>
+                                <rect key="frame" x="0.0" y="400" width="320" height="50"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
@@ -303,7 +317,46 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iZr-Ya-p29" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1954" y="-2194"/>
+            <point key="canvasLocation" x="-1490" y="-1308"/>
+        </scene>
+        <!--Page Read2 View Controller-->
+        <scene sceneID="HOk-2f-cge">
+            <objects>
+                <viewController storyboardIdentifier="PageRead2ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="OWf-Hl-5fG" customClass="PageRead2ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mdY-m8-EiZ">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="wpd-DL-wZm">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="01" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="b8a-lO-wSg">
+                                        <rect key="frame" x="278" y="88" width="42" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </scrollView>
+                            <view contentMode="scaleToFill" id="5p8-Lr-5pU" customClass="MCPagerView">
+                                <rect key="frame" x="108" y="320" width="212" height="50"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="pagerView" destination="5p8-Lr-5pU" id="7Ji-M4-DMe"/>
+                        <outlet property="scrollView" destination="wpd-DL-wZm" id="hVn-XO-mzx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QBd-tw-rZF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2018" y="-1332"/>
         </scene>
     </scenes>
     <classes>
@@ -342,6 +395,13 @@
             <relationships>
                 <relationship kind="outlet" name="pageContainer" candidateClass="UIView"/>
                 <relationship kind="outlet" name="topbarView" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="PageRead2ViewController" superclassName="BaseViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PageRead2ViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="pagerView" candidateClass="MCPagerView"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
             </relationships>
         </class>
         <class className="PageRead3ViewController" superclassName="BaseViewController">
