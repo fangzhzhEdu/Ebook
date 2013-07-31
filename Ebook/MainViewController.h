@@ -12,5 +12,6 @@
 @interface MainViewController : UIViewController //IIViewDeckController
 @property (weak, nonatomic) IBOutlet UIView *pageContainer;
 @property (weak, nonatomic) IBOutlet UIView *topbarView;
+@property (weak, nonatomic) IBOutlet UIView *daypicker;
 
 @end

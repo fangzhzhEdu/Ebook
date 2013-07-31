@@ -40,16 +40,17 @@
     scrollView.contentSize = CGSizeMake(scrollView.frame.size.width * 3, scrollView.frame.size.height);
     
     scrollView.delegate = self;
+    scrollView.backgroundColor = [UIColor grayColor];
     
     // Pager
-    [pagerView setImage:[UIImage imageNamed:@"a"]
-       highlightedImage:[UIImage imageNamed:@"a-h"]
+    [pagerView setImage:[UIImage imageNamed:@"pager-12"]
+       highlightedImage:[UIImage imageNamed:@"pager-red12"]
                  forKey:@"a"];
-    [pagerView setImage:[UIImage imageNamed:@"b"]
-       highlightedImage:[UIImage imageNamed:@"b-h"]
+    [pagerView setImage:[UIImage imageNamed:@"pager-12"]
+       highlightedImage:[UIImage imageNamed:@"pager-red12"]
                  forKey:@"b"];
-    [pagerView setImage:[UIImage imageNamed:@"c"]
-       highlightedImage:[UIImage imageNamed:@"c-h"]
+    [pagerView setImage:[UIImage imageNamed:@"pager-12"]
+       highlightedImage:[UIImage imageNamed:@"pager-red12"]
                  forKey:@"c"];
     
     [pagerView setPattern:@"abc"];
@@ -100,6 +101,17 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
 }
 
 @end

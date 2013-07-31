@@ -33,6 +33,8 @@
 {
     [super viewDidLoad];
     [super addHeadBarButton];
+    
+     
 	
 //    MGScrollView *scroller = [MGScrollView scrollerWithSize:self.view.bounds.size];
 //    [self.view addSubview:scroller];
@@ -43,7 +45,7 @@
     MGScrollView *scroller = [MGScrollView scrollerWithSize:scrollerSize];
     scroller.frame = CGRectMake(0,HEADBAR_HEIGHT+10 , 320,self.view.size.height - HEADBAR_HEIGHT);
     [self.view  addSubview:scroller];
- 
+    self.view.backgroundColor = [UIColor grayColor];
     
     MGBox *grid = [MGBox boxWithSize:self.view.bounds.size];
     grid.contentLayoutMode = MGLayoutGridStyle;
@@ -69,6 +71,9 @@
     
     [grid.boxes addObject: box];
     
+    
+    /***********
+     
     // the subsections table
     
     MGBox *table2 = MGBox.box;
@@ -117,16 +122,17 @@
                                                  padding:UIEdgeInsetsMake(16, 16, 16, 16)];
     [section.topLines addObject:waf2];
     
-    
+     [table2 layoutWithSpeed:0.3 completion:nil];
+ 
 
-        
-    
-    
-    [grid.boxes addObject:[self createBox:@"page-2"]] ;
+     *****/
     
     
     
-    [table2 layoutWithSpeed:0.3 completion:nil];
+//    [grid.boxes addObject:[self createBox:@"page-2"]] ;
+    
+    
+    
     [scroller layoutWithSpeed:0.3 completion:nil];
     
 
@@ -164,6 +170,17 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
 }
 
 @end

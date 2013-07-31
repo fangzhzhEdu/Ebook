@@ -5,6 +5,7 @@ pod 'ASIHTTPRequest'
 pod 'MZDayPicker'
 pod 'MGBox2'
 pod 'ViewDeck'
+#pod 'PopoverView'
 
 
 # pod 'CocoaLumberjack'

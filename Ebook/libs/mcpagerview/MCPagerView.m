@@ -17,6 +17,7 @@
 @synthesize pattern = _pattern;
 @synthesize delegate = _delegate;
 
+#define  PAGER_SPACE  5 
 - (void)commonInit
 {
     _page = 0;
@@ -98,14 +99,14 @@
         UIImageView *imageView = [self imageViewForKey:key];
         
         CGRect frame = imageView.frame;
-        frame.origin.x = xOffset;
+        frame.origin.x = xOffset ;
         imageView.frame = frame;
         imageView.highlighted = (i == self.page);
         
         [self addSubview:imageView];
         [_pageViews addObject:imageView];
         
-        xOffset = xOffset + frame.size.width;
+        xOffset = xOffset + frame.size.width + PAGER_SPACE ; // ydf edit here
     }
 }
 

@@ -31,5 +31,5 @@
 #define IPAD_TABLES_GRID       (CGSize){624, 0}
 
 #define HEADER_FONT            [UIFont fontWithName:@"HelveticaNeue" size:16]
-
+#define  VIEWDECK_LEFT_SIZE   50 
 #endif

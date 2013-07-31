@@ -8,6 +8,7 @@
 
 #import "PageRead3ViewController.h"
 #import "UIImage+Tint.h"
+#import "PopoverView.h" 
 @interface PageRead3ViewController ()
 
 @end
@@ -26,8 +27,8 @@
                                   scrollView.frame.size.width,
                                   scrollView.frame.size.height);
         UIImageView *imgview = [[UIImageView  alloc] initWithFrame:frame];
-        
-       [imgview setImage:[UIImage imageNamed: [NSString stringWithFormat:@"a0%i" ,i+1]]];
+       [imgview setImage:[UIImage imageNamed: @"page-5"]]; 
+//       [imgview setImage:[UIImage imageNamed: [NSString stringWithFormat:@"page-3%i" ,i+1]]];
         
 //        UILabel *label = [[UILabel alloc] initWithFrame:frame];
 //        label.textAlignment = UITextAlignmentCenter;
@@ -43,17 +44,17 @@
     
 //    UIColor *grayColor=  [UIColor grayColor];
     // Pager
-    [pagerView setImage:[UIImage imageNamed:@"a1"]
-       highlightedImage:[UIImage imageNamed:@"a1"]  
+    [pagerView setImage:[UIImage imageNamed:@"pager1"]
+       highlightedImage:[UIImage imageNamed:@"pager1-red"]
                  forKey:@"a"];
-    [pagerView setImage:[UIImage imageNamed:@"a2"]
-       highlightedImage:[UIImage imageNamed:@"a2"]  
+    [pagerView setImage:[UIImage imageNamed:@"pager2"]
+       highlightedImage:[UIImage imageNamed:@"pager2-red"]
                  forKey:@"b"];
-    [pagerView setImage:[UIImage imageNamed:@"a3"]
-       highlightedImage:[UIImage imageNamed:@"a3"] 
+    [pagerView setImage:[UIImage imageNamed:@"pager3"]
+       highlightedImage:[UIImage imageNamed:@"pager3-red"]
                  forKey:@"c"];
-    [pagerView setImage:[UIImage imageNamed:@"a4"]
-       highlightedImage:[UIImage imageNamed:@"a4"]  
+    [pagerView setImage:[UIImage imageNamed:@"pager4"]
+       highlightedImage:[UIImage imageNamed:@"pager4-red"]  
                  forKey:@"d"];
     
     [pagerView setPattern:@"abcd"];
@@ -80,8 +81,34 @@
 
 - (void)pageView:(MCPagerView *)pageView didUpdateToPage:(NSInteger)newPage
 {
-    CGPoint offset = CGPointMake(scrollView.frame.size.width * pagerView.page, 0);
-    [scrollView setContentOffset:offset animated:YES];
+//    CGPoint offset = CGPointMake(scrollView.frame.size.width * pagerView.page, 0);
+//    [scrollView setContentOffset:offset animated:YES];
+   
+    CGPoint point = CGPointMake(300, 350);
+    CGRect frame = CGRectMake(0, 0, 280, 200);
+    UIImageView *imageview;
+    
+    if(pagerView.page ==0)
+    {
+    
+    imageview = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"a01"]];
+        
+        }
+    if(pagerView.page ==1)
+    {
+       imageview = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"a02"]];
+    }
+    if(pagerView.page ==2)
+    {
+        imageview = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"a03"]];
+    }
+    if(pagerView.page ==3)
+    {
+       imageview = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"a04"]];
+    }
+    imageview.frame = frame ;
+    [PopoverView showPopoverAtPoint:point inView:self.view  withContentView:imageview delegate:nil];
+ 
 }
 
 - (void)viewDidUnload
@@ -104,6 +131,17 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
 }
 
 @end

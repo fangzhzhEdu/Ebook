@@ -32,7 +32,7 @@
 {
     [super viewDidLoad];
     
-    [super addHeadBarButton];
+//    [super addHeadBarButton];
   
 //    UIColor *bgColor = [UIColor colorWithPatternImage: [UIImage imageNamed:@"backgroudtexture"]];
     //                        UIView *myView = [[UIView alloc] initWithFrame:CGRectMake(0,0,320,480)];
@@ -40,11 +40,11 @@
 //    [ self.view setBackgroundColor:bgColor];
     
     
-    CGSize scrollerSize = CGSizeMake(self.view.bounds.size.width , self.view.bounds.size.height-HEADBAR_HEIGHT);
+    CGSize scrollerSize = CGSizeMake(self.view.bounds.size.width , self.view.bounds.size.height);
     
     
     MGScrollView *scroller = [MGScrollView scrollerWithSize:scrollerSize];
-    scroller.frame = CGRectMake(0,HEADBAR_HEIGHT+8 , 320,self.view.size.height - HEADBAR_HEIGHT);
+    scroller.frame = CGRectMake(0,0 , 320,self.view.size.height );
     [self.view  addSubview:scroller];
     
 //    [scroller setBackgroundColor: bgColor];
@@ -65,11 +65,11 @@
     | UIViewAutoresizingFlexibleLeftMargin;
     addView.contentMode = UIViewContentModeScaleToFill ;
     
-    MGBox *box = [MGBox boxWithSize:(CGSize){310, 560}];
+    MGBox *box = [MGBox boxWithSize:(CGSize){270, 560}];
     box.leftMargin = box.topMargin =0.1;
     //    addView.bounds = CGRectMake(0, 0, 100,100);
     
-    addView.frame = CGRectMake(0,0 , 310, 460);
+    addView.frame = CGRectMake(0,0 , 270, 460);
     
     
     [box addSubview:addView];
@@ -81,7 +81,7 @@
     
     // scroll
 
-     [scroller scrollToView:box withMargin:8];
+//     [scroller scrollToView:box withMargin:8];
     
 }
 

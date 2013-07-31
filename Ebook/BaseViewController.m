@@ -13,7 +13,7 @@
 #import "PhotoBox.h"
 #import "config.h"
 #import "MGButton.h"
-
+#import "IIViewDeckController.h"
 @interface BaseViewController ()
 
 
@@ -33,6 +33,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [self.viewDeckController closeLeftView];
+
 	
 }
 -(void) addHeadBarButton 

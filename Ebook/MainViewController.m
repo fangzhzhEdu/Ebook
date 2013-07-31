@@ -16,6 +16,7 @@
 #import "IssueViewController.h"
 #import "MZDayPicker.h"
 #import "MGButton.h"
+#import "IIViewDeckController.h"
 @interface MainViewController ()
 
 @end
@@ -43,6 +44,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [self initViewDeck];
+    [self addMyCal] ;
     
 //    self.navigationItem.leftBarButtonItem= [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"btn-info"]
 //                                            style:UIBarButtonItemStyleBordered                    target:self action:@selector(showAbout)];
@@ -87,6 +91,25 @@
     [self addBox];
     
 
+}
+-(void) initViewDeck
+{
+//    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard_iPhone" bundle:nil];
+//  
+//    AboutViewController *v  = [storyboard instantiateViewControllerWithIdentifier:@"AboutViewController"];
+//    
+    
+    
+    
+    
+}
+
+-(void) addMyCal
+{
+    UIImageView *calimage = [[UIImageView alloc ] initWithImage:[UIImage imageNamed:@"calbar"]];
+    calimage.contentMode =UIViewContentModeScaleToFill ;
+    calimage.frame = CGRectMake(0, 0, 320, 44);
+    [self.daypicker addSubview:calimage];
 }
 -(void) addHeadBar
 {
@@ -270,17 +293,18 @@
     [scroller layoutWithSpeed:0.3 completion:nil];
     
     // scroll
-    [scroller scrollToView:section withMargin:28];
+//    [scroller scrollToView:section withMargin:8];
 }
 -(void) showAbout{
     
-    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard_iPhone" bundle:nil];
-//    AboutViewController *v  = [storyboard instantiateInitialViewController];
-    AboutViewController *v  = [storyboard instantiateViewControllerWithIdentifier:@"AboutViewController"];
- 
+//    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard_iPhone" bundle:nil];
+//    AboutViewController *v  = [storyboard instantiateViewControllerWithIdentifier:@"AboutViewController"];
+// 
+//    [self.navigationController pushViewController:v animated:YES];
+//    
     
-//    AboutViewController *v=[[AboutViewController alloc] init];
-    [self.navigationController pushViewController:v animated:YES];
+    
+    [self.viewDeckController toggleLeftViewAnimated:YES];
     
 }
 -(void) showIssues{
@@ -306,10 +330,21 @@
 //    }
 //    return self;
 //}
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
+}
 
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
+}
 - (void)viewDidUnload {
     [self setPageContainer:nil];
     [self setTopbarView:nil];
+    [self setDaypicker:nil];
     [super viewDidUnload];
 }
 @end

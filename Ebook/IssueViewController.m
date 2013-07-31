@@ -60,7 +60,7 @@
     
     
     // add photo boxes to the grid
-    int initialImages = 24 ;
+    int initialImages = 3 ;
     for (int i = 1; i <= initialImages; i++) {
         
         MGBox *box = [self createBox:@"issue"];
@@ -203,7 +203,7 @@
     //    MGLineStyled *head1 = [MGLineStyled lineWithLeft:[UIImage imageNamed :@"btn-info"] right:[UIImage imageNamed :@"btn-read"] size: (CGSize){320, 50}]; //sharebutton
     //
     MGButton *b1 = [[MGButton alloc] initWithFrame:CGRectMake(0, 0,24, 24)];
-    [b1 setBackgroundImage:[UIImage imageNamed :@"btn-info"]   forState: UIControlStateNormal ];
+    [b1 setBackgroundImage:[UIImage imageNamed :@"backbutton"]   forState: UIControlStateNormal ];
     
     [b1 addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
     
@@ -271,5 +271,15 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
+}
 
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
+}
 @end

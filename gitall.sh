@@ -26,3 +26,7 @@ git clone https://github.com/pkluz/PKRevealController.git
 git clone https://github.com/steipete/PSStackedView.git
 git clone https://github.com/ptshih/PSCollectionView.git
 git clone https://github.com/sobri909/MGBox2.git
+git clone https://github.com/Baglan/MCPagerView.git
+git clone https://github.com/onevcat/VVImageTint.git
+git clone https://github.com/simonrice/ViewDeckStoryboardExample.git
+git clone https://github.com/runway20/PopoverView.git 
