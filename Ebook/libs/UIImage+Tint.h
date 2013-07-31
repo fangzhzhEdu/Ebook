@@ -12,5 +12,5 @@
 
 - (UIImage *) imageWithTintColor:(UIColor *)tintColor;
 - (UIImage *) imageWithGradientTintColor:(UIColor *)tintColor;
-+ (UIImage*) createRoundedRectImage:(UIImage*)image size:(CGSize)size;
+
 @end
