@@ -11,6 +11,7 @@
 #include "PageRead2ViewController.h"
 #include "PageRead3ViewController.h"
 #include "PageReadViewController.h" 
+#include "PageType1ViewController.h"
 @interface PageReadAllViewController ()
 {
 
@@ -35,6 +36,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [self.navigationController.navigationBar setHidden: YES ] ;
      
     
     [self loadBookData];
@@ -165,13 +168,16 @@
         return;
     
     // replace the placeholder if necessary
-     PageRead3ViewController  *controller = [self.viewControllers objectAtIndex:page];
+      PageType1ViewController  *controller = [self.viewControllers objectAtIndex:page];
     if ((NSNull *)controller == [NSNull null])
     {
-        controller = [PageRead3ViewController instance];
+        controller = [[PageType1ViewController alloc] initWithNibName:nil bundle:nil];
         controller.pageNumber = page ;
         [self.viewControllers replaceObjectAtIndex:page withObject:controller];
+        controller.thePage   =[self.bookpages  objectAtIndex:page];
+    
     }
+    
     
     // add the controller's view to the scroll view
     if (controller.view.superview == nil)
@@ -180,7 +186,7 @@
         frame.origin.x = CGRectGetWidth(frame) * page;
         frame.origin.y = 0;
         controller.view.frame = frame;
-        
+        [controller.navigationController.navigationBar setHidden:YES];
         [self addChildViewController:controller];
         [self.scrollView addSubview:controller.view];
         [controller didMoveToParentViewController:self];
@@ -237,7 +243,6 @@
 - (void)viewDidUnload {
     [self setScrollView:nil];
     [self setMcPager:nil];
-    [self setPageControl:nil];
     [self setPageControl:nil];
     [super viewDidUnload];
 }

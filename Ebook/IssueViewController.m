@@ -124,10 +124,7 @@
             if (_box.tag == 4) {
                 NSLog(@"you tapped my box: 3");
                 
-                PageRead3ViewController *v = [PageRead3ViewController initWithStoryBoardID:@"PageRead3ViewController"  ];
-                
-                [self.navigationController pushViewController:v animated:YES];
-                
+                                
             }
 
             

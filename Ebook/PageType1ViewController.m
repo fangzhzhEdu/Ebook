@@ -26,7 +26,23 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    [self.navigationController.navigationBar setHidden: YES ];
+    [self initi ] ;
+    
+}
+-(void) initi
+{
+           
+        UIImageView *imgview = [[UIImageView  alloc] initWithFrame:self.view.frame];
+        NSString *fileURL = self.thePage[@"image2x"] ;
+        NSLog(@"file url is : %@" ,fileURL ) ;
+        NSData * data = [NSData dataWithContentsOfURL:[NSURL URLWithString:fileURL]];
+        
+        UIImage *image  = [UIImage imageWithData:data];
+        
+        [imgview setImage:image];
+    
+        [self.view addSubview:imgview ];
 }
 
 - (void)didReceiveMemoryWarning
