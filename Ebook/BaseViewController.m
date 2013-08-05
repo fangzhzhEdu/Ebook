@@ -21,6 +21,14 @@
 
 @implementation BaseViewController
 
+
++(id)initWithStoryBoardID:(NSString*) storyBoardID ;
+{
+    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard_iPhone" bundle:nil];
+    return [storyboard instantiateViewControllerWithIdentifier:storyBoardID];
+            
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];

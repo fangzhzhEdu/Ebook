@@ -17,7 +17,11 @@
 #import "MZDayPicker.h"
 #import "MGButton.h"
 #import "IIViewDeckController.h"
-@interface MainViewController ()
+#import "OPDayPicker.h" 
+#import "DateUtil.h"
+
+@interface MainViewController () <MZDayPickerDelegate, MZDayPickerDataSource, UITableViewDataSource, UITableViewDelegate>
+@property (nonatomic,strong) NSDateFormatter *dateFormatter;
 
 @end
 @implementation UINavigationBar (CustomImage)
@@ -91,6 +95,7 @@
     [self addBox];
     
 
+    [self test ] ;
 }
 -(void) initViewDeck
 {
@@ -106,10 +111,57 @@
 
 -(void) addMyCal
 {
-    UIImageView *calimage = [[UIImageView alloc ] initWithImage:[UIImage imageNamed:@"calbar"]];
-    calimage.contentMode =UIViewContentModeScaleToFill ;
-    calimage.frame = CGRectMake(0, 0, 320, 44);
-    [self.daypicker addSubview:calimage];
+//    UIImageView *calimage = [[UIImageView alloc ] initWithImage:[UIImage imageNamed:@"calbar"]];
+//    calimage.contentMode =UIViewContentModeScaleToFill ;
+//    calimage.frame = CGRectMake(0, 0, 320, 44);
+//    [self.daypickerContainer addSubview:calimage];
+    
+    
+    //获得nib视图数组
+    NSArray *nib = [[NSBundle mainBundle]loadNibNamed:@"OPDayPicker" owner:self options:nil];
+    //得到第一个UIView
+    OPDayPicker *tmpCustomView = [nib objectAtIndex:0];
+    //获得屏幕的Frame
+//    CGRect tmpFrame = [[UIScreen mainScreen] bounds];
+    //设置自定义视图的中点为屏幕的中点
+//    [tmpCustomView setCenter:CGPointMake(tmpFrame.size.width / 2, tmpFrame.size.height / 2)];
+    //添加视图
+    
+//    
+    CGRect frame = CGRectMake(0, 0, 320, 46);
+    tmpCustomView.frame = frame ;
+    
+    self.dayPicker = tmpCustomView.dayPicker ;
+    self.lbMonth   = tmpCustomView.lbMonth;
+    //    [tmpCustomView.dayPicker  setActiveDaysFrom: -100  toDay:30];
+    
+    tmpCustomView.dayPicker.delegate =self ;
+    
+    tmpCustomView.dayPicker.dataSource = self ;
+    
+//    CGRect frame2 = CGRectMake(41, 0, 279, 46);
+//    self.dayPicker.frame = frame2 ;
+    self.dayPicker.dayNameLabelFontSize = 10.0f; //12.0f;
+    self.dayPicker.dayLabelFontSize =12.0f ;// 18.0f;
+    
+    self.dateFormatter = [[NSDateFormatter alloc] init];
+    [self.dateFormatter setDateFormat:@"EE"];
+    
+    [tmpCustomView.dayPicker   setStartDate:[NSDate dateFromDay:28 month:7 year:2013] endDate:[NSDate dateFromDay:5 month:9 year:2013]];
+    
+    [tmpCustomView.dayPicker setCurrentDate:[NSDate dateFromDay:1 month:8 year:2013] animated:YES];
+//    [self.view addSubview:tmpCustomView];
+    [self.daypickerContainer addSubview:tmpCustomView];
+    
+    [tmpCustomView.centerContainer setHidden: YES ];
+    
+    [tmpCustomView test];
+    
+}
+-(void) test
+{
+ 
+       
 }
 -(void) addHeadBar
 {
@@ -330,6 +382,7 @@
 //    }
 //    return self;
 //}
+#pragma mark - default method
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
@@ -344,7 +397,28 @@
 - (void)viewDidUnload {
     [self setPageContainer:nil];
     [self setTopbarView:nil];
-    [self setDaypicker:nil];
+    [self setDaypickerContainer:nil];
     [super viewDidUnload];
 }
+#pragma mark - MZDayPicker  delegate
+- (NSString *)dayPicker:(MZDayPicker *)dayPicker titleForCellDayNameLabelInDay:(MZDay *)day
+{
+    return [self.dateFormatter stringFromDate:day.date];
+}
+
+
+- (void)dayPicker:(MZDayPicker *)dayPicker didSelectDay:(MZDay *)day
+{
+    NSLog(@"Did select day %@",day.day);
+    self.lbMonth.text = [NSString stringWithFormat:@"%@" ,day.day ];
+    self.lbMonth.text  = [DateUtil getMonthCN: day.date];
+    
+    
+}
+
+- (void)dayPicker:(MZDayPicker *)dayPicker willSelectDay:(MZDay *)day
+{
+    NSLog(@"Will select day %@",day.day);
+}
+
 @end

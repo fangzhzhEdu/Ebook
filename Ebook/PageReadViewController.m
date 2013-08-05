@@ -19,7 +19,12 @@
 @end
 
 @implementation PageReadViewController
-
++(id) instance
+{
+    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard_iPhone" bundle:nil];
+    return [storyboard instantiateViewControllerWithIdentifier:@"PageReadViewController"];
+    
+}
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];

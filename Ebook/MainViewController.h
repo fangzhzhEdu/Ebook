@@ -8,10 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import <IIViewDeckController.h>
-
+#import "MZDayPicker.h"
 @interface MainViewController : UIViewController //IIViewDeckController
 @property (weak, nonatomic) IBOutlet UIView *pageContainer;
 @property (weak, nonatomic) IBOutlet UIView *topbarView;
-@property (weak, nonatomic) IBOutlet UIView *daypicker;
+@property (weak, nonatomic) IBOutlet UIView *daypickerContainer;
+
+
+@property (weak, nonatomic)  MZDayPicker *dayPicker;
+@property (weak, nonatomic)  UILabel    *lbMonth ;
+
+
 
 @end

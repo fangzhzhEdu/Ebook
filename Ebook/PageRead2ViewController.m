@@ -13,7 +13,12 @@
 @end
 
 @implementation PageRead2ViewController
-
++(id) instance
+{
+    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard_iPhone" bundle:nil];
+    return [storyboard instantiateViewControllerWithIdentifier:@"PageRead2ViewController"];
+    
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];

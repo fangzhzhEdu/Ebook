@@ -10,11 +10,21 @@
 #import "UIImage+Tint.h"
 #import "PopoverView.h" 
 @interface PageRead3ViewController ()
+{
+    
+
+}
 
 @end
 
 @implementation PageRead3ViewController
 
++(id) instance 
+{
+    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard_iPhone" bundle:nil];
+    return [storyboard instantiateViewControllerWithIdentifier:@"PageRead3ViewController"];
+    
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -115,6 +125,7 @@
 {
     pagerView = nil;
     scrollView = nil;
+    
     [super viewDidUnload];
    
 }

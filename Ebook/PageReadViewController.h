@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 #import "BaseViewController.h"
 @interface PageReadViewController : BaseViewController
-
++(id) instance;
 @end

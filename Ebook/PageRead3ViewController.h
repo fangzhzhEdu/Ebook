@@ -13,5 +13,8 @@
     __weak IBOutlet UIScrollView *scrollView;
     __weak IBOutlet MCPagerView *pagerView;
 }
++(id) instance ; 
+
+
 
 @end

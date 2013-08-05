@@ -1,12 +1,12 @@
 platform :ios ,'5.0' 
 pod 'JSONKit' , '~> 1.4'
 pod 'Reachability' ,'~> 3.0.0'
-pod 'ASIHTTPRequest' 
-pod 'MZDayPicker'
+#pod 'ASIHTTPRequest'
+#pod 'MZDayPicker'
 pod 'MGBox2'
 pod 'ViewDeck'
 #pod 'PopoverView'
-
+pod  'MKNetworkKit'
 
 # pod 'CocoaLumberjack'
 # pod 'GMGridView'

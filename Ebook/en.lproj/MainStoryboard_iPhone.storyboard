@@ -167,6 +167,44 @@
             </objects>
             <point key="canvasLocation" x="-3475" y="-594"/>
         </scene>
+        <!--Page Read All View Controller-->
+        <scene sceneID="exZ-xr-Yne">
+            <objects>
+                <viewController storyboardIdentifier="PageReadAllViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="SNW-Ym-C88" customClass="PageReadAllViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mbb-O6-07q">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" id="fJp-km-ElU">
+                                <rect key="frame" x="100" y="100" width="200" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.65882354970000001" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                <connections>
+                                    <action selector="changePage:" destination="SNW-Ym-C88" eventType="valueChanged" id="4b1-1a-OUg"/>
+                                </connections>
+                            </pageControl>
+                            <view contentMode="scaleToFill" id="bNC-xs-eEg" userLabel="MCPager" customClass="MCPagerView">
+                                <rect key="frame" x="0.0" y="300" width="320" height="70"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="YRZ-2l-c6n">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="mcPager" destination="bNC-xs-eEg" id="GDu-gP-9rh"/>
+                        <outlet property="pageControl" destination="fJp-km-ElU" id="TPv-td-tPP"/>
+                        <outlet property="scrollView" destination="YRZ-2l-c6n" id="7SR-hb-0Dz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9yb-KR-Ecw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2484" y="-2339"/>
+        </scene>
         <!--Page Read View Controller - 发现清迈-->
         <scene sceneID="Vra-Ne-ktm">
             <objects>
@@ -186,7 +224,7 @@
         <!--Navigation Controller-->
         <scene sceneID="QLx-eN-J2s">
             <objects>
-                <navigationController definesPresentationContext="YES" navigationBarHidden="YES" id="P2u-Cq-vl4" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="UINavigationController" definesPresentationContext="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" navigationBarHidden="YES" id="P2u-Cq-vl4" sceneMemberID="viewController">
                     <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="mcA-LL-EUs">
                         <autoresizingMask key="autoresizingMask"/>
@@ -231,19 +269,19 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" id="qOP-eO-YXW">
-                                <rect key="frame" x="0.0" y="50" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                            </view>
-                            <view contentMode="scaleToFill" id="I4L-H3-Zov">
-                                <rect key="frame" x="0.0" y="98" width="320" height="434"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                            </view>
-                            <view contentMode="scaleToFill" id="A0x-CI-opT">
+                            <view contentMode="scaleToFill" id="A0x-CI-opT" userLabel="navbar">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="qOP-eO-YXW" userLabel="calendar">
+                                <rect key="frame" x="0.0" y="50" width="320" height="46"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="I4L-H3-Zov" userLabel="content">
+                                <rect key="frame" x="0.0" y="96" width="320" height="434"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
@@ -254,7 +292,7 @@
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
-                        <outlet property="daypicker" destination="qOP-eO-YXW" id="L94-Is-dbe"/>
+                        <outlet property="daypickerContainer" destination="qOP-eO-YXW" id="QTj-Ft-38e"/>
                         <outlet property="pageContainer" destination="I4L-H3-Zov" id="8yB-z6-sVt"/>
                         <outlet property="topbarView" destination="A0x-CI-opT" id="sQp-Ba-r3B"/>
                     </connections>
@@ -372,6 +410,21 @@
             </objects>
             <point key="canvasLocation" x="-2018" y="-1332"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="yRx-BU-mcd">
+            <objects>
+                <viewController id="PvW-WL-gMW" sceneMemberID="viewController">
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="AKX-Nk-5yP">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gYR-w7-piq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1987" y="-2329"/>
+        </scene>
     </scenes>
     <classes>
         <class className="AboutViewController" superclassName="BaseViewController">
@@ -421,7 +474,7 @@
         <class className="MainViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MainViewController.h"/>
             <relationships>
-                <relationship kind="outlet" name="daypicker" candidateClass="UIView"/>
+                <relationship kind="outlet" name="daypickerContainer" candidateClass="UIView"/>
                 <relationship kind="outlet" name="pageContainer" candidateClass="UIView"/>
                 <relationship kind="outlet" name="topbarView" candidateClass="UIView"/>
             </relationships>
@@ -437,6 +490,15 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PageRead3ViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="pagerView" candidateClass="MCPagerView"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+            </relationships>
+        </class>
+        <class className="PageReadAllViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PageReadAllViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="changePage:"/>
+                <relationship kind="outlet" name="mcPager" candidateClass="MCPagerView"/>
+                <relationship kind="outlet" name="pageControl" candidateClass="UIPageControl"/>
                 <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
             </relationships>
         </class>

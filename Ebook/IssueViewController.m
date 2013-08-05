@@ -17,6 +17,9 @@
 
 #import "PageRead2ViewController.h"
 #import "PageRead3ViewController.h"
+#import "PageReadAllViewController.h" 
+
+
 @interface IssueViewController ()
 
 @end
@@ -60,7 +63,7 @@
     
     
     // add photo boxes to the grid
-    int initialImages = 3 ;
+    int initialImages = 6 ;
     for (int i = 1; i <= initialImages; i++) {
         
         MGBox *box = [self createBox:@"issue"];
@@ -75,10 +78,19 @@
 //            [self performSegueWithIdentifier:@"pagedetail" sender:self];
             if (_box.tag == 1) {
                 NSLog(@"you tapped my box: 1 !");
-                PageReadViewController *v=[[PageReadViewController alloc] init];
+//                PageReadViewController *v=[[PageReadViewController alloc] init];
+//                [self.navigationController pushViewController:v animated:YES];
+                
+                //                PageReadAllViewController *v=[[PageReadAllViewController alloc] init];
+                //                [self.navigationController pushViewController:v animated:YES];
+                
+                
+                UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard_iPhone" bundle:nil];
+                PageReadAllViewController *v  = [storyboard instantiateViewControllerWithIdentifier:@"PageReadAllViewController"];
+                
                 [self.navigationController pushViewController:v animated:YES];
-                
-                
+
+ 
                 
                 
             }
@@ -96,17 +108,28 @@
             if (_box.tag == 3) {
                 NSLog(@"you tapped my box: 3");
                 
+//                
+//                UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard_iPhone" bundle:nil];
+//                PageRead3ViewController *v  = [storyboard instantiateViewControllerWithIdentifier:@"PageRead3ViewController"];
                 
-                UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard_iPhone" bundle:nil];
-                PageRead3ViewController *v  = [storyboard instantiateViewControllerWithIdentifier:@"PageRead3ViewController"];
+                PageRead3ViewController *v = [PageRead3ViewController initWithStoryBoardID:@"PageRead3ViewController"  ];
                 
                 [self.navigationController pushViewController:v animated:YES];
                 
                 
-                
+               
                 
                 
             }
+            if (_box.tag == 4) {
+                NSLog(@"you tapped my box: 3");
+                
+                PageRead3ViewController *v = [PageRead3ViewController initWithStoryBoardID:@"PageRead3ViewController"  ];
+                
+                [self.navigationController pushViewController:v animated:YES];
+                
+            }
+
             
         };
        

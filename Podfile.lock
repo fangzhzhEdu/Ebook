@@ -1,34 +1,22 @@
 PODS:
-  - ASIHTTPRequest (1.8.1):
-    - ASIHTTPRequest/ASIWebPageRequest
-    - ASIHTTPRequest/CloudFiles
-    - ASIHTTPRequest/S3
-    - Reachability
-  - ASIHTTPRequest/ASIWebPageRequest (1.8.1):
-    - Reachability
-  - ASIHTTPRequest/CloudFiles (1.8.1):
-    - Reachability
-  - ASIHTTPRequest/S3 (1.8.1):
-    - Reachability
   - JSONKit (1.5pre)
   - MGBox2 (2.0.0)
-  - MZDayPicker (0.0.4)
+  - MKNetworkKit (0.87):
+    - Reachability (~> 3.1.0)
   - Reachability (3.0.0)
   - ViewDeck (2.3.1)
 
 DEPENDENCIES:
-  - ASIHTTPRequest
   - JSONKit (~> 1.4)
   - MGBox2
-  - MZDayPicker
+  - MKNetworkKit
   - Reachability (~> 3.0.0)
   - ViewDeck
 
 SPEC CHECKSUMS:
-  ASIHTTPRequest: a411b8d0f006ed8fc24248be6a0c4ad2abc9b101
   JSONKit: 409734ab3407fce90ef7eaa95d7168f38d9a6601
   MGBox2: 7c09e36c2271f9af16fdb5141a0ca554ecee4d8d
-  MZDayPicker: c9e00f477285b9b962b5c27a671584b6b3a4f511
+  MKNetworkKit: f174100f92473012138b6b1c3040266af8d43a14
   Reachability: 500bd76bf6cd8ff2c6fb715fc5f44ef6e4c024f2
   ViewDeck: 2cdc67c4b41a10cafc7556b982f028409e33604d
 
