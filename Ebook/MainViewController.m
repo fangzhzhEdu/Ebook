@@ -24,14 +24,14 @@
 @property (nonatomic,strong) NSDateFormatter *dateFormatter;
 
 @end
-@implementation UINavigationBar (CustomImage)
-
-//定义navigation背景图片
-- (void)drawRect:(CGRect)rect {
-    UIImage *image = [UIImage imageNamed: @"backgroud.png"];
-    [image drawInRect:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
-}
-@end
+//@implementation UINavigationBar (CustomImage) // only work on 4.x
+//
+////定义navigation背景图片
+//- (void)drawRect:(CGRect)rect {
+//    UIImage *image = [UIImage imageNamed: @"backgroud.png"];
+//    [image drawInRect:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
+//}
+//@end
 
 
 @implementation MainViewController

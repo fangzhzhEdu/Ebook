@@ -57,6 +57,12 @@
 		6CC008FF17AE7B1A0083FD04 /* PageReadAllViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC008FE17AE7B190083FD04 /* PageReadAllViewController.m */; };
 		6CC0090217AE7E8F0083FD04 /* JsonUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC0090117AE7E8D0083FD04 /* JsonUtil.m */; };
 		6CC0090417AE81F40083FD04 /* old-p.json in Resources */ = {isa = PBXBuildFile; fileRef = 6CC0090317AE81F40083FD04 /* old-p.json */; };
+		6CCB931F17B121D400952EC1 /* UIImageView+DispatchLoad.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CCB931E17B121D400952EC1 /* UIImageView+DispatchLoad.m */; };
+		6CCB932317B123EC00952EC1 /* PageType2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CCB932117B123EC00952EC1 /* PageType2ViewController.m */; };
+		6CCB932417B123EC00952EC1 /* PageType2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CCB932217B123EC00952EC1 /* PageType2ViewController.xib */; };
+		6CCB932917B1329E00952EC1 /* PageType3ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CCB932717B1329E00952EC1 /* PageType3ViewController.m */; };
+		6CCB932A17B1329E00952EC1 /* PageType3ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CCB932817B1329E00952EC1 /* PageType3ViewController.xib */; };
+		6CCB933017B14D9900952EC1 /* App.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CCB932F17B14D9800952EC1 /* App.m */; };
 		6CCEB78E17A921A300F4B81D /* InitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CCEB78D17A921A300F4B81D /* InitialViewController.m */; };
 		6CCEB7A317A92B9400F4B81D /* pager1-red.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CCEB79117A92B9400F4B81D /* pager1-red.png */; };
 		6CCEB7A417A92B9400F4B81D /* pager1-red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CCEB79217A92B9400F4B81D /* pager1-red@2x.png */; };
@@ -247,6 +253,16 @@
 		6CC0090017AE7E8D0083FD04 /* JsonUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonUtil.h; sourceTree = "<group>"; };
 		6CC0090117AE7E8D0083FD04 /* JsonUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsonUtil.m; sourceTree = "<group>"; };
 		6CC0090317AE81F40083FD04 /* old-p.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "old-p.json"; path = "json/old-p.json"; sourceTree = "<group>"; };
+		6CCB931D17B121D400952EC1 /* UIImageView+DispatchLoad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+DispatchLoad.h"; sourceTree = "<group>"; };
+		6CCB931E17B121D400952EC1 /* UIImageView+DispatchLoad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+DispatchLoad.m"; sourceTree = "<group>"; };
+		6CCB932017B123EC00952EC1 /* PageType2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageType2ViewController.h; sourceTree = "<group>"; };
+		6CCB932117B123EC00952EC1 /* PageType2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageType2ViewController.m; sourceTree = "<group>"; };
+		6CCB932217B123EC00952EC1 /* PageType2ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PageType2ViewController.xib; sourceTree = "<group>"; };
+		6CCB932617B1329D00952EC1 /* PageType3ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageType3ViewController.h; sourceTree = "<group>"; };
+		6CCB932717B1329E00952EC1 /* PageType3ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageType3ViewController.m; sourceTree = "<group>"; };
+		6CCB932817B1329E00952EC1 /* PageType3ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PageType3ViewController.xib; sourceTree = "<group>"; };
+		6CCB932E17B14D9700952EC1 /* App.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = App.h; sourceTree = "<group>"; };
+		6CCB932F17B14D9800952EC1 /* App.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = App.m; sourceTree = "<group>"; };
 		6CCEB78C17A921A300F4B81D /* InitialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitialViewController.h; sourceTree = "<group>"; };
 		6CCEB78D17A921A300F4B81D /* InitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitialViewController.m; sourceTree = "<group>"; };
 		6CCEB79117A92B9400F4B81D /* pager1-red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pager1-red.png"; sourceTree = "<group>"; };
@@ -474,37 +490,29 @@
 		6C685B741796EA4F00DDDE36 /* viewcontroller */ = {
 			isa = PBXGroup;
 			children = (
+				6CCB932517B123F600952EC1 /* pagetype */,
+				6C4EA0CA178D8D950076E9AC /* MainStoryboard_iPhone.storyboard */,
 				6CCEB78C17A921A300F4B81D /* InitialViewController.h */,
 				6CCEB78D17A921A300F4B81D /* InitialViewController.m */,
 				6CD38C1817A67B30003A79F3 /* MainViewController.h */,
 				6CD38C1917A67B30003A79F3 /* MainViewController.m */,
-				6C4EA0CA178D8D950076E9AC /* MainStoryboard_iPhone.storyboard */,
+				6C40B983179A1914007BF5E4 /* IssueViewController.h */,
+				6C40B984179A1914007BF5E4 /* IssueViewController.m */,
+				6CC008FD17AE7B190083FD04 /* PageReadAllViewController.h */,
+				6CC008FE17AE7B190083FD04 /* PageReadAllViewController.m */,
 				6C40B980179A17B5007BF5E4 /* PhotoBox.h */,
 				6C40B981179A17B5007BF5E4 /* PhotoBox.m */,
 				6C685B751796EA8000DDDE36 /* AboutViewController.h */,
 				6C685B761796EA8000DDDE36 /* AboutViewController.m */,
 				6C6BE21617996EFB00B74CD3 /* MTBoxTestViewController.h */,
 				6C6BE21717996EFB00B74CD3 /* MTBoxTestViewController.m */,
-				6CD38C7017A6A6FC003A79F3 /* BaseViewController.h */,
-				6CD38C7117A6A6FD003A79F3 /* BaseViewController.m */,
-				6C6BE2251799857800B74CD3 /* PageReadViewController.h */,
-				6C6BE2261799857800B74CD3 /* PageReadViewController.m */,
-				6CD61BC617A8024000F49438 /* PageRead2ViewController.h */,
-				6CD61BC717A8024000F49438 /* PageRead2ViewController.m */,
-				6CD38C7C17A6B0E0003A79F3 /* PageRead3ViewController.h */,
-				6CD38C7D17A6B0E1003A79F3 /* PageRead3ViewController.m */,
-				6CC008FD17AE7B190083FD04 /* PageReadAllViewController.h */,
-				6CC008FE17AE7B190083FD04 /* PageReadAllViewController.m */,
-				6C40B983179A1914007BF5E4 /* IssueViewController.h */,
-				6C40B984179A1914007BF5E4 /* IssueViewController.m */,
 				6C40B986179A1A02007BF5E4 /* config.h */,
 				6C253376179ABBF100E0C034 /* ShareViewController.h */,
 				6C253377179ABBF100E0C034 /* ShareViewController.m */,
 				6C25339F179B992200E0C034 /* DownloadViewController.h */,
 				6C2533A0179B992200E0C034 /* DownloadViewController.m */,
-				6CB3F9C817AFE91B00F0EB5B /* PageType1ViewController.h */,
-				6CB3F9C917AFE91B00F0EB5B /* PageType1ViewController.m */,
-				6CB3F9CA17AFE91C00F0EB5B /* PageType1ViewController.xib */,
+				6CCB932E17B14D9700952EC1 /* App.h */,
+				6CCB932F17B14D9800952EC1 /* App.m */,
 			);
 			name = viewcontroller;
 			sourceTree = "<group>";
@@ -565,6 +573,30 @@
 				6CC008FB17AE7A6B0083FD04 /* Book.m */,
 			);
 			path = model;
+			sourceTree = "<group>";
+		};
+		6CCB932517B123F600952EC1 /* pagetype */ = {
+			isa = PBXGroup;
+			children = (
+				6CD38C7017A6A6FC003A79F3 /* BaseViewController.h */,
+				6CD38C7117A6A6FD003A79F3 /* BaseViewController.m */,
+				6CB3F9C817AFE91B00F0EB5B /* PageType1ViewController.h */,
+				6CB3F9C917AFE91B00F0EB5B /* PageType1ViewController.m */,
+				6CB3F9CA17AFE91C00F0EB5B /* PageType1ViewController.xib */,
+				6CCB932017B123EC00952EC1 /* PageType2ViewController.h */,
+				6CCB932117B123EC00952EC1 /* PageType2ViewController.m */,
+				6CCB932217B123EC00952EC1 /* PageType2ViewController.xib */,
+				6CCB932617B1329D00952EC1 /* PageType3ViewController.h */,
+				6CCB932717B1329E00952EC1 /* PageType3ViewController.m */,
+				6CCB932817B1329E00952EC1 /* PageType3ViewController.xib */,
+				6C6BE2251799857800B74CD3 /* PageReadViewController.h */,
+				6C6BE2261799857800B74CD3 /* PageReadViewController.m */,
+				6CD61BC617A8024000F49438 /* PageRead2ViewController.h */,
+				6CD61BC717A8024000F49438 /* PageRead2ViewController.m */,
+				6CD38C7C17A6B0E0003A79F3 /* PageRead3ViewController.h */,
+				6CD38C7D17A6B0E1003A79F3 /* PageRead3ViewController.m */,
+			);
+			name = pagetype;
 			sourceTree = "<group>";
 		};
 		6CCEB78F17A92B9400F4B81D /* imgpager */ = {
@@ -630,6 +662,8 @@
 			children = (
 				6CD38C7917A6B0A9003A79F3 /* UIImage+Tint.h */,
 				6CD38C7A17A6B0A9003A79F3 /* UIImage+Tint.m */,
+				6CCB931D17B121D400952EC1 /* UIImageView+DispatchLoad.h */,
+				6CCB931E17B121D400952EC1 /* UIImageView+DispatchLoad.m */,
 			);
 			path = imageutil;
 			sourceTree = "<group>";
@@ -790,7 +824,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0460;
-				ORGANIZATIONNAME = openkava;
+				ORGANIZATIONNAME = "openkava@gmail.com";
 			};
 			buildConfigurationList = 6C4EA0AA178D8D950076E9AC /* Build configuration list for PBXProject "Ebook" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -932,6 +966,8 @@
 				6C6E157817AE8934003C34F5 /* books.json in Resources */,
 				6C6E157A17AE8E21003C34F5 /* book1.json in Resources */,
 				6CB3F9CC17AFE91C00F0EB5B /* PageType1ViewController.xib in Resources */,
+				6CCB932417B123EC00952EC1 /* PageType2ViewController.xib in Resources */,
+				6CCB932A17B1329E00952EC1 /* PageType3ViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1009,6 +1045,10 @@
 				6CC008FF17AE7B1A0083FD04 /* PageReadAllViewController.m in Sources */,
 				6CC0090217AE7E8F0083FD04 /* JsonUtil.m in Sources */,
 				6CB3F9CB17AFE91C00F0EB5B /* PageType1ViewController.m in Sources */,
+				6CCB931F17B121D400952EC1 /* UIImageView+DispatchLoad.m in Sources */,
+				6CCB932317B123EC00952EC1 /* PageType2ViewController.m in Sources */,
+				6CCB932917B1329E00952EC1 /* PageType3ViewController.m in Sources */,
+				6CCB933017B14D9900952EC1 /* App.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

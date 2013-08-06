@@ -16,7 +16,7 @@
 @property (nonatomic, strong) NSMutableArray *viewControllers;
 
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
-
+@property (nonatomic, assign) BOOL isHideHeadBar;
 
 
 @end

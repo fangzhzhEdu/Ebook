@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class MGTableBoxStyled ;
 @interface BaseViewController : UIViewController
 {
      }
@@ -15,6 +15,8 @@
 @property (nonatomic, assign)  NSInteger pageNumber; //当前是第x页
 @property (nonatomic, strong)  NSDictionary *thePage;// 当前第x页的内容
 @property (nonatomic, strong)  NSString  *storyboardID ;
+@property (nonatomic, strong)  MGTableBoxStyled  *headBar ;
+@property (nonatomic, assign) BOOL isHideHeadBar;
 
 
 +(id) initWithStoryBoardID :(NSString*) storyBoardID ;

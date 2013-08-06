@@ -54,7 +54,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="enq-Aj-cdG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4381" y="-548"/>
+            <point key="canvasLocation" x="-3991" y="-1316"/>
         </scene>
         <!--About View Controller-->
         <scene sceneID="3ih-7H-zgi">
@@ -63,6 +63,12 @@
                     <view key="view" contentMode="scaleToFill" id="QbK-tr-jFm">
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="vYk-fp-iP2">
+                                <rect key="frame" x="-36" y="0.0" width="320" height="548"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
@@ -221,22 +227,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gmL-oC-Qf1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2472" y="-1333"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="QLx-eN-J2s">
-            <objects>
-                <navigationController storyboardIdentifier="UINavigationController" definesPresentationContext="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" navigationBarHidden="YES" id="P2u-Cq-vl4" sceneMemberID="viewController">
-                    <nil key="simulatedTopBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mcA-LL-EUs">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="0Wl-kK-FVv" kind="relationship" relationship="rootViewController" id="miX-kO-J4E"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tLB-ak-O1e" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-4034" y="-1333"/>
         </scene>
         <!--Box Test View Controller-->
         <scene sceneID="JGB-Fl-xvK">
@@ -427,88 +417,6 @@
             <point key="canvasLocation" x="-1987" y="-2329"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="AboutViewController" superclassName="BaseViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AboutViewController.h"/>
-        </class>
-        <class className="BaseViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BaseViewController.h"/>
-        </class>
-        <class className="DownloadViewController" superclassName="BaseViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DownloadViewController.h"/>
-        </class>
-        <class className="IIViewDeckController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/IIViewDeckController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="bottomController" candidateClass="UIViewController"/>
-                <relationship kind="outlet" name="centerController" candidateClass="UIViewController"/>
-                <relationship kind="outlet" name="leftController" candidateClass="UIViewController"/>
-                <relationship kind="outlet" name="panningView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="rightController" candidateClass="UIViewController"/>
-                <relationship kind="outlet" name="topController" candidateClass="UIViewController"/>
-            </relationships>
-        </class>
-        <class className="InitialViewController" superclassName="IIViewDeckController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/InitialViewController.h"/>
-        </class>
-        <class className="IssueViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/IssueViewController.h"/>
-        </class>
-        <class className="MCPagerView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MCPagerView.h"/>
-        </class>
-        <class className="MGBox" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MGBox.h"/>
-        </class>
-        <class className="MGScrollView" superclassName="UIScrollView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MGScrollView.h"/>
-        </class>
-        <class className="MTBoxTestViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MTBoxTestViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="scroller" candidateClass="MGScrollView"/>
-            </relationships>
-        </class>
-        <class className="MZDayPicker" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MZDayPicker.h"/>
-        </class>
-        <class className="MainViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="daypickerContainer" candidateClass="UIView"/>
-                <relationship kind="outlet" name="pageContainer" candidateClass="UIView"/>
-                <relationship kind="outlet" name="topbarView" candidateClass="UIView"/>
-            </relationships>
-        </class>
-        <class className="PageRead2ViewController" superclassName="BaseViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PageRead2ViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="pagerView" candidateClass="MCPagerView"/>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-            </relationships>
-        </class>
-        <class className="PageRead3ViewController" superclassName="BaseViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PageRead3ViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="pagerView" candidateClass="MCPagerView"/>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-            </relationships>
-        </class>
-        <class className="PageReadAllViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PageReadAllViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="mcPager" candidateClass="MCPagerView"/>
-                <relationship kind="outlet" name="pageControl" candidateClass="UIPageControl"/>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-            </relationships>
-        </class>
-        <class className="PageReadViewController" superclassName="BaseViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PageReadViewController.h"/>
-        </class>
-        <class className="ShareViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ShareViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

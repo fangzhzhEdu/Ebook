@@ -5,7 +5,7 @@
 //  Created by ydf on 13-7-29.
 //  Copyright (c) 2013年 openkava. All rights reserved.
 //
-
+#import "App.h"
 #import "BaseViewController.h"
 #import "MGScrollView.h"
 #import "MGTableBoxStyled.h"
@@ -53,7 +53,7 @@
 -(void) addHeadBarButton :(NSString*) leftImage  centerButton:(NSString*) centerImage  rightButton:(NSString*)rightImage
 {
     MGTableBoxStyled *headbar = [MGTableBoxStyled boxWithSize:(CGSize){320,44 }];
-    [self.view  addSubview:headbar];
+   
     
     MGLineStyled *head1= [MGLineStyled lineWithSize: (CGSize){320, 44}];
 // header
@@ -93,9 +93,12 @@
     [headbar.topLines addObject:head1];
     
     [headbar  layoutWithSpeed:0.3 completion:nil];
-    
-    
-    
+    if([App sharedInstance].isHideHeadBar == NO)
+    {
+    [self.view  addSubview:headbar];
+    [self.view bringSubviewToFront: headbar];
+    }
+    self.headBar = headbar ;
     
 }
 -(void)leftButtonClick

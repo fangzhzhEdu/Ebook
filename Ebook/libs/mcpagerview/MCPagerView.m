@@ -97,7 +97,7 @@
     for (int i=0; i<pages; i++) {
         NSString *key = [_pattern substringWithRange:NSMakeRange(i, 1)];
         UIImageView *imageView = [self imageViewForKey:key];
-        
+         
         CGRect frame = imageView.frame;
         frame.origin.x = xOffset ;
         imageView.frame = frame;
@@ -107,6 +107,7 @@
         [_pageViews addObject:imageView];
         
         xOffset = xOffset + frame.size.width + PAGER_SPACE ; // ydf edit here
+        imageView.backgroundColor = [UIColor clearColor];
     }
 }
 

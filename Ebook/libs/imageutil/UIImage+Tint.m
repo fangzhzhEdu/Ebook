@@ -5,6 +5,7 @@
 //  Created by 王 巍 on 13-4-29.
 //  Copyright (c) 2013年 OneV-s-Den. All rights reserved.
 //
+//http://blog.sina.com.cn/s/blog_6f72ff900101dcl8.html 
 
 #import "UIImage+Tint.h"
 

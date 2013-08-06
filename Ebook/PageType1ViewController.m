@@ -7,12 +7,21 @@
 //
 
 #import "PageType1ViewController.h"
-
+#import "PageType2ViewController.h"
+#import "PageType3ViewController.h"
+#include "PageRead2ViewController.h"
+#include "PageRead3ViewController.h"
+#include "PageReadViewController.h"
+#include "UIImageView+DispatchLoad.h"
+#import "MGTableBoxStyled.h"
+#import "App.h"
 @interface PageType1ViewController ()
+
 
 @end
 
 @implementation PageType1ViewController
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,29 +35,177 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.navigationController.navigationBar setHidden: YES ];
+    
+    
+    
     [self initi ] ;
+    [self addHeadBarButton ];
     
 }
 -(void) initi
 {
            
-        UIImageView *imgview = [[UIImageView  alloc] initWithFrame:self.view.frame];
-        NSString *fileURL = self.thePage[@"image2x"] ;
-        NSLog(@"file url is : %@" ,fileURL ) ;
-        NSData * data = [NSData dataWithContentsOfURL:[NSURL URLWithString:fileURL]];
-        
-        UIImage *image  = [UIImage imageWithData:data];
-        
-        [imgview setImage:image];
+    UIImageView *imgview = [[UIImageView  alloc] initWithFrame:self.view.frame];
+    NSString *fileURL = self.thePage[@"image2x"] ;
+//    NSLog(@"file url is : %@" ,fileURL ) ;
+//    NSData * data = [NSData dataWithContentsOfURL:[NSURL URLWithString:fileURL]];
+//    
+//    UIImage *image  = [UIImage imageWithData:data];
     
-        [self.view addSubview:imgview ];
+//    [imgview setImage:image];
+    
+    [imgview setImageFromUrl:fileURL];
+    [self.view addSubview:imgview ];
+    NSNumber *pageType = (NSNumber *) self.thePage[@"order"] ;
+    NSLog(@"page type is  : %i" ,pageType.intValue);
+    int pageTypeint= pageType.intValue ;
+    NSArray *zone =(NSArray*)  self.thePage[@"zones"]; 
+    if(pageTypeint ==4)
+    {
+       
+        [self initPageType2:zone ];
+          
+    }
+    else if ( pageTypeint ==5)
+    {
+        [self initPageType3:zone ];
+    }
+    [imgview setUserInteractionEnabled:YES];
+    [imgview setMultipleTouchEnabled: YES];
+    
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTapGestureCaptured:)];
+    [imgview addGestureRecognizer:singleTap];
+    
+    
+}
+-(void) initPageType2 :(NSArray*) zone
+{
+    
+    PageType2ViewController * p3 = [[PageType2ViewController alloc] init];
+    
+    CGRect frame = CGRectMake(10, 80, 300, 300);
+    p3.view.frame = frame ;
+    [self addChildViewController:p3];
+    [self.view addSubview: p3.view ] ;
 }
 
+-(void) initPageType3 :(NSArray*) zone
+{
+        
+    PageType3ViewController * p3 = [[PageType3ViewController alloc] init];
+    
+    CGRect frame = CGRectMake(10, 80, 300, 300);
+    p3.view.frame = frame ;
+    [self addChildViewController:p3];
+    [self.view addSubview: p3.view ] ;
+    
+}
+
+-(void) initPageType4 :(NSArray*) zone
+{
+    int i = 0;
+    for (NSDictionary  *img in zone) {
+        
+        
+        CGRect frame = CGRectMake(50, 50+i*100, 100, 100);
+        UIImageView *imgview = [[UIImageView  alloc] initWithFrame:frame];
+        NSString *fileURL = img[@"img"] ;
+        NSLog(@"file url is : %@" ,fileURL ) ;
+        //        NSData * data = [NSData dataWithContentsOfURL:[NSURL URLWithString:fileURL]];
+        
+        UIImage *image  = [UIImage imageNamed: fileURL];
+        
+        [imgview setImage:image];
+        
+        [self.view addSubview:imgview ];
+        i++;
+        
+    }
+    
+    
+    
+}
+- (void)singleTapGestureCaptured:(UITapGestureRecognizer *)gesture
+{
+//    CGPoint touchPoint=[gesture locationInView:scrollView];
+    App *app =[App sharedInstance] ;
+    BOOL isHideHeadBar = app.isHideHeadBar ;
+    if (isHideHeadBar) {
+        [self.view addSubview:self.headBar];
+     }
+    else{
+        
+    [self.headBar removeFromSuperview];
+        
+    }
+    app.isHideHeadBar =!app.isHideHeadBar;
+    NSLog(@"tap here: headbar or not : %i " ,app.isHideHeadBar);
+ 
+}
+-(void) needShowHeadBar
+{
+    App *app =[App sharedInstance] ;
+    BOOL isHideHeadBar = app.isHideHeadBar ;
+    if (isHideHeadBar) {
+         [self.headBar removeFromSuperview];
+        
+    }
+    
+    
+    NSLog(@"show headbar or not %i!" ,app.isHideHeadBar);
+ 
+}
+//- (void)tapped:(UITapGestureRecognizer *)recognizer
+//{
+//    [self.headBar removeFromSuperview];
+//}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
+    [super viewWillAppear:animated];
+    
+}
 
+- (void)viewDidAppear:(BOOL)animated
+{
+//   [self needShowHeadBar]; 
+}
 @end
+
+/*
+ http://www.cnblogs.com/aipingguodeli/archive/2012/05/08/2489917.html
+ 
+ self.view.backgroundColor = [UIColorcolorWithPatternImage:[UIImageimageNamed:@"bg_blank.png"]];
+ 
+ //  self.view.backgroundColor = [UIColor clearColor];
+ 
+ 
+ 
+ ／／定义UIScrollView
+ 
+ scrollview = [[UIScrollViewalloc] init];
+ 
+ scrollview.frame = CGRectMake(10, 0, 300, 108);
+ 
+ scrollview.contentSize = CGSizeMake(600, 108);  ／／scrollview的滚动范围
+ 
+ scrollview.showsVerticalScrollIndicator = NO;
+ 
+ scrollview.showsHorizontalScrollIndicator = NO;
+ 
+ //myScrollView.clipsToBounds = YES;
+ 
+ scrollview.delegate = self;
+ 
+ scrollview.scrollEnabled = YES;
+ 
+ scrollview.pagingEnabled = YES; ／／使用翻页属性
+ 
+ scrollview.bounces = NO;
+ 
+ */
