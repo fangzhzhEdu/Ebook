@@ -40,13 +40,23 @@
     
     [self initi ] ;
     [self addHeadBarButton ];
+    [self addPageNumber];
     
+}
+-(void) addPageNumber
+{
+    UILabel *lbPage = [[UILabel alloc ] initWithFrame: CGRectMake(300, 50, 20, 20)];
+    lbPage.text = [NSString stringWithFormat:@"%i" ,self.pageNumber+1] ;
+    lbPage.backgroundColor =[UIColor clearColor] ;
+    [self.view addSubview:lbPage];
 }
 -(void) initi
 {
            
     UIImageView *imgview = [[UIImageView  alloc] initWithFrame:self.view.frame];
     NSString *fileURL = self.thePage[@"image2x"] ;
+//    [imgview setImageFromUrl:fileURL];
+    
 //    NSLog(@"file url is : %@" ,fileURL ) ;
 //    NSData * data = [NSData dataWithContentsOfURL:[NSURL URLWithString:fileURL]];
 //    
@@ -54,7 +64,11 @@
     
 //    [imgview setImage:image];
     
-    [imgview setImageFromUrl:fileURL];
+    [imgview setImage:[UIImage imageNamed:fileURL]];
+    
+    
+    
+    
     [self.view addSubview:imgview ];
     NSNumber *pageType = (NSNumber *) self.thePage[@"order"] ;
     NSLog(@"page type is  : %i" ,pageType.intValue);

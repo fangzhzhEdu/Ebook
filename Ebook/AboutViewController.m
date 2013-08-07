@@ -65,11 +65,11 @@
     | UIViewAutoresizingFlexibleLeftMargin;
     addView.contentMode = UIViewContentModeScaleToFill ;
     
-    MGBox *box = [MGBox boxWithSize:(CGSize){270, 560}];
+    MGBox *box = [MGBox boxWithSize:(CGSize){320, 460}];
     box.leftMargin = box.topMargin =0.1;
     //    addView.bounds = CGRectMake(0, 0, 100,100);
     
-    addView.frame = CGRectMake(0,0 , 270, 460);
+    addView.frame = CGRectMake(0,0 , 320, 460);
     
     
     [box addSubview:addView];

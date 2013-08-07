@@ -38,11 +38,8 @@
 		6CC0088D17AE4EF10083FD04 /* btn-today@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CC0088517AE4EF10083FD04 /* btn-today@2x.png */; };
 		6CC0088E17AE4EF10083FD04 /* cal-month@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CC0088617AE4EF10083FD04 /* cal-month@2x.png */; };
 		6CC0088F17AE4EF10083FD04 /* cal-red-90.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CC0088717AE4EF10083FD04 /* cal-red-90.png */; };
-		6CC0089017AE4EF10083FD04 /* cal-red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CC0088817AE4EF10083FD04 /* cal-red@2x.png */; };
-		6CC0089117AE4EF10083FD04 /* cal-red90.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CC0088917AE4EF10083FD04 /* cal-red90.png */; };
 		6CC0089217AE4EF10083FD04 /* cal-white-90.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CC0088A17AE4EF10083FD04 /* cal-white-90.png */; };
 		6CC0089317AE4EF10083FD04 /* cal-white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CC0088B17AE4EF10083FD04 /* cal-white@2x.png */; };
-		6CC0089417AE4EF10083FD04 /* cal-white90.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CC0088C17AE4EF10083FD04 /* cal-white90.png */; };
 		6CC008A017AE526C0083FD04 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CC0089F17AE526C0083FD04 /* Security.framework */; };
 		6CC008AC17AE53C00083FD04 /* DateUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC008AB17AE53C00083FD04 /* DateUtil.m */; };
 		6CC008D717AE60050083FD04 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CC008D617AE60050083FD04 /* Default-568h@2x.png */; };
@@ -111,8 +108,6 @@
 		6CCEB82217A947AC00F4B81D /* btn-read@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CCEB81017A947AC00F4B81D /* btn-read@2x.png */; };
 		6CCEB82317A947AC00F4B81D /* btn-today.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CCEB81117A947AC00F4B81D /* btn-today.png */; };
 		6CCEB82417A947AC00F4B81D /* cal-month.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CCEB81217A947AC00F4B81D /* cal-month.png */; };
-		6CCEB82517A947AC00F4B81D /* cal-red.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CCEB81317A947AC00F4B81D /* cal-red.png */; };
-		6CCEB82617A947AC00F4B81D /* cal-white.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CCEB81417A947AC00F4B81D /* cal-white.png */; };
 		6CCEB82717A947AC00F4B81D /* listone.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CCEB81517A947AC00F4B81D /* listone.png */; };
 		6CCEB82817A947AC00F4B81D /* listone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CCEB81617A947AC00F4B81D /* listone@2x.png */; };
 		6CCEB82917A947AC00F4B81D /* t5.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CCEB81717A947AC00F4B81D /* t5.png */; };
@@ -223,11 +218,8 @@
 		6CC0088517AE4EF10083FD04 /* btn-today@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-today@2x.png"; sourceTree = "<group>"; };
 		6CC0088617AE4EF10083FD04 /* cal-month@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cal-month@2x.png"; sourceTree = "<group>"; };
 		6CC0088717AE4EF10083FD04 /* cal-red-90.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cal-red-90.png"; sourceTree = "<group>"; };
-		6CC0088817AE4EF10083FD04 /* cal-red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cal-red@2x.png"; sourceTree = "<group>"; };
-		6CC0088917AE4EF10083FD04 /* cal-red90.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cal-red90.png"; sourceTree = "<group>"; };
 		6CC0088A17AE4EF10083FD04 /* cal-white-90.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cal-white-90.png"; sourceTree = "<group>"; };
 		6CC0088B17AE4EF10083FD04 /* cal-white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cal-white@2x.png"; sourceTree = "<group>"; };
-		6CC0088C17AE4EF10083FD04 /* cal-white90.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cal-white90.png"; sourceTree = "<group>"; };
 		6CC0089F17AE526C0083FD04 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		6CC008AA17AE53C00083FD04 /* DateUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateUtil.h; sourceTree = "<group>"; };
 		6CC008AB17AE53C00083FD04 /* DateUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateUtil.m; sourceTree = "<group>"; };
@@ -315,8 +307,6 @@
 		6CCEB81017A947AC00F4B81D /* btn-read@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-read@2x.png"; sourceTree = "<group>"; };
 		6CCEB81117A947AC00F4B81D /* btn-today.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-today.png"; sourceTree = "<group>"; };
 		6CCEB81217A947AC00F4B81D /* cal-month.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cal-month.png"; sourceTree = "<group>"; };
-		6CCEB81317A947AC00F4B81D /* cal-red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cal-red.png"; sourceTree = "<group>"; };
-		6CCEB81417A947AC00F4B81D /* cal-white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cal-white.png"; sourceTree = "<group>"; };
 		6CCEB81517A947AC00F4B81D /* listone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = listone.png; sourceTree = "<group>"; };
 		6CCEB81617A947AC00F4B81D /* listone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "listone@2x.png"; sourceTree = "<group>"; };
 		6CCEB81717A947AC00F4B81D /* t5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = t5.png; sourceTree = "<group>"; };
@@ -712,11 +702,8 @@
 				6CC0088517AE4EF10083FD04 /* btn-today@2x.png */,
 				6CC0088617AE4EF10083FD04 /* cal-month@2x.png */,
 				6CC0088717AE4EF10083FD04 /* cal-red-90.png */,
-				6CC0088817AE4EF10083FD04 /* cal-red@2x.png */,
-				6CC0088917AE4EF10083FD04 /* cal-red90.png */,
 				6CC0088A17AE4EF10083FD04 /* cal-white-90.png */,
 				6CC0088B17AE4EF10083FD04 /* cal-white@2x.png */,
-				6CC0088C17AE4EF10083FD04 /* cal-white90.png */,
 				6CCEB85317A950F600F4B81D /* calbar@2x.png */,
 				6CCEB85117A9505300F4B81D /* calbar.png */,
 				6CCEB80917A947AC00F4B81D /* backbutton.png */,
@@ -729,8 +716,6 @@
 				6CCEB81017A947AC00F4B81D /* btn-read@2x.png */,
 				6CCEB81117A947AC00F4B81D /* btn-today.png */,
 				6CCEB81217A947AC00F4B81D /* cal-month.png */,
-				6CCEB81317A947AC00F4B81D /* cal-red.png */,
-				6CCEB81417A947AC00F4B81D /* cal-white.png */,
 				6CCEB81517A947AC00F4B81D /* listone.png */,
 				6CCEB81617A947AC00F4B81D /* listone@2x.png */,
 				6CCEB81717A947AC00F4B81D /* t5.png */,
@@ -912,8 +897,6 @@
 				6CCEB82217A947AC00F4B81D /* btn-read@2x.png in Resources */,
 				6CCEB82317A947AC00F4B81D /* btn-today.png in Resources */,
 				6CCEB82417A947AC00F4B81D /* cal-month.png in Resources */,
-				6CCEB82517A947AC00F4B81D /* cal-red.png in Resources */,
-				6CCEB82617A947AC00F4B81D /* cal-white.png in Resources */,
 				6CCEB82717A947AC00F4B81D /* listone.png in Resources */,
 				6CCEB82817A947AC00F4B81D /* listone@2x.png in Resources */,
 				6CCEB82917A947AC00F4B81D /* t5.png in Resources */,
@@ -956,11 +939,8 @@
 				6CC0088D17AE4EF10083FD04 /* btn-today@2x.png in Resources */,
 				6CC0088E17AE4EF10083FD04 /* cal-month@2x.png in Resources */,
 				6CC0088F17AE4EF10083FD04 /* cal-red-90.png in Resources */,
-				6CC0089017AE4EF10083FD04 /* cal-red@2x.png in Resources */,
-				6CC0089117AE4EF10083FD04 /* cal-red90.png in Resources */,
 				6CC0089217AE4EF10083FD04 /* cal-white-90.png in Resources */,
 				6CC0089317AE4EF10083FD04 /* cal-white@2x.png in Resources */,
-				6CC0089417AE4EF10083FD04 /* cal-white90.png in Resources */,
 				6CC008D717AE60050083FD04 /* Default-568h@2x.png in Resources */,
 				6CC0090417AE81F40083FD04 /* old-p.json in Resources */,
 				6C6E157817AE8934003C34F5 /* books.json in Resources */,

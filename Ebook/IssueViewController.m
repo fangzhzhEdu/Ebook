@@ -63,7 +63,7 @@
     
     
     // add photo boxes to the grid
-    int initialImages = 6 ;
+    int initialImages = 1 ;
     for (int i = 1; i <= initialImages; i++) {
         
         MGBox *box = [self createBox:@"issue"];
@@ -153,8 +153,8 @@
     | UIViewAutoresizingFlexibleLeftMargin;
     addView.contentMode = UIViewContentModeScaleToFill ;
     
-    MGBox *box = [MGBox boxWithSize:(CGSize){90, 128}];
-    box.leftMargin = box.topMargin = 10;
+    MGBox *boxImage = [MGBox boxWithSize:(CGSize){90, 128}];
+    boxImage.leftMargin = boxImage.topMargin = 0;
 //    box.rightMargin =10;
 //    box.bottomMargin =10 ;
     //    addView.bounds = CGRectMake(0, 0, 100,100);
@@ -162,11 +162,55 @@
     addView.frame = CGRectMake(0,0 , 90, 128);
     
         
-    [box addSubview:addView];
+    [boxImage addSubview:addView];
+        
     
-         
     
-    return box ;
+    // make the section
+//    MGTableBoxStyled *section = MGTableBoxStyled.box;
+    
+    
+    
+    MGLineStyled *head11 = [MGLineStyled lineWithLeft:@"碧海蓝天 夏日倾城"  right:nil   size: (CGSize){90, 16}];
+    head11.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:10];
+    head11.borderStyle = MGBorderNone ;
+    head11.leftPadding = head11.rightPadding =2 ;
+//    [section.topLines addObject:head11];
+    
+    MGLineStyled *head12 = [MGLineStyled lineWithLeft:@"2013/第二期"    right:nil   size: (CGSize){90,16}];
+    head12.font = [UIFont fontWithName:@"HelveticaNeue" size:8];
+    head12.borderStyle = MGBorderNone ;
+    head11.leftPadding = head11.rightPadding =1 ;
+    
+    MGLineStyled *head13 =[MGLineStyled lineWithSize:(CGSize){90, 22}];
+    head13.font =[UIFont fontWithName:@"HelveticaNeue" size:8];
+    head13.multilineLeft = (id) @"碧海蓝天夏日倾城\n2013/第二期" ;
+    head13.itemPadding = 0 ;
+    head13.leftMargin = 0 ;
+    head13.rightMargin =0 ;
+    head13.leftPadding =0 ;
+    head13.borderStyle = MGBorderNone ;
+//    [section.topLines addObject:head12];
+    // header
+//    MGLineStyled *head1 = [MGLineStyled lineWithLeft:[UIImage imageNamed :@"listone"]  right:nil  size: (CGSize){304, 44}];
+//    head1.font = HEADER_FONT;
+//    head1.middleItems = (id)@"银联信用卡享四季酒店三重礼";
+//    head1.middleTextColor =[UIColor blueColor];
+//    head1.borderStyle = MGBorderNone ;
+//    [section.topLines addObject:head11];
+//    [section.topLines addObject:boxImage];
+    
+    MGBox *boxContainer = [MGBox boxWithSize:(CGSize){90, 316}];
+    boxContainer.leftMargin =boxContainer.topMargin =10;
+    boxContainer.backgroundColor =[UIColor grayColor];
+//    boxContainer.sizingMode = MGResizingShrinkWrap;
+    [boxContainer.boxes removeAllObjects];
+    [boxContainer.boxes addObject:boxImage];
+    [boxContainer.boxes addObject:head11];
+    [boxContainer.boxes addObject:head12 ];
+//    [boxContainer layoutWithSpeed:0.3 completion:nil]; 
+    
+    return  boxContainer;
 }
 
 -(MGBox*) createBox2:(NSString*) imageName

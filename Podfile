@@ -7,6 +7,10 @@ pod 'MGBox2'
 pod 'ViewDeck'
 #pod 'PopoverView'
 pod  'MKNetworkKit'
+pod 'SDWebImage'
+pod 'UIActivityIndicator-for-SDWebImage'
+
+
 
 # pod 'CocoaLumberjack'
 # pod 'GMGridView'
