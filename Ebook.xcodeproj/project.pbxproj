@@ -166,7 +166,22 @@
 		6CD38CB717A6C068003A79F3 /* c-h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CD38CAB17A6C068003A79F3 /* c-h@2x.png */; };
 		6CD38CB817A6C068003A79F3 /* c.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CD38CAC17A6C068003A79F3 /* c.png */; };
 		6CD38CB917A6C068003A79F3 /* c@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CD38CAD17A6C068003A79F3 /* c@2x.png */; };
+		6CD48EEB17B3D87200F5E28A /* list1.json in Resources */ = {isa = PBXBuildFile; fileRef = 6CD48EEA17B3D87200F5E28A /* list1.json */; };
+		6CD48EF517B3D87F00F5E28A /* top-1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6CD48EED17B3D87F00F5E28A /* top-1.jpg */; };
+		6CD48EF617B3D87F00F5E28A /* top-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6CD48EEE17B3D87F00F5E28A /* top-2.jpg */; };
+		6CD48EF717B3D87F00F5E28A /* top-3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6CD48EEF17B3D87F00F5E28A /* top-3.jpg */; };
+		6CD48EF817B3D87F00F5E28A /* top-4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6CD48EF017B3D87F00F5E28A /* top-4.jpg */; };
+		6CD48EF917B3D87F00F5E28A /* top-5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6CD48EF117B3D87F00F5E28A /* top-5.jpg */; };
+		6CD48EFA17B3D87F00F5E28A /* top-6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6CD48EF217B3D87F00F5E28A /* top-6.jpg */; };
+		6CD48EFB17B3D87F00F5E28A /* top-7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6CD48EF317B3D87F00F5E28A /* top-7.jpg */; };
+		6CD48EFC17B3D87F00F5E28A /* top-7.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CD48EF417B3D87F00F5E28A /* top-7.png */; };
+		6CD48F0217B3E61000F5E28A /* btn-back.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CD48EFD17B3E60F00F5E28A /* btn-back.png */; };
+		6CD48F0317B3E61000F5E28A /* btn-download.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CD48EFE17B3E60F00F5E28A /* btn-download.png */; };
+		6CD48F0417B3E61000F5E28A /* btn-linkout.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CD48EFF17B3E60F00F5E28A /* btn-linkout.png */; };
+		6CD48F0517B3E61000F5E28A /* btn-pagelist.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CD48F0017B3E60F00F5E28A /* btn-pagelist.png */; };
+		6CD48F0617B3E61000F5E28A /* headbar-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CD48F0117B3E61000F5E28A /* headbar-bg.png */; };
 		6CD61BC817A8024000F49438 /* PageRead2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD61BC717A8024000F49438 /* PageRead2ViewController.m */; };
+		6CEFC57E17B3F6C3003ABC0E /* p2-cover.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6CEFC57D17B3F6C3003ABC0E /* p2-cover.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -371,8 +386,23 @@
 		6CD38CAB17A6C068003A79F3 /* c-h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "c-h@2x.png"; sourceTree = "<group>"; };
 		6CD38CAC17A6C068003A79F3 /* c.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = c.png; sourceTree = "<group>"; };
 		6CD38CAD17A6C068003A79F3 /* c@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "c@2x.png"; sourceTree = "<group>"; };
+		6CD48EEA17B3D87200F5E28A /* list1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = list1.json; path = json/list1.json; sourceTree = "<group>"; };
+		6CD48EED17B3D87F00F5E28A /* top-1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "top-1.jpg"; sourceTree = "<group>"; };
+		6CD48EEE17B3D87F00F5E28A /* top-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "top-2.jpg"; sourceTree = "<group>"; };
+		6CD48EEF17B3D87F00F5E28A /* top-3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "top-3.jpg"; sourceTree = "<group>"; };
+		6CD48EF017B3D87F00F5E28A /* top-4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "top-4.jpg"; sourceTree = "<group>"; };
+		6CD48EF117B3D87F00F5E28A /* top-5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "top-5.jpg"; sourceTree = "<group>"; };
+		6CD48EF217B3D87F00F5E28A /* top-6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "top-6.jpg"; sourceTree = "<group>"; };
+		6CD48EF317B3D87F00F5E28A /* top-7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "top-7.jpg"; sourceTree = "<group>"; };
+		6CD48EF417B3D87F00F5E28A /* top-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "top-7.png"; sourceTree = "<group>"; };
+		6CD48EFD17B3E60F00F5E28A /* btn-back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-back.png"; sourceTree = "<group>"; };
+		6CD48EFE17B3E60F00F5E28A /* btn-download.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-download.png"; sourceTree = "<group>"; };
+		6CD48EFF17B3E60F00F5E28A /* btn-linkout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-linkout.png"; sourceTree = "<group>"; };
+		6CD48F0017B3E60F00F5E28A /* btn-pagelist.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-pagelist.png"; sourceTree = "<group>"; };
+		6CD48F0117B3E61000F5E28A /* headbar-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "headbar-bg.png"; sourceTree = "<group>"; };
 		6CD61BC617A8024000F49438 /* PageRead2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageRead2ViewController.h; sourceTree = "<group>"; };
 		6CD61BC717A8024000F49438 /* PageRead2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageRead2ViewController.m; sourceTree = "<group>"; };
+		6CEFC57D17B3F6C3003ABC0E /* p2-cover.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "p2-cover.jpg"; sourceTree = "<group>"; };
 		7EAA0ADEBB704C6B83DBFEF5 /* Pods/Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -470,6 +500,7 @@
 		6C685A3E1796E0CE00DDDE36 /* json */ = {
 			isa = PBXGroup;
 			children = (
+				6CD48EEA17B3D87200F5E28A /* list1.json */,
 				6C6E157917AE8E21003C34F5 /* book1.json */,
 				6C6E157717AE8934003C34F5 /* books.json */,
 				6CC0090317AE81F40083FD04 /* old-p.json */,
@@ -696,9 +727,29 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
+		6CD48EEC17B3D87F00F5E28A /* topimage */ = {
+			isa = PBXGroup;
+			children = (
+				6CD48EED17B3D87F00F5E28A /* top-1.jpg */,
+				6CD48EEE17B3D87F00F5E28A /* top-2.jpg */,
+				6CD48EEF17B3D87F00F5E28A /* top-3.jpg */,
+				6CD48EF017B3D87F00F5E28A /* top-4.jpg */,
+				6CD48EF117B3D87F00F5E28A /* top-5.jpg */,
+				6CD48EF217B3D87F00F5E28A /* top-6.jpg */,
+				6CD48EF317B3D87F00F5E28A /* top-7.jpg */,
+				6CD48EF417B3D87F00F5E28A /* top-7.png */,
+			);
+			path = topimage;
+			sourceTree = "<group>";
+		};
 		6CD61B5617A7E9A500F49438 /* imgbtn */ = {
 			isa = PBXGroup;
 			children = (
+				6CD48EFD17B3E60F00F5E28A /* btn-back.png */,
+				6CD48EFE17B3E60F00F5E28A /* btn-download.png */,
+				6CD48EFF17B3E60F00F5E28A /* btn-linkout.png */,
+				6CD48F0017B3E60F00F5E28A /* btn-pagelist.png */,
+				6CD48F0117B3E61000F5E28A /* headbar-bg.png */,
 				6CC0088517AE4EF10083FD04 /* btn-today@2x.png */,
 				6CC0088617AE4EF10083FD04 /* cal-month@2x.png */,
 				6CC0088717AE4EF10083FD04 /* cal-red-90.png */,
@@ -754,6 +805,8 @@
 		6CD61B7317A7E9A500F49438 /* imgpage */ = {
 			isa = PBXGroup;
 			children = (
+				6CEFC57D17B3F6C3003ABC0E /* p2-cover.jpg */,
+				6CD48EEC17B3D87F00F5E28A /* topimage */,
 				6CCEB86F17A9601300F4B81D /* page-5.png */,
 				6CCEB87017A9601300F4B81D /* page-6.png */,
 				6CCEB7DF17A9476D00F4B81D /* a00.png */,
@@ -948,6 +1001,21 @@
 				6CB3F9CC17AFE91C00F0EB5B /* PageType1ViewController.xib in Resources */,
 				6CCB932417B123EC00952EC1 /* PageType2ViewController.xib in Resources */,
 				6CCB932A17B1329E00952EC1 /* PageType3ViewController.xib in Resources */,
+				6CD48EEB17B3D87200F5E28A /* list1.json in Resources */,
+				6CD48EF517B3D87F00F5E28A /* top-1.jpg in Resources */,
+				6CD48EF617B3D87F00F5E28A /* top-2.jpg in Resources */,
+				6CD48EF717B3D87F00F5E28A /* top-3.jpg in Resources */,
+				6CD48EF817B3D87F00F5E28A /* top-4.jpg in Resources */,
+				6CD48EF917B3D87F00F5E28A /* top-5.jpg in Resources */,
+				6CD48EFA17B3D87F00F5E28A /* top-6.jpg in Resources */,
+				6CD48EFB17B3D87F00F5E28A /* top-7.jpg in Resources */,
+				6CD48EFC17B3D87F00F5E28A /* top-7.png in Resources */,
+				6CD48F0217B3E61000F5E28A /* btn-back.png in Resources */,
+				6CD48F0317B3E61000F5E28A /* btn-download.png in Resources */,
+				6CD48F0417B3E61000F5E28A /* btn-linkout.png in Resources */,
+				6CD48F0517B3E61000F5E28A /* btn-pagelist.png in Resources */,
+				6CD48F0617B3E61000F5E28A /* headbar-bg.png in Resources */,
+				6CEFC57E17B3F6C3003ABC0E /* p2-cover.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

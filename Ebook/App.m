@@ -7,6 +7,7 @@
 //
 
 #import "App.h"
+#import "JsonUtil.h"
 static  App *sharedObj = nil; //第一步：静态实例，并初始化。
 
 @implementation App
@@ -18,6 +19,8 @@ static  App *sharedObj = nil; //第一步：静态实例，并初始化。
         {
             sharedObj=  [[self alloc] init];
             sharedObj.isHideHeadBar =NO ;
+            
+            [sharedObj loadRecommendPages];
         }
     }
     return sharedObj;
@@ -39,6 +42,19 @@ static  App *sharedObj = nil; //第一步：静态实例，并初始化。
     return self;
 }
 
+-(void) loadRecommendPages
+{
+    
+    
+    id  dic = [JsonUtil getFromJson:@"list1" ] ;
+    
+    self.theRecommendPages  =dic[@"pages"];
+    
+    
+    
+    NSLog(@"the recommend pages is :%i " , self.theRecommendPages.count  ) ;
+    
+}
 
 
 

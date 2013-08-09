@@ -45,9 +45,9 @@
 }
 -(void) addPageNumber
 {
-    UILabel *lbPage = [[UILabel alloc ] initWithFrame: CGRectMake(300, 50, 20, 20)];
-    lbPage.text = [NSString stringWithFormat:@"%i" ,self.pageNumber+1] ;
-    lbPage.backgroundColor =[UIColor clearColor] ;
+    UILabel *lbPage = [[UILabel alloc ] initWithFrame: CGRectMake(290, 50, 20, 20)];
+    lbPage.text = [NSString stringWithFormat:@"%02d" ,self.pageNumber+1] ;
+    lbPage.backgroundColor =[UIColor grayColor] ;
     [self.view addSubview:lbPage];
 }
 -(void) initi
@@ -143,16 +143,19 @@
 {
 //    CGPoint touchPoint=[gesture locationInView:scrollView];
     App *app =[App sharedInstance] ;
-    BOOL isHideHeadBar = app.isHideHeadBar ;
-    if (isHideHeadBar) {
-        [self.view addSubview:self.headBar];
-     }
-    else{
-        
-    [self.headBar removeFromSuperview];
-        
-    }
+//    BOOL isHideHeadBar = app.isHideHeadBar ;
+//    if (isHideHeadBar) {
+//        [self.view addSubview:self.headBar];
+//     }
+//    else{
+//        
+//    [self.headBar removeFromSuperview];
+//        
+//    }
     app.isHideHeadBar =!app.isHideHeadBar;
+    [self setHideHeadBar:app.isHideHeadBar];
+    [self.view setNeedsDisplay ];
+    [self.view setNeedsLayout ] ;
     NSLog(@"tap here: headbar or not : %i " ,app.isHideHeadBar);
  
 }
@@ -182,12 +185,14 @@
 {
     [self.navigationController setNavigationBarHidden:YES animated:animated];
     [super viewWillAppear:animated];
-    
+    [self setHideHeadBar:YES];
+     NSLog(@"page type1 will   appear");
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
-//   [self needShowHeadBar]; 
+    [self setHideHeadBar:YES];
+     NSLog(@"page type1 did  appear");
 }
 @end
 

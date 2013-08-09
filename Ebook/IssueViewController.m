@@ -262,25 +262,24 @@
 {
     MGTableBoxStyled *headbar = [MGTableBoxStyled boxWithSize:(CGSize){320,44 }];
     [self.view  addSubview:headbar];
-    
     // header
     //    MGLineStyled *head1 = [MGLineStyled lineWithLeft:[UIImage imageNamed :@"btn-info"] right:[UIImage imageNamed :@"btn-read"] size: (CGSize){320, 50}]; //sharebutton
     //
     MGButton *b1 = [[MGButton alloc] initWithFrame:CGRectMake(0, 0,24, 24)];
-    [b1 setBackgroundImage:[UIImage imageNamed :@"backbutton"]   forState: UIControlStateNormal ];
+    [b1 setBackgroundImage:[UIImage imageNamed :@"btn-back"]   forState: UIControlStateNormal ];
     
     [b1 addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
     
     MGButton *b2 = [[MGButton alloc] initWithFrame:CGRectMake(0, 0, 100, 44)];
     [b2 setBackgroundImage:[UIImage imageNamed :@"logo-100x44"]   forState: UIControlStateNormal ];
-    
-    MGButton *b3 = [[MGButton alloc] initWithFrame:CGRectMake(0, 0, 68, 24)];
-    [b3 setBackgroundImage:[UIImage imageNamed :@"btn-read"]   forState: UIControlStateNormal ];
+   b2.leftMargin =40 ;  
+    MGButton *b3 = [[MGButton alloc] initWithFrame:CGRectMake(0, 0, 24, 24)];
+    [b3 setBackgroundImage:[UIImage imageNamed :@"btn-download"]   forState: UIControlStateNormal ];
     //    b3.onTap =^{
     //        [self showIssues];
     //    };
     //
-    [b3 addTarget:self action:@selector(showDownload) forControlEvents:UIControlEventTouchUpInside];
+//    [b3 addTarget:self action:@selector(showDownload) forControlEvents:UIControlEventTouchUpInside];
     
     
     MGLineStyled *head1= [MGLineStyled lineWithSize: (CGSize){320, 50}];

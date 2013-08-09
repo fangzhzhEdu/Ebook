@@ -19,13 +19,14 @@
 #import "IIViewDeckController.h"
 #import "OPDayPicker.h" 
 #import "DateUtil.h"
+#import "App.h"
 
 @interface MainViewController () <MZDayPickerDelegate, MZDayPickerDataSource, UITableViewDataSource, UITableViewDelegate>
 {
     MGScrollView *boxScrollView ;
-    MGBox *boxImage ;
-    MGBox *boxContent ;
-    MGTableBoxStyled *section;
+//    MGBox *boxImage ;
+//    MGBox *boxContent ;
+//    MGTableBoxStyled *section;
     
     
 }
@@ -102,7 +103,7 @@
 //    [self addHeadBar];
     [self addHeadBarButton];
  
-    [self addBox];
+    [self addBoxInit];
     
 
     [self test ] ;
@@ -157,7 +158,7 @@
     self.dateFormatter = [[NSDateFormatter alloc] init];
     [self.dateFormatter setDateFormat:@"EE"];
     
-    [tmpCustomView.dayPicker   setStartDate:[NSDate dateFromDay:18 month:7 year:2013] endDate:[NSDate dateFromDay:18 month:8 year:2013]];
+    [tmpCustomView.dayPicker   setStartDate:[NSDate dateFromDay:18 month:7 year:2013] endDate:[NSDate dateFromDay:12 month:8 year:2013]];
     
     [tmpCustomView.dayPicker setCurrentDate:[NSDate date] animated:YES];
 //    [self.view addSubview:tmpCustomView];
@@ -174,7 +175,7 @@
     
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(selectToday:)];
     [imgview addGestureRecognizer:singleTap];
-//    [self.dayPicker setCurrentDate:[NSDate new] animated:YES]; 
+    [self.dayPicker setCurrentDate:[NSDate new] animated:YES]; 
     
     
 }
@@ -204,6 +205,13 @@
    
     
 }
+-(void) addHeadBarButton2
+{
+    
+    
+    
+}
+
 -(void) addHeadBarButton
 {
     MGTableBoxStyled *headbar = [MGTableBoxStyled boxWithSize:(CGSize){320,44 }];
@@ -220,7 +228,7 @@
     MGButton *b2 = [[MGButton alloc] initWithFrame:CGRectMake(0, 0, 100, 44)];
     [b2 setBackgroundImage:[UIImage imageNamed :@"logo-100x44"]   forState: UIControlStateNormal ];
 //    b2.frame  = CGRectMake(150, 0, 100, 44);
-    
+   b2.leftMargin =40 ;  
     MGButton *b3 = [[MGButton alloc] initWithFrame:CGRectMake(0, 0, 68, 24)];
     [b3 setBackgroundImage:[UIImage imageNamed :@"btn-read"]   forState: UIControlStateNormal ];
 //    b3.onTap =^{
@@ -245,9 +253,9 @@
 }
 
 
--(void) addBox
+-(void) addBoxInit
 {
-    CGSize scrollerSize = CGSizeMake(self.view.bounds.size.width , self.view.bounds.size.height-65);
+    CGSize scrollerSize = CGSizeMake(self.view.bounds.size.width , self.view.bounds.size.height-96);
     
     
     
@@ -255,6 +263,8 @@
     MGScrollView *scroller = [MGScrollView scrollerWithSize:scrollerSize];
     boxScrollView = scroller ;
     [self.pageContainer addSubview:scroller];
+    NSDictionary *thePage = [App sharedInstance].theRecommendPages[0];
+    [self addBoxContent: thePage   ];
     
     //    MGBox *boxpicker = [MGBox boxWithSize:(CGSize){360, 50}];
     //    boxpicker.leftMargin = boxpicker.topMargin = 10;
@@ -273,7 +283,7 @@
     
     
     
-    
+    /*
     UIImage *add = [UIImage imageNamed:@"p1-cover"];
     UIImageView *addView = [[UIImageView alloc] initWithImage:add];
     addView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin
@@ -297,9 +307,9 @@
     [box addSubview:addView];
     
     [scroller.boxes addObject: box];
+    */
     
-    
-    
+    /*
     // the subsections table
     MGBox *table2 = MGBox.box;
     boxContent =table2 ;
@@ -373,10 +383,18 @@
     
     // scroll
 //    [scroller scrollToView:section withMargin:8];
+     
+     */
+    
+    
 }
--(void) addBoxContent:(NSString*) imageName content:(NSString*) content
+-(void) addBoxContent: (NSDictionary*) thePage 
 {
-    [boxScrollView.boxes removeAllObjects ];
+    NSString *imageName = thePage[@"pic"];
+    NSString *linkurl = thePage[@"pageURL"];
+    NSLog(@"add image content %@",imageName);
+   
+    // 图片内容 box
     
     UIImage *add = [UIImage imageNamed:imageName];
     UIImageView *addView = [[UIImageView alloc] initWithImage:add];
@@ -385,47 +403,70 @@
     | UIViewAutoresizingFlexibleBottomMargin
     | UIViewAutoresizingFlexibleLeftMargin;
     addView.contentMode = UIViewContentModeScaleToFill ;
-    for( UIView *v in boxImage.subviews )
-    {
-        [v removeFromSuperview];
-    }
-    MGBox *box = [MGBox boxWithSize:(CGSize){320, 460}];
-    box.leftMargin = box.topMargin = 0;
+    float  x = add.size.width ;
+    float  y = add.size.height ;
+    float y1 = 320* y / x ; 
+    
+    MGBox *boxImage = [MGBox boxWithSize:(CGSize){320, y1}];
+    boxImage.leftMargin = boxImage.topMargin = 0;
     //    addView.bounds = CGRectMake(0, 0, 100,100);
     
-    addView.frame = CGRectMake(0,0 , 320, 460);
+    addView.frame = CGRectMake(0,0 , 320, y1);
     
-    box.onTap = ^ {
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://wallet.95516.net/"]];
+    boxImage.onTap = ^ {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:linkurl]];
     };
     
-    [box addSubview:addView];
-    
-    [boxScrollView.boxes addObject: box];
+    [boxImage addSubview:addView];
     
     
-    [section.boxes removeAllObjects];
-    [section.topLines removeAllObjects];
+    // 文字内容box 
+    MGBox *contentBox = MGBox.box;
+    contentBox.sizingMode = MGResizingShrinkWrap;
+    
+       
+    MGTableBoxStyled *lineBox = MGTableBoxStyled.box;
+    [contentBox.boxes addObject:lineBox];
+  
+
     // header
+    MGLineStyled *head1 = [MGLineStyled lineWithLeft:[UIImage imageNamed :@"listone"]  right:[UIImage imageNamed :@"btn-link"]  size: (CGSize){304, 44}];
+    head1.font = HEADER_FONT;
+    head1.middleItems = (id)thePage[@"title"];
+    head1.middleTextColor =[UIColor blueColor];
+    head1.borderStyle = MGBorderNone ;
+    [lineBox.topLines addObject:head1];
+
+    
+    MGLineStyled *line1 = [MGLineStyled multilineWithText:(NSString*)thePage[@"line1"] font:nil width:304 padding:UIEdgeInsetsMake(16, 16, 16, 16)];
+    [lineBox.topLines addObject:line1];
+    MGLineStyled *line2 = [MGLineStyled multilineWithText:(NSString*)thePage[@"line2"] font:nil width:304 padding:UIEdgeInsetsMake(16, 16, 16, 16)];
+    [lineBox.topLines addObject:line2];
+    MGLineStyled *line3 = [MGLineStyled multilineWithText:(NSString*)thePage[@"line3"] font:nil width:304 padding:UIEdgeInsetsMake(16, 16, 16, 16)];
+    [lineBox.topLines addObject:line3];
+    MGLineStyled *line4 = [MGLineStyled multilineWithText:(NSString*)thePage[@"content"] font:nil width:304 padding:UIEdgeInsetsMake(16, 16, 16, 16)];
+    [lineBox.topLines addObject:line4];
+ 
+    line1.borderStyle = MGBorderNone ;
+    line2.borderStyle = MGBorderNone ;
+    line3.borderStyle = MGBorderNone ;
+    line4.borderStyle = MGBorderNone ;
+    
+    NSLog(@"add  line1 content %@",thePage[@"line1"]);
+    NSLog(@"add line2  content %@",thePage[@"line2"]);
+    NSLog(@"add line3 content %@",thePage[@"line3"]);
+    NSLog(@"add content content %@",thePage[@"content"]);    
+    
+   [boxScrollView.boxes removeAllObjects ]; 
+   [boxScrollView.boxes addObject: boxImage]; 
+   [boxScrollView.boxes addObject:contentBox];
+//    boxScrollView.contentSize = (CGSize){320, 180};
+    //[lineBox layoutWithSpeed:0.3 completion:nil];
+    //[boxImage layoutWithSpeed:0.3 completion:nil];
+    //[contentBox layoutWithSpeed:0.3 completion:nil];
+    //[boxScrollView  layoutWithSpeed:0.3 completion:nil];
   
-    MGLineStyled *waf2 = [MGLineStyled lineWithLeft: addView right:nil];
-    [section.topLines addObject:waf2];
-    
-   
-    
-   
-    
-    [boxImage layoutWithSpeed:0.3 completion:nil];
-    
-    [box layoutWithSpeed:0.3 completion:nil];
-    [boxScrollView  layoutWithSpeed:0.3 completion:nil];
-//    [boxScrollView setHidden:YES ] ;
-    
-    
-    
-//    addView.frame = CGRectMake(0, 105, 320, 460);
-//    [self.view addSubview: addView];
-  
+    [boxScrollView layout ];
     
     
 }
@@ -494,14 +535,28 @@
     NSLog(@"Did select day %@",day.day);
     self.lbMonth.text = [NSString stringWithFormat:@"%@" ,day.day ];
     self.lbMonth.text  = [DateUtil getMonthCN: day.date];
-    int i = day.day.intValue %  3 ;
-    if (i==0)
-    [self addBoxContent:@"page-1" content:@"夏天的荷花" ];
-    if (i==1)
-        [self addBoxContent:@"page-5" content:@"最高支持16GB容量。你拍下的照片和视频会直接写入USB闪存驱动器，通过机身上的USB插头连接电脑就能立即观看。如果所有产品的设计都能如此一体化，我们的生活将更加方便和快捷。" ];
-    if (i==2)
-        [self addBoxContent:@"page-6" content:@"日本玩具相机制造商Power Shovel推出了一款比手掌还小的超迷你相机" ];
+    int i = day.day.intValue  ;
+    @try {
+        NSDictionary *thePage = [App sharedInstance].theRecommendPages[i-1];
+        [self addBoxContent: thePage ] ;
+    }
+    @catch (NSException *exception) {
+       NSLog(@"Did select day error  %@",exception);
+    }
+    @finally {
+        
+    }
     
+    
+    
+//    
+//    if (i==0)
+//    [self addBoxContent:@"page-1" content:@"夏天的荷花" ];
+//    if (i==1)
+//        [self addBoxContent:@"page-5" content:@"最高支持16GB容量。你拍下的照片和视频会直接写入USB闪存驱动器，通过机身上的USB插头连接电脑就能立即观看。如果所有产品的设计都能如此一体化，我们的生活将更加方便和快捷。" ];
+//    if (i==2)
+//        [self addBoxContent:@"page-6" content:@"日本玩具相机制造商Power Shovel推出了一款比手掌还小的超迷你相机" ];
+//    
     
 }
 
@@ -510,6 +565,18 @@
     NSLog(@"Will select day %@",day.day);
 }
 - (void)selectToday: (UITapGestureRecognizer *)gesture{
-    [self.dayPicker setCurrentDate:[NSDate new] animated:YES];
+    [self.dayPicker setCurrentDate:[NSDate date] animated:YES];
+    int i =1 ;
+    @try {
+        NSDictionary *thePage = [App sharedInstance].theRecommendPages[i-1];
+        [self addBoxContent: thePage ] ;
+    }
+    @catch (NSException *exception) {
+        NSLog(@"Did select day error  %@",exception);
+    }
+    @finally {
+        
+    }
+
 }
 @end

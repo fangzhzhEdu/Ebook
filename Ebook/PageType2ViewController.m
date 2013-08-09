@@ -8,7 +8,7 @@
 
 #import "PageType2ViewController.h"
 #import <QuartzCore/QuartzCore.h> 
-
+#import "App.h"
 @interface PageType2ViewController ()
 
 @end
@@ -32,8 +32,18 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self initPage] ;
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
  
+        [self setHideHeadBar:YES];
+   
+  NSLog(@"page type2 will  appear"); 
     
+    
+}
+- (void)viewDidAppear:(BOOL)animated
+{
+   [self setHideHeadBar:YES];
+     NSLog(@"page type2 did  appear");
 }
 -(void)initPage
 {

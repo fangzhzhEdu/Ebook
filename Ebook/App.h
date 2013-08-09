@@ -11,5 +11,12 @@
 @interface App : NSObject
 
 @property (nonatomic, assign) BOOL isHideHeadBar;
+
+@property (nonatomic, strong) NSArray *theRecommendPages;// 日历对应推荐页面
+
+
+
 + (App *) sharedInstance;
+
+
 @end

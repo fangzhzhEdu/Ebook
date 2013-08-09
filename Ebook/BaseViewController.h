@@ -20,7 +20,7 @@
 
 
 +(id) initWithStoryBoardID :(NSString*) storyBoardID ;
-
+-(void) setHideHeadBar: (BOOL) isHide; 
 -(void)addHeadBarButton :(NSString*) leftImage  centerButton:(NSString*) centerImage  rightButton:(NSString*)rightImage;
 -(void)addHeadBarButton ;
 -(void) leftButtonClick ;

@@ -169,6 +169,8 @@
     
     // replace the placeholder if necessary
       PageType1ViewController  *controller = [self.viewControllers objectAtIndex:page];
+    
+    
     if ((NSNull *)controller == [NSNull null])
     {
         controller = [[PageType1ViewController alloc] initWithNibName:nil bundle:nil];
@@ -194,6 +196,8 @@
         NSDictionary *thePage = [self.bookpages  objectAtIndex:page];
         controller.thePage   = thePage ;
     }
+    
+    [controller setHideHeadBar:YES ];
 }
 
 // at the end of scroll animation, reset the boolean used when scrolls originate from the UIPageControl

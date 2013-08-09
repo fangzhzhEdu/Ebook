@@ -46,9 +46,20 @@
 
 	
 }
--(void) addHeadBarButton 
+-(void) setHideHeadBar: (BOOL) isHide;
 {
-    [self addHeadBarButton :@"backbutton"  centerButton:nil rightButton:nil  ];
+    
+    if( self.headBar!=nil)
+    {
+        if( [App sharedInstance].isHideHeadBar)
+            [self.headBar setHidden:YES];
+        else
+            [self.headBar setHidden: NO];
+    }
+}
+-(void) addHeadBarButton
+{
+    [self addHeadBarButton :@"btn-back"  centerButton:@"logo-100x44" rightButton:@"btn-pagelist"  ];
 }
 -(void) addHeadBarButton :(NSString*) leftImage  centerButton:(NSString*) centerImage  rightButton:(NSString*)rightImage
 {
@@ -74,12 +85,13 @@
         MGButton *b2 = [[MGButton alloc] initWithFrame:CGRectMake(0, 0, 100, 44)];
         [b2 setBackgroundImage:[UIImage imageNamed :centerImage]   forState: UIControlStateNormal ];
         [b2 addTarget:self action:@selector(centerButtonClick) forControlEvents:UIControlEventTouchUpInside];
-        head1.middleItems =(id) b2; 
+        head1.middleItems =(id) b2;
+//        b2.leftMargin =40;
  
     }
    if(rightImage!=nil)
    {
-       MGButton *b3 = [[MGButton alloc] initWithFrame:CGRectMake(0, 0, 68, 24)];
+       MGButton *b3 = [[MGButton alloc] initWithFrame:CGRectMake(0, 0, 24, 24)];
        [b3 setBackgroundImage:[UIImage imageNamed :rightImage ]   forState: UIControlStateNormal ];
        
        [b3 addTarget:self action:@selector(rightButtonClick) forControlEvents:UIControlEventTouchUpInside];

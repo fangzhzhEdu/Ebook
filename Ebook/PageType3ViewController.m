@@ -10,6 +10,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "UIImage+Tint.h"
 #import "PopoverView.h" 
+#import "App.h"
 @interface PageType3ViewController ()
 
 @end
@@ -34,7 +35,17 @@
     [super viewWillAppear:animated];
     [self initPage] ;
     
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
     
+    [self setHideHeadBar:YES];
+
+     NSLog(@"page type3   will appear");
+    
+}
+- (void)viewDidAppear:(BOOL)animated
+{
+    [self setHideHeadBar:YES];
+    NSLog(@"page type3 did  appear");
 }
 -(void)initPage
 {
