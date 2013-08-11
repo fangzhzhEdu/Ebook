@@ -5,7 +5,7 @@
 //  Created by ydf on 13-8-4.
 //  Copyright (c) 2013年 openkava. All rights reserved.
 //
-
+#import "App.h"
 #import "PageReadAllViewController.h"
 #include "JsonUtil.h"
 #include "PageRead2ViewController.h"
@@ -17,6 +17,8 @@
 
     NSArray *pages  ;
     NSDictionary *book ;
+    
+    UIScrollView *listScrollView ;
     
     
 }
@@ -39,7 +41,7 @@
     
     [self.navigationController.navigationBar setHidden: YES ] ;
      
-    
+    [self addHeadBarButton2] ;
     [self loadBookData];
     
     [self initScrollView];
@@ -100,6 +102,95 @@
     [self loadScrollViewWithPage:1];
 
 }
+-(void) addHeadBarButton2
+{
+    self.view.backgroundColor = [UIColor grayColor];
+    UIView *headbar= [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
+    
+//        headbar.backgroundColor = [UIColor grayColor] ;
+    //  headbar.backgroundColor = [UIColor colorWithPatternImage: [UIImage imageNamed:@"Backgroundbar"] ];
+    
+    
+    //    UIImage *image =[UIImage imageNamed:@"Backgroundbar"];
+    //method1 ok
+    UIImageView* imageView = [[UIImageView alloc] initWithFrame:headbar.bounds];
+    imageView.image = [[UIImage imageNamed:@"Backgroundbar"] stretchableImageWithLeftCapWidth:0   topCapHeight:0];
+    [headbar addSubview:imageView];
+    
+    
+    
+    //method2 not work
+    //    headbar.layer.contents = (id) image.CIImage ;
+    //    headbar.layer.backgroundColor =[UIColor clearColor].CGColor ;
+    
+    [self.view addSubview: headbar ] ;
+    
+    
+    UIButton *b1 = [[UIButton alloc] initWithFrame:CGRectMake(10, 10,24, 24)];
+    [b1 setBackgroundImage:[UIImage imageNamed :@"btn-back"]   forState: UIControlStateNormal ];
+    
+    [b1 addTarget:self action:@selector(leftButtonClick) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIButton *b2 = [[UIButton alloc] initWithFrame:CGRectMake(110, 0, 100, 40)];
+    [b2 setBackgroundImage:[UIImage imageNamed :@"logo-100x44"]   forState: UIControlStateNormal ];
+    //    b2.leftMargin =10 ;
+    UIButton *b3 = [[UIButton alloc] initWithFrame:CGRectMake(280, 10, 24, 24)];
+    [b3 setBackgroundImage:[UIImage imageNamed :@"btn-pagelist"]   forState: UIControlStateNormal ];
+    [b3 addTarget:self action:@selector(addBookIndexList) forControlEvents:UIControlEventTouchUpInside];
+
+    
+    [headbar addSubview:b1];
+    [headbar addSubview:b2];
+    [headbar addSubview:b3];
+    
+    self.headBar  = headbar ; 
+    
+}
+-(void) addBookIndexList // 动态创建背景透明的杂志索引
+{
+//    for (UIView * v  in listScrollView.subviews) {
+//        [v removeFromSuperview];
+//        
+//    }
+    if (listScrollView != nil )
+    {
+      
+       [listScrollView setHidden: !listScrollView.isHidden ];
+        return ;
+    }
+    
+    CGRect frame = CGRectMake(0, 44, self.view.frame.size.width, self.view.frame.size.height-44);
+    listScrollView = [[UIScrollView alloc] initWithFrame: frame];
+    listScrollView.showsHorizontalScrollIndicator = false ;
+    listScrollView.backgroundColor = [UIColor blackColor];
+    listScrollView.alpha =0.8;
+    int total = 3;
+    for (int i=0;i<total ; i++) {
+        
+        UIView *listi = [[UIView alloc] initWithFrame: CGRectMake(0, i*44, 320, 50)];
+        NSString *imageName = [NSString stringWithFormat:@"listicon%i" , i+1];
+        UIImageView *icon = [[UIImageView alloc] initWithImage:[UIImage imageNamed:imageName]];
+        icon.frame = CGRectMake(10, 5 , 40,40);
+        [listi addSubview: icon ] ;
+        UILabel *lbTitle = [[UILabel alloc] initWithFrame:CGRectMake(60, 0, 250, 48)];
+        lbTitle.text =  [NSString stringWithFormat:@"杂志第 %i 页" , i+1 ];
+        lbTitle.backgroundColor =[UIColor clearColor] ;
+        lbTitle.textColor  = [UIColor whiteColor] ;
+        lbTitle.font  = [UIFont fontWithName:@"HelveticaNeue" size:18];
+        lbTitle.textAlignment = NSTextAlignmentLeft ;
+        
+        [listi addSubview: lbTitle];
+        UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTapGestureCaptured:)];
+        [listi addGestureRecognizer:singleTap ];
+        
+        [listScrollView addSubview: listi ] ;
+        
+    }
+    listScrollView.contentSize = CGSizeMake(self.view.frame.size.width, 44*total );
+  
+    
+    [self.view addSubview: listScrollView ] ;
+}
 -(void) initi
 {
     UIScrollView *scrollView = self.scrollView ;
@@ -123,6 +214,10 @@
         [imgview setImage:image];
         
         [scrollView addSubview:imgview];
+        
+        UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTapGestureCaptured:)];
+        [scrollView addGestureRecognizer:singleTap];
+
     }
     
     scrollView.contentSize = CGSizeMake(scrollView.frame.size.width * 6, scrollView.frame.size.height);
@@ -130,7 +225,52 @@
     scrollView.delegate = self;
 
 }
-#pragma mark - mcpager delegate 
+
+- (void)singleTapGestureCaptured:(UITapGestureRecognizer *)gesture
+{
+     CGPoint touchPoint=[gesture locationInView:listScrollView];
+    int page = touchPoint.y /50 ;
+    
+//   App *app =[App sharedInstance] ;
+    //    BOOL isHideHeadBar = app.isHideHeadBar ;
+    //    if (isHideHeadBar) {
+    //        [self.view addSubview:self.headBar];
+    //     }
+    //    else{
+    //
+    //    [self.headBar removeFromSuperview];
+    //
+    //    }
+    
+       NSLog(@"PageReadAll tap here: select page %i  in  %f ,%f " ,page ,touchPoint.x,touchPoint.y);
+    self.pageControl.currentPage = page;
+    
+    // load the visible page and the page on either side of it (to avoid flashes when the user starts scrolling)
+    [self loadScrollViewWithPage:page - 1];
+    [self loadScrollViewWithPage:page];
+    [self loadScrollViewWithPage:page + 1];
+    [listScrollView setHidden: YES ] ;
+    [self gotoPage:YES ];
+ 
+}
+
+-(void) refreshHeadBar {
+    
+    App *app =[App sharedInstance] ;
+    BOOL isHideHeadBar = app.isHideHeadBar ;
+    if (isHideHeadBar) {
+        [self.headBar setHidden:YES ];
+    }
+    else{
+        
+        [self.headBar setHidden:NO ] ;
+        
+    }
+    
+    
+    
+}
+#pragma mark - mcpager delegate
 - (void)updatePager
 {
     self.mcPager.page = floorf(self.scrollView.contentOffset.x / self.scrollView.frame.size.width);
@@ -177,6 +317,7 @@
         controller.pageNumber = page ;
         [self.viewControllers replaceObjectAtIndex:page withObject:controller];
         controller.thePage   =[self.bookpages  objectAtIndex:page];
+        
     
     }
     
@@ -196,7 +337,7 @@
         NSDictionary *thePage = [self.bookpages  objectAtIndex:page];
         controller.thePage   = thePage ;
     }
-    
+    controller.pageReadAll = self ;
     [controller setHideHeadBar:YES ];
 }
 
@@ -236,7 +377,10 @@
 {
     [self gotoPage:YES];    // YES = animate
 }
-
+-(void)leftButtonClick
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
 #pragma mark - ViewController method 
 - (void)didReceiveMemoryWarning
 {

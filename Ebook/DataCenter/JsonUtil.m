@@ -23,7 +23,7 @@
     {
         DLog(@"success serialized data to json");
         jsonString = [[NSString alloc] initWithData:jsonData encoding: NSUTF8StringEncoding];
-        DLog(@" json :%@",jsonString);
+//        DLog(@" json :%@",jsonString);
     }
     else if ([jsonData length ] >0  && error == nil)
     {
@@ -59,7 +59,7 @@
             }
             
            
-            NSLog(@" json :%@",dataSet );
+//            NSLog(@" json :%@",dataSet );
             return dataSet ;
         }
         @catch (NSException *exception) {

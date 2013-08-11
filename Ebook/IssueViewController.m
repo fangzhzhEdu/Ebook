@@ -45,7 +45,7 @@
                                                                             action:@selector(showDownload)];
     
     
-  [self addHeadBarButton];
+  [self addHeadBarButton2];
     CGSize scrollerSize = CGSizeMake(self.view.bounds.size.width , self.view.bounds.size.height-50);
     
  
@@ -256,7 +256,46 @@
     
     return section ;
 }
-
+-(void) addHeadBarButton2
+{
+    self.view.backgroundColor = [UIColor grayColor];
+    UIView *headbar= [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
+    
+//    headbar.backgroundColor = [UIColor blueColor] ;
+  //  headbar.backgroundColor = [UIColor colorWithPatternImage: [UIImage imageNamed:@"Backgroundbar"] ];
+    
+    
+//    UIImage *image =[UIImage imageNamed:@"Backgroundbar"];
+    //method1 ok 
+    UIImageView* imageView = [[UIImageView alloc] initWithFrame:headbar.bounds];
+    imageView.image = [[UIImage imageNamed:@"Backgroundbar"] stretchableImageWithLeftCapWidth:0   topCapHeight:0];
+    [headbar addSubview:imageView];
+    
+    
+    
+    //method2 not work 
+//    headbar.layer.contents = (id) image.CIImage ;
+//    headbar.layer.backgroundColor =[UIColor clearColor].CGColor ;
+   
+    [self.view addSubview: headbar ] ;
+    
+    
+    UIButton *b1 = [[UIButton alloc] initWithFrame:CGRectMake(10, 10,24, 24)];
+    [b1 setBackgroundImage:[UIImage imageNamed :@"btn-back"]   forState: UIControlStateNormal ];
+    
+    [b1 addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIButton *b2 = [[UIButton alloc] initWithFrame:CGRectMake(110, 0, 100, 40)];
+    [b2 setBackgroundImage:[UIImage imageNamed :@"logo-100x44"]   forState: UIControlStateNormal ];
+//    b2.leftMargin =10 ;
+    UIButton *b3 = [[UIButton alloc] initWithFrame:CGRectMake(280, 10, 24, 24)];
+    [b3 setBackgroundImage:[UIImage imageNamed :@"btn-download"]   forState: UIControlStateNormal ];
+    
+    [headbar addSubview:b1];
+    [headbar addSubview:b2];
+    [headbar addSubview:b3];
+    
+}
 
 -(void) addHeadBarButton
 {
@@ -272,7 +311,7 @@
     
     MGButton *b2 = [[MGButton alloc] initWithFrame:CGRectMake(0, 0, 100, 44)];
     [b2 setBackgroundImage:[UIImage imageNamed :@"logo-100x44"]   forState: UIControlStateNormal ];
-   b2.leftMargin =40 ;  
+    b2.leftMargin =10 ;
     MGButton *b3 = [[MGButton alloc] initWithFrame:CGRectMake(0, 0, 24, 24)];
     [b3 setBackgroundImage:[UIImage imageNamed :@"btn-download"]   forState: UIControlStateNormal ];
     //    b3.onTap =^{

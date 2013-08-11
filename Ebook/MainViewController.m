@@ -157,10 +157,17 @@
     
     self.dateFormatter = [[NSDateFormatter alloc] init];
     [self.dateFormatter setDateFormat:@"EE"];
-    
     [tmpCustomView.dayPicker   setStartDate:[NSDate dateFromDay:18 month:7 year:2013] endDate:[NSDate dateFromDay:12 month:8 year:2013]];
+    tmpCustomView.dayPicker.year =2013;
+    tmpCustomView.dayPicker.month = 8 ;
     
-    [tmpCustomView.dayPicker setCurrentDate:[NSDate date] animated:YES];
+//    [tmpCustomView.dayPicker setActiveDaysFrom:1 toDay:30];
+    [tmpCustomView.dayPicker setCurrentDay:12 animated:YES] ;
+    
+//  
+//    
+//    [tmpCustomView.dayPicker setCurrentDate:[NSDate date] animated:YES];
+//    
 //    [self.view addSubview:tmpCustomView];
     [self.daypickerContainer addSubview:tmpCustomView];
     
@@ -175,8 +182,8 @@
     
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(selectToday:)];
     [imgview addGestureRecognizer:singleTap];
-    [self.dayPicker setCurrentDate:[NSDate new] animated:YES]; 
-    
+//    [self.dayPicker setCurrentDate:[NSDate new] animated:YES]; 
+    NSLog(@"now date is : %@" ,[NSDate date]  );
     
 }
 -(void) test
@@ -263,7 +270,10 @@
     MGScrollView *scroller = [MGScrollView scrollerWithSize:scrollerSize];
     boxScrollView = scroller ;
     [self.pageContainer addSubview:scroller];
+    scroller.showsHorizontalScrollIndicator  =   NO ;
+    scroller.showsVerticalScrollIndicator   =   NO ;
     NSDictionary *thePage = [App sharedInstance].theRecommendPages[0];
+    
     [self addBoxContent: thePage   ];
     
     //    MGBox *boxpicker = [MGBox boxWithSize:(CGSize){360, 50}];
@@ -535,7 +545,7 @@
     NSLog(@"Did select day %@",day.day);
     self.lbMonth.text = [NSString stringWithFormat:@"%@" ,day.day ];
     self.lbMonth.text  = [DateUtil getMonthCN: day.date];
-    int i = day.day.intValue  ;
+    int i = day.day.intValue % 7 ;
     @try {
         NSDictionary *thePage = [App sharedInstance].theRecommendPages[i-1];
         [self addBoxContent: thePage ] ;
@@ -566,6 +576,7 @@
 }
 - (void)selectToday: (UITapGestureRecognizer *)gesture{
     [self.dayPicker setCurrentDate:[NSDate date] animated:YES];
+    
     int i =1 ;
     @try {
         NSDictionary *thePage = [App sharedInstance].theRecommendPages[i-1];

@@ -14,6 +14,7 @@
 #include "PageReadViewController.h"
 #include "UIImageView+DispatchLoad.h"
 #import "MGTableBoxStyled.h"
+#import "PageReadAllViewController.h"
 #import "App.h"
 @interface PageType1ViewController ()
 
@@ -39,15 +40,19 @@
     
     
     [self initi ] ;
-    [self addHeadBarButton ];
+//    [self addHeadBarButton ];
     [self addPageNumber];
     
 }
 -(void) addPageNumber
 {
-    UILabel *lbPage = [[UILabel alloc ] initWithFrame: CGRectMake(290, 50, 20, 20)];
+    UILabel *lbPage = [[UILabel alloc ] initWithFrame: CGRectMake(290, 50, 25, 20)];
     lbPage.text = [NSString stringWithFormat:@"%02d" ,self.pageNumber+1] ;
-    lbPage.backgroundColor =[UIColor grayColor] ;
+    lbPage.backgroundColor =[UIColor blackColor] ;
+    lbPage.textColor  = [UIColor whiteColor];
+    lbPage.font  = [UIFont fontWithName:@"HelveticaNeue-Bold" size:12];
+    lbPage.textAlignment = NSTextAlignmentCenter ;
+    
     [self.view addSubview:lbPage];
 }
 -(void) initi
@@ -115,61 +120,16 @@
     
 }
 
--(void) initPageType4 :(NSArray*) zone
-{
-    int i = 0;
-    for (NSDictionary  *img in zone) {
-        
-        
-        CGRect frame = CGRectMake(50, 50+i*100, 100, 100);
-        UIImageView *imgview = [[UIImageView  alloc] initWithFrame:frame];
-        NSString *fileURL = img[@"img"] ;
-        NSLog(@"file url is : %@" ,fileURL ) ;
-        //        NSData * data = [NSData dataWithContentsOfURL:[NSURL URLWithString:fileURL]];
-        
-        UIImage *image  = [UIImage imageNamed: fileURL];
-        
-        [imgview setImage:image];
-        
-        [self.view addSubview:imgview ];
-        i++;
-        
-    }
-    
-    
-    
-}
+
 - (void)singleTapGestureCaptured:(UITapGestureRecognizer *)gesture
 {
 //    CGPoint touchPoint=[gesture locationInView:scrollView];
     App *app =[App sharedInstance] ;
-//    BOOL isHideHeadBar = app.isHideHeadBar ;
-//    if (isHideHeadBar) {
-//        [self.view addSubview:self.headBar];
-//     }
-//    else{
-//        
-//    [self.headBar removeFromSuperview];
-//        
-//    }
     app.isHideHeadBar =!app.isHideHeadBar;
-    [self setHideHeadBar:app.isHideHeadBar];
-    [self.view setNeedsDisplay ];
-    [self.view setNeedsLayout ] ;
-    NSLog(@"tap here: headbar or not : %i " ,app.isHideHeadBar);
- 
-}
--(void) needShowHeadBar
-{
-    App *app =[App sharedInstance] ;
-    BOOL isHideHeadBar = app.isHideHeadBar ;
-    if (isHideHeadBar) {
-         [self.headBar removeFromSuperview];
-        
-    }
+    [self.pageReadAll refreshHeadBar ] ;
     
-    
-    NSLog(@"show headbar or not %i!" ,app.isHideHeadBar);
+   
+    NSLog(@"PageType1 tap here: headbar or not : %i " ,app.isHideHeadBar);
  
 }
 //- (void)tapped:(UITapGestureRecognizer *)recognizer

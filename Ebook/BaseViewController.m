@@ -14,6 +14,7 @@
 #import "config.h"
 #import "MGButton.h"
 #import "IIViewDeckController.h"
+#import "PageReadAllViewController.h" 
 @interface BaseViewController ()
 
 
@@ -49,12 +50,9 @@
 -(void) setHideHeadBar: (BOOL) isHide;
 {
     
-    if( self.headBar!=nil)
+    if( self.pageReadAll!=nil)
     {
-        if( [App sharedInstance].isHideHeadBar)
-            [self.headBar setHidden:YES];
-        else
-            [self.headBar setHidden: NO];
+        [self.pageReadAll refreshHeadBar] ;
     }
 }
 -(void) addHeadBarButton
