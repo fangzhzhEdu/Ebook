@@ -1,5 +1,4 @@
 PODS:
-  - JSONKit (1.5pre)
   - libwebp (0.3.0-rc7):
     - libwebp/dec
     - libwebp/dsp
@@ -23,7 +22,6 @@ PODS:
   - ViewDeck (2.3.1)
 
 DEPENDENCIES:
-  - JSONKit (~> 1.4)
   - MGBox2
   - MKNetworkKit
   - Reachability (~> 3.0.0)
@@ -32,7 +30,6 @@ DEPENDENCIES:
   - ViewDeck
 
 SPEC CHECKSUMS:
-  JSONKit: 409734ab3407fce90ef7eaa95d7168f38d9a6601
   libwebp: 40517fa1fd3716eded73b4696c45fc0b66e4b414
   MGBox2: 7c09e36c2271f9af16fdb5141a0ca554ecee4d8d
   MKNetworkKit: f174100f92473012138b6b1c3040266af8d43a14

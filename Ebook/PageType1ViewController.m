@@ -46,7 +46,7 @@
 }
 -(void) addPageNumber
 {
-    UILabel *lbPage = [[UILabel alloc ] initWithFrame: CGRectMake(290, 50, 25, 20)];
+    UILabel *lbPage = [[UILabel alloc ] initWithFrame: CGRectMake(290, 430, 25, 20)];
     lbPage.text = [NSString stringWithFormat:@"%02d" ,self.pageNumber+1] ;
     lbPage.backgroundColor =[UIColor blackColor] ;
     lbPage.textColor  = [UIColor whiteColor];
@@ -57,9 +57,25 @@
 }
 -(void) initi
 {
-           
-    UIImageView *imgview = [[UIImageView  alloc] initWithFrame:self.view.frame];
+    CGRect frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+    UIScrollView *listScrollView = [[UIScrollView alloc] initWithFrame: frame];
+    listScrollView.showsHorizontalScrollIndicator = NO ;
+    listScrollView.showsVerticalScrollIndicator  = NO ;
+    listScrollView.backgroundColor = [UIColor grayColor];
+   
+    
+    
+    [self.view addSubview: listScrollView ] ;
+    
     NSString *fileURL = self.thePage[@"image2x"] ;
+    UIImage *image  = [UIImage imageNamed:fileURL];
+    float  w = image.size.width ;
+    float  h = image.size.height ;
+    float  h1 =320.0* h / w ;
+    UIImageView *imgview = [[UIImageView  alloc] initWithFrame:CGRectMake(0, 0, 320, h1)];
+    
+    
+    
 //    [imgview setImageFromUrl:fileURL];
     
 //    NSLog(@"file url is : %@" ,fileURL ) ;
@@ -69,12 +85,14 @@
     
 //    [imgview setImage:image];
     
-    [imgview setImage:[UIImage imageNamed:fileURL]];
+    [imgview setImage:image];
+    
+    listScrollView.contentSize = CGSizeMake(self.view.frame.size.width,h1+10  );
     
     
+    [listScrollView  addSubview:imgview];
     
     
-    [self.view addSubview:imgview ];
     NSNumber *pageType = (NSNumber *) self.thePage[@"order"] ;
     NSLog(@"page type is  : %i" ,pageType.intValue);
     int pageTypeint= pageType.intValue ;

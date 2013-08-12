@@ -162,7 +162,7 @@
     tmpCustomView.dayPicker.month = 8 ;
     
 //    [tmpCustomView.dayPicker setActiveDaysFrom:1 toDay:30];
-    [tmpCustomView.dayPicker setCurrentDay:12 animated:YES] ;
+    
     
 //  
 //    
@@ -171,7 +171,7 @@
 //    [self.view addSubview:tmpCustomView];
     [self.daypickerContainer addSubview:tmpCustomView];
     
-    [tmpCustomView.centerContainer setHidden: YES ];
+//    [tmpCustomView.centerContainer setHidden: YES ];
     
     [tmpCustomView test];
     
@@ -182,8 +182,10 @@
     
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(selectToday:)];
     [imgview addGestureRecognizer:singleTap];
-//    [self.dayPicker setCurrentDate:[NSDate new] animated:YES]; 
-    NSLog(@"now date is : %@" ,[NSDate date]  );
+//    [self.dayPicker setCurrentDate:[NSDate new] animated:YES];
+    [tmpCustomView.dayPicker setCurrentDay:11 animated:YES] ;
+    [tmpCustomView.dayPicker setCurrentDay:12 animated:YES] ;
+    DLog(@"now date is : %@" ,[NSDate date]  );
     
 }
 -(void) test
@@ -263,12 +265,9 @@
 -(void) addBoxInit
 {
     CGSize scrollerSize = CGSizeMake(self.view.bounds.size.width , self.view.bounds.size.height-96);
-    
-    
-    
-    
     MGScrollView *scroller = [MGScrollView scrollerWithSize:scrollerSize];
     boxScrollView = scroller ;
+    scroller.backgroundColor = [UIColor whiteColor];
     [self.pageContainer addSubview:scroller];
     scroller.showsHorizontalScrollIndicator  =   NO ;
     scroller.showsVerticalScrollIndicator   =   NO ;
@@ -432,12 +431,15 @@
     
     // 文字内容box 
     MGBox *contentBox = MGBox.box;
-    contentBox.sizingMode = MGResizingShrinkWrap;
+   contentBox.sizingMode = MGResizingShrinkWrap;
+    contentBox.backgroundColor =[UIColor clearColor] ;
+    contentBox.borderStyle =MGBorderNone ;
     
-       
     MGTableBoxStyled *lineBox = MGTableBoxStyled.box;
     [contentBox.boxes addObject:lineBox];
-  
+    lineBox.backgroundColor = [UIColor whiteColor] ;
+    lineBox.borderStyle =MGBorderNone ;
+//    lineBox.margin = UIEdgeInsetsZero ;
 
     // header
     MGLineStyled *head1 = [MGLineStyled lineWithLeft:[UIImage imageNamed :@"listone"]  right:[UIImage imageNamed :@"btn-link"]  size: (CGSize){304, 44}];
@@ -445,6 +447,7 @@
     head1.middleItems = (id)thePage[@"title"];
     head1.middleTextColor =[UIColor blueColor];
     head1.borderStyle = MGBorderNone ;
+    head1.backgroundColor =[UIColor whiteColor] ;
     [lineBox.topLines addObject:head1];
 
     
@@ -456,11 +459,21 @@
     [lineBox.topLines addObject:line3];
     MGLineStyled *line4 = [MGLineStyled multilineWithText:(NSString*)thePage[@"content"] font:nil width:304 padding:UIEdgeInsetsMake(16, 16, 16, 16)];
     [lineBox.topLines addObject:line4];
- 
+    
+   line1.onTap = ^ {[[UIApplication sharedApplication] openURL:[NSURL URLWithString:(NSString*)thePage[@"line1_url"]]]; };
+   line2.onTap = ^ {[[UIApplication sharedApplication] openURL:[NSURL URLWithString:(NSString*)thePage[@"line2_url"]]]; };
+   line3.onTap = ^ {[[UIApplication sharedApplication] openURL:[NSURL URLWithString:(NSString*)thePage[@"line3_url"]]]; };
+    
+    
     line1.borderStyle = MGBorderNone ;
     line2.borderStyle = MGBorderNone ;
     line3.borderStyle = MGBorderNone ;
     line4.borderStyle = MGBorderNone ;
+    
+    line1.backgroundColor =[UIColor whiteColor] ;
+    line2.backgroundColor =[UIColor whiteColor] ;
+    line3.backgroundColor =[UIColor whiteColor] ;
+    line4.backgroundColor =[UIColor whiteColor] ;
     
     NSLog(@"add  line1 content %@",thePage[@"line1"]);
     NSLog(@"add line2  content %@",thePage[@"line2"]);
@@ -469,11 +482,19 @@
     
    [boxScrollView.boxes removeAllObjects ]; 
    [boxScrollView.boxes addObject: boxImage]; 
-   [boxScrollView.boxes addObject:contentBox];
+   //[boxScrollView.boxes addObject:contentBox];
+    
+   [boxScrollView.boxes addObject:head1];
+   [boxScrollView.boxes addObject:line1];
+   [boxScrollView.boxes addObject:line2];
+   [boxScrollView.boxes addObject:line3];
+   [boxScrollView.boxes addObject:line4];
+    
+    
 //    boxScrollView.contentSize = (CGSize){320, 180};
     //[lineBox layoutWithSpeed:0.3 completion:nil];
     //[boxImage layoutWithSpeed:0.3 completion:nil];
-    //[contentBox layoutWithSpeed:0.3 completion:nil];
+//    [contentBox layoutWithSpeed:0.3 completion:nil];
     //[boxScrollView  layoutWithSpeed:0.3 completion:nil];
   
     [boxScrollView layout ];
@@ -545,9 +566,9 @@
     NSLog(@"Did select day %@",day.day);
     self.lbMonth.text = [NSString stringWithFormat:@"%@" ,day.day ];
     self.lbMonth.text  = [DateUtil getMonthCN: day.date];
-    int i = day.day.intValue % 7 ;
+    int i = day.day.intValue % 7;
     @try {
-        NSDictionary *thePage = [App sharedInstance].theRecommendPages[i-1];
+        NSDictionary *thePage = [App sharedInstance].theRecommendPages[i];
         [self addBoxContent: thePage ] ;
     }
     @catch (NSException *exception) {
