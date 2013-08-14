@@ -20,7 +20,7 @@
 #import "OPDayPicker.h" 
 #import "DateUtil.h"
 #import "App.h"
-
+#import "WebViewController.h" 
 @interface MainViewController () <MZDayPickerDelegate, MZDayPickerDataSource, UITableViewDataSource, UITableViewDelegate>
 {
     MGScrollView *boxScrollView ;
@@ -397,6 +397,22 @@
     
     
 }
+- (void)openWebView : (NSString*) linkurl
+{
+    //  [[UIApplication sharedApplication] openURL:[NSURL URLWithString:linkurl]];
+    
+    WebViewController *v = [[WebViewController alloc] init];
+    
+    
+    // v.url = [NSURL URLWithString: @"http://www.weibo.com"];
+    v.url = [NSURL URLWithString: linkurl];
+    // v.isLocal =YES;
+    //v.localHtml =@"image";
+//    v.isHideButtomNavBar =NO;
+    v.isHideNavBar  =YES ;
+    [self.navigationController pushViewController:v animated:YES];
+}
+
 -(void) addBoxContent: (NSDictionary*) thePage 
 {
     NSString *imageName = thePage[@"pic"];
@@ -423,7 +439,7 @@
     addView.frame = CGRectMake(0,0 , 320, y1);
     
     boxImage.onTap = ^ {
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:linkurl]];
+        [self openWebView:linkurl];
     };
     
     [boxImage addSubview:addView];
@@ -460,10 +476,9 @@
     MGLineStyled *line4 = [MGLineStyled multilineWithText:(NSString*)thePage[@"content"] font:nil width:304 padding:UIEdgeInsetsMake(16, 16, 16, 16)];
     [lineBox.topLines addObject:line4];
     
-   line1.onTap = ^ {[[UIApplication sharedApplication] openURL:[NSURL URLWithString:(NSString*)thePage[@"line1_url"]]]; };
-   line2.onTap = ^ {[[UIApplication sharedApplication] openURL:[NSURL URLWithString:(NSString*)thePage[@"line2_url"]]]; };
-   line3.onTap = ^ {[[UIApplication sharedApplication] openURL:[NSURL URLWithString:(NSString*)thePage[@"line3_url"]]]; };
-    
+   line1.onTap = ^ { [self openWebView:(NSString*)thePage[@"line1_url"]]; };
+   line2.onTap = ^ { [self openWebView:(NSString*)thePage[@"line2_url"]]; };
+   line3.onTap = ^ { [self openWebView:(NSString*)thePage[@"line3_url"]]; };    
     
     line1.borderStyle = MGBorderNone ;
     line2.borderStyle = MGBorderNone ;
