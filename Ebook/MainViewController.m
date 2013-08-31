@@ -101,6 +101,8 @@
     
     
 //    [self addHeadBar];
+    
+    /// head's buton
     [self addHeadBarButton];
  
     [self addBoxInit];
@@ -195,6 +197,7 @@
 }
 -(void) addHeadBar
 {
+    /*
     MGTableBoxStyled *headbar = MGTableBoxStyled.box;
     [self.topbarView  addSubview:headbar];
     
@@ -210,6 +213,7 @@
        
         [self showIssues];
    };
+     */
     
    
     
