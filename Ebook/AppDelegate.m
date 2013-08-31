@@ -7,12 +7,21 @@
 //
 
 #import "AppDelegate.h"
-
+#import "DateUtil.h"
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    
+    
+    //加入时间限制，demo用
+    bool iscanrun =false ;
+    iscanrun = [DateUtil getYear ]==2013  && [DateUtil getMonth] <9 && [DateUtil getDay] <10 ;
+    if(!iscanrun)
+    {
+       exit(0);  
+    }
+        
     return YES;
 }
 							

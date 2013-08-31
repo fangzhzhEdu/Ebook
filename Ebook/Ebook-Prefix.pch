@@ -13,6 +13,8 @@
     #import <Foundation/Foundation.h>
 #endif
 
+#import "config.h" 
+
 
 #ifdef DEBUG
 #   define DLog(fmt, ...) {NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);}

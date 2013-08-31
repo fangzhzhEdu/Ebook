@@ -32,4 +32,25 @@
 
 #define HEADER_FONT            [UIFont fontWithName:@"HelveticaNeue" size:16]
 #define  VIEWDECK_LEFT_SIZE   50 
+
+#define SERVER              @"git.openkava.com"
+
+
+#define SERVER_PATH         @"api/handler"
+#define MODULE_NAME         @"galaxy.iphone"
+
+#define USER_NAME           @"userName"
+#define PASS_NAME           @"pass"
+#define IS_REMEMBER_PASS    @"isrempass"
+
+#define OA_USER_NAME         @"oaName"
+#define OA_PASS_NAME         @"oaPass"
+#define AES_KEY                 @"xzde$1223@888"
+#define UPDATE_INTERVAL        -60.0*60.0*12.0
+#define CHART_WIDTH         @"320"
+#define CHART_HEIGHT        @"416"
+
+
+
+
 #endif

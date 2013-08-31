@@ -21,6 +21,12 @@ static  App *sharedObj = nil; //第一步：静态实例，并初始化。
             sharedObj.isHideHeadBar =NO ;
             
             [sharedObj loadRecommendPages];
+            
+//            sharedObj.netDataPost = [[NetDataPost alloc] initWithHostName:SERVER customHeaderFields:nil];
+//            [sharedObj.netDataPost useCache];
+//            
+            
+            
         }
     }
     return sharedObj;

@@ -7,8 +7,8 @@
 //
 
 #import "PageRead3ViewController.h"
-#import "UIImage+Tint.h"
-#import "PopoverView.h" 
+//#import "UIImage+Tint.h"
+#import "PopoverView.h"
 @interface PageRead3ViewController ()
 {
     

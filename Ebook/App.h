@@ -7,6 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+//#import "NetDataPost.h"
+#import "User.h"
+
+//#define  appInstance [App sharedInstance]
+
 
 @interface App : NSObject
 
@@ -14,6 +19,12 @@
 
 @property (nonatomic, strong) NSArray *theRecommendPages;// 日历对应推荐页面
 
+//@property (strong, nonatomic) NetDataPost *netDataPost ;
+//@property (strong, nonatomic) NSString *requestKey ;
+//@property (strong ,nonatomic) NSDictionary *returnJsonData;
+//@property (strong ,nonatomic) User *user ;
+//@property(strong,nonatomic) NSString *updateUrl;
+//@property (strong ,nonatomic) NSDate *lastCheckUpdateDT;
 
 
 + (App *) sharedInstance;

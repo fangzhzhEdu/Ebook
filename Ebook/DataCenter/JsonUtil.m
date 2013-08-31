@@ -15,6 +15,8 @@
 
 + (NSString *) jsonFromDic: (NSDictionary *) dic
 {
+    @autoreleasepool {
+        
     NSError *error=nil;
     NSString *jsonString =nil;
     NSData *jsonData= [NSJSONSerialization dataWithJSONObject:dic options: NSJSONWritingPrettyPrinted error:&error];
@@ -34,10 +36,13 @@
         DLog(@"Error  to json");
     }
     return jsonString;
+    }
 }
 
 + (id ) getFromJson : (NSString *) fileName
 {
+    @autoreleasepool {
+        
         NSError *error=nil;
         @try {
             NSString  *filePathname = [[NSBundle mainBundle] pathForResource:fileName  ofType:@"json"];
@@ -71,7 +76,7 @@
         }
      
     
-    
+    }
     
 }
 

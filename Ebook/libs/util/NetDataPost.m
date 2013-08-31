@@ -1,30 +1,33 @@
 
 #import "NetDataPost.h"
-#import "AppDelegate.h"
+#import "App.h"
 #import "MyUtil.h" 
- 
+#import "MKNetworkKit/MKNetworkKit.h" 
 
 @implementation NetDataPost
 
--(MKNetworkOperation*) postGetDataWithRequestData: (NSDictionary *) requestData method:(NSString*) method  usingBlockObject:(postGetDataBlock) paramBlockObject
+-(MKNetworkOperation*) postGetDataWithRequestData: (NSString*) server_path requestData: (NSDictionary *) requestData method:(NSString*) method  usingBlockObject:(postGetDataBlock) paramBlockObject
 {
-    MKNetworkOperation *op = [self operationWithPath:SERVER_PATH
-                                              params:@{@"RequestKey": ApplicationDelegate.user.requestKey , @"RequestData":[MyUtil jsonFromDic:requestData], @"RequestMethod":method ,}
-                                          httpMethod:@"POST"];
+    MKNetworkOperation *op = [self operationWithPath:server_path
+                            params:@{@"RequestKey": appInstance.requestKey , @"RequestData":[MyUtil jsonFromDic:requestData], @"RequestMethod":method ,}
+                            httpMethod:@"POST"];
     [op addCompletionHandler:^(MKNetworkOperation *operation) {
         
-        NSError *error=nil;
-        NSDictionary *dataSet=nil;
-        //NSLog(@"json:%@",operation.responseJSON);
-        @try {
-               dataSet = [NSJSONSerialization JSONObjectWithData:operation.responseData options:NSJSONReadingMutableLeaves error:&error];
-          
+        @autoreleasepool {
             
+            
+            NSError *error=nil;
+            NSDictionary *dataSet=nil;
+            //NSLog(@"json:%@",operation.responseJSON);
+            @try {
+                dataSet = [NSJSONSerialization JSONObjectWithData:operation.responseData options:NSJSONReadingMutableLeaves error:&error];
+                
+                
+            }
+            @finally {
+                paramBlockObject(dataSet);
+            }
         }
-        @finally {
-            paramBlockObject(dataSet);
-        }
-        
         
     } errorHandler:^(MKNetworkOperation *errorOp, NSError* error) {
         NSLog(@"netpostdata error:%@",error);

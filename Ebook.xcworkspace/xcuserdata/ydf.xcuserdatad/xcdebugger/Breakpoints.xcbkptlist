@@ -240,11 +240,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Ebook/App.m"
-         timestampString = "397662286.440318"
+         timestampString = "399629872.487268"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "49"
-         endingLineNumber = "49"
+         startingLineNumber = "55"
+         endingLineNumber = "55"
          landmarkName = "-loadRecommendPages"
          landmarkType = "5">
       </FileBreakpoint>
@@ -363,6 +363,19 @@
          startingLineNumber = "42"
          endingLineNumber = "42"
          landmarkName = "-viewDidLoad"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Ebook/libs/util/DateUtil.m"
+         timestampString = "399632481.486113"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "56"
+         endingLineNumber = "56"
+         landmarkName = "+getMonthCN:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

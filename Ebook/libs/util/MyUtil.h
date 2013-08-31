@@ -15,12 +15,8 @@
 + (void)showMessage :(NSString*) msg title: (NSString*) title  ;
 + (NSString *)md5HexDigestUTF16:(NSString*)input;
 + (NSString *)md5HexDigestUTF8:(NSString*)input;
-+ (NSInteger) getYear ;                             //2013
 + (NSString*) numberFormatString:(NSString*) input; // 123,32.2335
 + (NSString*) numberFormatNumber:(NSNumber*) input; // 123,32.2335
-+ (NSString*) getYearMonth;                         // 201309
-+ (NSString*) getYearMonth :(NSDate *)mydate;       // 201305
-+ (void)   setDefaultCompany:(UISearchBar*) bar;   
 + (float)  floatFormatString:(NSString*) input; // 123255.36655
 + (NSString *) jsonFromDic: (NSDictionary *) dic;
 + (void) openWeb: (NSString *) url;

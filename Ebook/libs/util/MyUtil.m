@@ -10,6 +10,7 @@
 #import <CommonCrypto/CommonDigest.h>
 #import "Encryption.h"
 #import "NSData+MKBase64.h"
+#import "App.h" 
 @implementation MyUtil
 
 
@@ -69,100 +70,9 @@
     return [ret lowercaseString];
     
 }
-+(NSInteger) getYear
-{
-    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-    NSDate *now = [NSDate date];
-    NSDateComponents *comps = [[NSDateComponents alloc] init];
-    NSInteger unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSWeekdayCalendarUnit |
-    NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit;
-     
-    comps = [calendar components:unitFlags fromDate:now];
-    NSInteger thisyear = [comps year];
-    return thisyear; 
-}
-+(NSString*) getMonthCN :(NSDate *)mydate
-{
-    
-    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-    
-    NSDateComponents *comps = [[NSDateComponents alloc] init];
-    NSInteger unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSWeekdayCalendarUnit |
-    NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit;
-    
-    comps = [calendar components:unitFlags fromDate:mydate];
-    
-    int month =[comps month];
-    NSString *strMonth;
-    if( month <10)
-        strMonth = [NSString stringWithFormat:@"0%d" ,month];
-    else
-        strMonth = [NSString stringWithFormat:@"%d" ,month];
-    
-    
-    NSString *r = [NSString stringWithFormat:@"%d%@" ,[comps year] ,strMonth];
-    
-    
-    return r ; // @"201212" ;
-    
-}
 
-+(NSString*) getYearMonth
-{
-    NSDate *now = [[NSDate date] dateByAddingTimeInterval: MONTH_SECONDS];
-    return  [MyUtil getYearMonth:  now ];
-   
-}
-+(NSString*) getYearMonth :(NSDate *)mydate
-{
-   
-    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-    
-    NSDateComponents *comps = [[NSDateComponents alloc] init];
-    NSInteger unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSWeekdayCalendarUnit |
-    NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit;
-    
-    comps = [calendar components:unitFlags fromDate:mydate];
-    
-    int month =[comps month];
-    NSString *strMonth;
-    if( month <10)
-        strMonth = [NSString stringWithFormat:@"0%d" ,month];
-    else
-        strMonth = [NSString stringWithFormat:@"%d" ,month];
-    
-    
-    NSString *r = [NSString stringWithFormat:@"%d%@" ,[comps year] ,strMonth];
-    
-    
-    return r ; // @"201212" ;
-    
-}
- 
-+ (void)   setDefaultCompany:(UISearchBar*) bar
-{
-   int companyid=ApplicationDelegate.user.companyIntID.intValue;
-    
-    switch (companyid) {
-        case 26:
-            bar.text=@"保税第一市场";
-            bar.tag=26;
-            break;
-        case 17:
-            bar.text=@"保税第二市场";
-            bar.tag=17;
-            break;
-        case 27:
-            bar.text=@"保税第三市场";
-            bar.tag=27;
-            break;
-        default:
-            bar.text=@"保税第一市场";
-            bar.tag=26;
-            break;
-    }
 
-}
+
 + (float)  floatFormatString:(NSString*) input
 {
     float  i= input.floatValue;
@@ -208,7 +118,7 @@
     id error = [data objectForKey:@"Error"];
     if( data ==nil || [data isEqual:[NSNull null]] || error !=nil)
     {
-        [MyUtil showMessage: error  title:@"Galaxy"];
+        [MyUtil showMessage: error  title:@"json result"];
         return NO;
     }
     return YES;
@@ -273,34 +183,34 @@
 }
 + (BOOL)    sendOALogin
 {
-    if( ApplicationDelegate.user.OAUserName ==nil
-       || ApplicationDelegate.user.OAPassword ==nil 
-       || [[NSNull null ] isEqual: ApplicationDelegate.user.OAUserName]
-       || [[NSNull null ] isEqual: ApplicationDelegate.user.OAPassword]
-       )
-    {
-        [MyUtil showMessage:@"请先在App中设置登录OA帐号和密码" title:@"当前没有设置登录OA帐号"];
-        return  NO;
-
-    }
-    // 登录
-    NSString *loginurl =[NSString stringWithFormat:@"%@%@", ApplicationDelegate.OA_ROOT_URL, OA_LOGIN_URL];
-    NSURL *url = [NSURL URLWithString:loginurl];
-    NSMutableURLRequest *requestObj = [NSMutableURLRequest requestWithURL:url];
-    
-    [requestObj setHTTPMethod:@"POST"];
-    
-    NSString *postString =[NSString stringWithFormat: @"localeCode=zh_cn&domainAccount=whir&userName=%@&userPassword=%@" ,
-                           ApplicationDelegate.user.OAUserName  ,
-                           ApplicationDelegate.user.OAPassword   ];
-    //DLog(@"post data: %@",  postString );
-    NSURLResponse *response=nil;
-    NSError *error = nil;
-    [requestObj setHTTPBody:[postString dataUsingEncoding:NSUTF8StringEncoding]];
-    [NSURLConnection sendSynchronousRequest:requestObj returningResponse:&response error:&error];
-    
-//    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
-//    [NSURLConnection sendAsynchronousRequest:requestObj queue:queue completionHandler:nil];
+//    if( ApplicationDelegate.user.OAUserName ==nil
+//       || ApplicationDelegate.user.OAPassword ==nil 
+//       || [[NSNull null ] isEqual: ApplicationDelegate.user.OAUserName]
+//       || [[NSNull null ] isEqual: ApplicationDelegate.user.OAPassword]
+//       )
+//    {
+//        [MyUtil showMessage:@"请先在App中设置登录OA帐号和密码" title:@"当前没有设置登录OA帐号"];
+//        return  NO;
+//
+//    }
+//    // 登录
+//    NSString *loginurl =[NSString stringWithFormat:@"%@%@", ApplicationDelegate.OA_ROOT_URL, OA_LOGIN_URL];
+//    NSURL *url = [NSURL URLWithString:loginurl];
+//    NSMutableURLRequest *requestObj = [NSMutableURLRequest requestWithURL:url];
+//    
+//    [requestObj setHTTPMethod:@"POST"];
+//    
+//    NSString *postString =[NSString stringWithFormat: @"localeCode=zh_cn&domainAccount=whir&userName=%@&userPassword=%@" ,
+//                           ApplicationDelegate.user.OAUserName  ,
+//                           ApplicationDelegate.user.OAPassword   ];
+//    //DLog(@"post data: %@",  postString );
+//    NSURLResponse *response=nil;
+//    NSError *error = nil;
+//    [requestObj setHTTPBody:[postString dataUsingEncoding:NSUTF8StringEncoding]];
+//    [NSURLConnection sendSynchronousRequest:requestObj returningResponse:&response error:&error];
+//    
+////    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+////    [NSURLConnection sendAsynchronousRequest:requestObj queue:queue completionHandler:nil];
     return YES;
 }
 + (BOOL) isEmpty: (id) obj
@@ -322,7 +232,7 @@
     NSDictionary *requestData= @{ @"Module" : MODULE_NAME  };;
     NSString *method = @"Galaxy.Server.Environment.Mobile.UpdateManagement.GetUpdateItems";
     
-    [ApplicationDelegate.netDataPost postGetDataWithRequestData: requestData method: method usingBlockObject:^(NSDictionary *dataSet) {
+    [appInstance.netDataPost postGetDataWithRequestData:@""  requestData: requestData  method: method usingBlockObject:^(NSDictionary *dataSet) {
         NSArray *dt = dataSet[@"t_Update_Items"];
         NSDictionary *item = dt[0];
         NSString *app_Version =  [MyUtil getAppVersion];
@@ -330,8 +240,8 @@
         NSString *version   =   item[@"ItemVersion"];
         NSString *updateUrl =   item[@"ItemDownloadUrl"];
         NSLog(@"url :%@",updateUrl);
-        ApplicationDelegate.updateUrl = updateUrl;
-        ApplicationDelegate.lastCheckUpdateDT = [NSDate date];
+        appInstance.updateUrl = updateUrl;
+        appInstance.lastCheckUpdateDT = [NSDate date];
         if ( ![version isEqualToString:app_Version])
         {
             UIAlertView *av=[[UIAlertView alloc] initWithTitle:@"检测新版本"
@@ -339,29 +249,29 @@
                                                       delegate:alertDelegate
                                              cancelButtonTitle:@"取消" otherButtonTitles: @"确认",nil];
             [av show];
-             
+            
         }
         else
         {
-           if( isShow==YES)
-               [MyUtil showMessage:@"当前版本已经是最新版本" title:@"检测新版本"];
-           
+            if( isShow==YES)
+                [MyUtil showMessage:@"当前版本已经是最新版本" title:@"检测新版本"];
+            
         }
     }];
     
 }
 + (UIImage*) loadWebImage:(NSString*) strUrl
 {
-         UIImage* image=nil;
-     
+    UIImage* image=nil;
+    
     NSURL* url = [NSURL URLWithString:[strUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];//网络图片url
     NSData* data = [NSData dataWithContentsOfURL:url];//获取网咯图片数据
     if(data!=nil){
-       
+        
         image = [[UIImage alloc] initWithData:data];//根据图片数据流构造image
         
         return image;
-         
+        
     }
     else
         return nil;

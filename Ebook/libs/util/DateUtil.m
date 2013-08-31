@@ -11,41 +11,47 @@
 @implementation DateUtil 
 
 
-+(void)showMessage :(NSString*) msg title: (NSString*) title
-{
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
-                                                    message:msg
-                                                   delegate:nil
-                                          cancelButtonTitle:NSLocalizedString(@"确认", @"")
-                                          otherButtonTitles:nil];
-    [alert show];
-}
 
-+(NSString*) numberFormatString:(NSString*) input
-{
-    int i= input.intValue;
-    
-    return  [NSNumberFormatter localizedStringFromNumber:@(i)
-                                             numberStyle:NSNumberFormatterDecimalStyle];
-    
-}
-+(NSString*) numberFormatNumber:(NSNumber*) input
-{
-    return  [NSNumberFormatter localizedStringFromNumber: input
-                                             numberStyle:NSNumberFormatterDecimalStyle];
-}
+
 
 +(NSInteger) getYear
 {
+    return [DateUtil getDateYMD: 3];
+}
++(NSInteger) getMonth
+{
+   return [DateUtil getDateYMD: 2];}
++(NSInteger) getDay
+{
+    
+    return [DateUtil getDateYMD: 1];
+}
+
++(NSInteger) getDateYMD: (NSInteger) type
+{
+    
     NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
     NSDate *now = [NSDate date];
     NSDateComponents *comps = [[NSDateComponents alloc] init];
     NSInteger unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSWeekdayCalendarUnit |
     NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit;
-    
+    NSInteger r = 0 ;
     comps = [calendar components:unitFlags fromDate:now];
-    NSInteger thisyear = [comps year];
-    return thisyear;
+    switch (type) {
+        case 1:
+            r = [comps day] ;
+            break;
+        case 2:
+            r = [comps month] ;
+            break;
+        case 3:
+            r=  [comps year ] ;
+            break;
+        default:
+            break;
+    }
+    return r ;
+    
 }
 +(NSString*) getMonthCN :(NSDate *)mydate
 {
@@ -114,110 +120,6 @@
     
     return r ; // @"201212" ;
     
-}
-
-+ (float)  floatFormatString:(NSString*) input
-{
-    float  i= input.floatValue;
-    return i;
-}
-+ (void) openWeb: (NSString *) url
-{
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
-    
-}
-+(NSString*) getAppVersion
-{
-    NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
-    NSString *app_Version = [infoDictionary objectForKey:@"CFBundleShortVersionString"];
-    
-    return app_Version;
-}
-+ (NSString*) getDeviceInfo
-{
-    NSString *content=[[NSString alloc]
-                       initWithFormat:
-                       @"%@:%@",
-                       [[UIDevice currentDevice] systemName],
-                       [[UIDevice currentDevice] systemVersion]];
-    
-    
-    NSLog(@"%@",content);
-    return content;
-}
-+ (BOOL) setPreference:(NSString*) key  value:(NSString*) value
-{
-    NSUserDefaults *defaults =[NSUserDefaults standardUserDefaults];
-    [defaults setObject:value forKey:key];
-    BOOL r = [defaults synchronize];
-    defaults = nil;
-    return r;
-}
-+ (NSString*) getPreference:(NSString*) key
-{
-    NSString *s;
-    NSUserDefaults *defaults =[NSUserDefaults standardUserDefaults];
-    @try {
-        s= [defaults objectForKey:key];//根据键值取出name
-    }
-    @catch (NSException *exception) {
-        NSLog(@"Error read saved data: %@",key);
-        s =@"";
-    }
-    @finally {
-        defaults = nil;
-        return s;
-    }
-    
-}
-+ (BOOL)    sendOALogin
-{
-   
-    return YES;
-}
-+ (BOOL) isEmpty: (id) obj
-{
-    if( obj ==nil || [[NSNull null] isEqual:obj])
-        return YES;
-    else
-        return NO ;
-}
-+ (BOOL) isStringEmpty: (NSString*) obj
-{
-    if( obj ==nil || [[NSNull null] isEqual:obj] || [@"" isEqualToString:obj])
-        return YES;
-    else
-        return NO ;
-}
-+ (void)checkNewVersion:(id) alertDelegate showHint:(BOOL) isShow
-{
-
-    
-}
-+ (UIImage*) loadWebImage:(NSString*) strUrl
-{
-    UIImage* image=nil;
-    
-    NSURL* url = [NSURL URLWithString:[strUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];//网络图片url
-    NSData* data = [NSData dataWithContentsOfURL:url];//获取网咯图片数据
-    if(data!=nil){
-        
-        image = [[UIImage alloc] initWithData:data];//根据图片数据流构造image
-        
-        return image;
-        
-    }
-    else
-        return nil;
-    
-}
-
-+(void) showChart:(UIViewController*) v :(NSDictionary*) dic
-{
-    //    NSString *img =  dic[@"Chart"][0][@"Image"];
-    //    ImageViewController *v1 = [[ImageViewController alloc] init];
-    //    [v1 setImageByBase64String:img];
-    //    [v.navigationController pushViewController:v1 animated:YES];
 }
 
 @end

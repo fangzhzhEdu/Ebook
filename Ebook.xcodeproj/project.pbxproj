@@ -65,6 +65,8 @@
 		6CC008FF17AE7B1A0083FD04 /* PageReadAllViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC008FE17AE7B190083FD04 /* PageReadAllViewController.m */; };
 		6CC0090217AE7E8F0083FD04 /* JsonUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC0090117AE7E8D0083FD04 /* JsonUtil.m */; };
 		6CC0090417AE81F40083FD04 /* old-p.json in Resources */ = {isa = PBXBuildFile; fileRef = 6CC0090317AE81F40083FD04 /* old-p.json */; };
+		6CC76C3F17D1D3F300877520 /* Encryption.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC76C3A17D1D3F300877520 /* Encryption.m */; };
+		6CC76C4417D1E8BC00877520 /* UIImage+Tint.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC76C4317D1E8BC00877520 /* UIImage+Tint.m */; };
 		6CCB931F17B121D400952EC1 /* UIImageView+DispatchLoad.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CCB931E17B121D400952EC1 /* UIImageView+DispatchLoad.m */; };
 		6CCB932317B123EC00952EC1 /* PageType2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CCB932117B123EC00952EC1 /* PageType2ViewController.m */; };
 		6CCB932417B123EC00952EC1 /* PageType2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CCB932217B123EC00952EC1 /* PageType2ViewController.xib */; };
@@ -162,7 +164,6 @@
 		6CD38C5617A67C2A003A79F3 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CD38C5517A67C2A003A79F3 /* Icon@2x.png */; };
 		6CD38C7217A6A6FD003A79F3 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD38C7117A6A6FD003A79F3 /* BaseViewController.m */; };
 		6CD38C7817A6B00B003A79F3 /* MCPagerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD38C7717A6B00B003A79F3 /* MCPagerView.m */; };
-		6CD38C7B17A6B0A9003A79F3 /* UIImage+Tint.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD38C7A17A6B0A9003A79F3 /* UIImage+Tint.m */; };
 		6CD38C7E17A6B0E2003A79F3 /* PageRead3ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD38C7D17A6B0E1003A79F3 /* PageRead3ViewController.m */; };
 		6CD38C8217A6B239003A79F3 /* UINavigationBar+Customized.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD38C8117A6B239003A79F3 /* UINavigationBar+Customized.m */; };
 		6CD38CAE17A6C068003A79F3 /* a-h.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CD38CA217A6C068003A79F3 /* a-h.png */; };
@@ -281,6 +282,10 @@
 		6CC0090017AE7E8D0083FD04 /* JsonUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonUtil.h; sourceTree = "<group>"; };
 		6CC0090117AE7E8D0083FD04 /* JsonUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsonUtil.m; sourceTree = "<group>"; };
 		6CC0090317AE81F40083FD04 /* old-p.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "old-p.json"; path = "json/old-p.json"; sourceTree = "<group>"; };
+		6CC76C3917D1D3F300877520 /* Encryption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Encryption.h; sourceTree = "<group>"; };
+		6CC76C3A17D1D3F300877520 /* Encryption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Encryption.m; sourceTree = "<group>"; };
+		6CC76C4217D1E8BC00877520 /* UIImage+Tint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Tint.h"; sourceTree = "<group>"; };
+		6CC76C4317D1E8BC00877520 /* UIImage+Tint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Tint.m"; sourceTree = "<group>"; };
 		6CCB931D17B121D400952EC1 /* UIImageView+DispatchLoad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+DispatchLoad.h"; sourceTree = "<group>"; };
 		6CCB931E17B121D400952EC1 /* UIImageView+DispatchLoad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+DispatchLoad.m"; sourceTree = "<group>"; };
 		6CCB932017B123EC00952EC1 /* PageType2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageType2ViewController.h; sourceTree = "<group>"; };
@@ -389,8 +394,6 @@
 		6CD38C7117A6A6FD003A79F3 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		6CD38C7617A6B00B003A79F3 /* MCPagerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCPagerView.h; sourceTree = "<group>"; };
 		6CD38C7717A6B00B003A79F3 /* MCPagerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCPagerView.m; sourceTree = "<group>"; };
-		6CD38C7917A6B0A9003A79F3 /* UIImage+Tint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Tint.h"; sourceTree = "<group>"; };
-		6CD38C7A17A6B0A9003A79F3 /* UIImage+Tint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Tint.m"; sourceTree = "<group>"; };
 		6CD38C7C17A6B0E0003A79F3 /* PageRead3ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageRead3ViewController.h; sourceTree = "<group>"; };
 		6CD38C7D17A6B0E1003A79F3 /* PageRead3ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageRead3ViewController.m; sourceTree = "<group>"; };
 		6CD38C8017A6B239003A79F3 /* UINavigationBar+Customized.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+Customized.h"; sourceTree = "<group>"; };
@@ -578,13 +581,13 @@
 				6C685B761796EA8000DDDE36 /* AboutViewController.m */,
 				6C6BE21617996EFB00B74CD3 /* MTBoxTestViewController.h */,
 				6C6BE21717996EFB00B74CD3 /* MTBoxTestViewController.m */,
-				6C40B986179A1A02007BF5E4 /* config.h */,
 				6C253376179ABBF100E0C034 /* ShareViewController.h */,
 				6C253377179ABBF100E0C034 /* ShareViewController.m */,
 				6C25339F179B992200E0C034 /* DownloadViewController.h */,
 				6C2533A0179B992200E0C034 /* DownloadViewController.m */,
 				6CCB932E17B14D9700952EC1 /* App.h */,
 				6CCB932F17B14D9800952EC1 /* App.m */,
+				6C40B986179A1A02007BF5E4 /* config.h */,
 			);
 			name = viewcontroller;
 			sourceTree = "<group>";
@@ -617,6 +620,8 @@
 		6CC0089517AE50BF0083FD04 /* util */ = {
 			isa = PBXGroup;
 			children = (
+				6CC76C3917D1D3F300877520 /* Encryption.h */,
+				6CC76C3A17D1D3F300877520 /* Encryption.m */,
 				6CC008AA17AE53C00083FD04 /* DateUtil.h */,
 				6CC008AB17AE53C00083FD04 /* DateUtil.m */,
 			);
@@ -742,8 +747,8 @@
 		6CD38C7417A6B00B003A79F3 /* imageutil */ = {
 			isa = PBXGroup;
 			children = (
-				6CD38C7917A6B0A9003A79F3 /* UIImage+Tint.h */,
-				6CD38C7A17A6B0A9003A79F3 /* UIImage+Tint.m */,
+				6CC76C4217D1E8BC00877520 /* UIImage+Tint.h */,
+				6CC76C4317D1E8BC00877520 /* UIImage+Tint.m */,
 				6CCB931D17B121D400952EC1 /* UIImageView+DispatchLoad.h */,
 				6CCB931E17B121D400952EC1 /* UIImageView+DispatchLoad.m */,
 			);
@@ -1141,7 +1146,6 @@
 				6CD38C1A17A67B30003A79F3 /* MainViewController.m in Sources */,
 				6CD38C7217A6A6FD003A79F3 /* BaseViewController.m in Sources */,
 				6CD38C7817A6B00B003A79F3 /* MCPagerView.m in Sources */,
-				6CD38C7B17A6B0A9003A79F3 /* UIImage+Tint.m in Sources */,
 				6CD38C7E17A6B0E2003A79F3 /* PageRead3ViewController.m in Sources */,
 				6CD38C8217A6B239003A79F3 /* UINavigationBar+Customized.m in Sources */,
 				6CD61BC817A8024000F49438 /* PageRead2ViewController.m in Sources */,
@@ -1168,6 +1172,8 @@
 				6CCB932917B1329E00952EC1 /* PageType3ViewController.m in Sources */,
 				6CCB933017B14D9900952EC1 /* App.m in Sources */,
 				6C44839A17BBC10C00880746 /* WebViewController.m in Sources */,
+				6CC76C3F17D1D3F300877520 /* Encryption.m in Sources */,
+				6CC76C4417D1E8BC00877520 /* UIImage+Tint.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
