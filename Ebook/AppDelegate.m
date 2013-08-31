@@ -16,7 +16,7 @@
     
     //加入时间限制，demo用
     bool iscanrun =false ;
-    iscanrun = [DateUtil getYear ]==2013  && [DateUtil getMonth] <9 && [DateUtil getDay] <10 ;
+    iscanrun = [DateUtil getYear ]==2013  && [DateUtil getMonth] <10 && [DateUtil getDay] <32 ;
     if(!iscanrun)
     {
        exit(0);  

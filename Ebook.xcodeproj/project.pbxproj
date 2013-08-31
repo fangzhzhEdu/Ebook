@@ -67,6 +67,8 @@
 		6CC0090417AE81F40083FD04 /* old-p.json in Resources */ = {isa = PBXBuildFile; fileRef = 6CC0090317AE81F40083FD04 /* old-p.json */; };
 		6CC76C3F17D1D3F300877520 /* Encryption.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC76C3A17D1D3F300877520 /* Encryption.m */; };
 		6CC76C4417D1E8BC00877520 /* UIImage+Tint.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC76C4317D1E8BC00877520 /* UIImage+Tint.m */; };
+		6CC76C4917D2172D00877520 /* MyUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC76C4617D2172D00877520 /* MyUtil.m */; };
+		6CC76C4A17D2172D00877520 /* NetDataPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC76C4817D2172D00877520 /* NetDataPost.m */; };
 		6CCB931F17B121D400952EC1 /* UIImageView+DispatchLoad.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CCB931E17B121D400952EC1 /* UIImageView+DispatchLoad.m */; };
 		6CCB932317B123EC00952EC1 /* PageType2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CCB932117B123EC00952EC1 /* PageType2ViewController.m */; };
 		6CCB932417B123EC00952EC1 /* PageType2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CCB932217B123EC00952EC1 /* PageType2ViewController.xib */; };
@@ -286,6 +288,10 @@
 		6CC76C3A17D1D3F300877520 /* Encryption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Encryption.m; sourceTree = "<group>"; };
 		6CC76C4217D1E8BC00877520 /* UIImage+Tint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Tint.h"; sourceTree = "<group>"; };
 		6CC76C4317D1E8BC00877520 /* UIImage+Tint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Tint.m"; sourceTree = "<group>"; };
+		6CC76C4517D2172D00877520 /* MyUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyUtil.h; sourceTree = "<group>"; };
+		6CC76C4617D2172D00877520 /* MyUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyUtil.m; sourceTree = "<group>"; };
+		6CC76C4717D2172D00877520 /* NetDataPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetDataPost.h; sourceTree = "<group>"; };
+		6CC76C4817D2172D00877520 /* NetDataPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetDataPost.m; sourceTree = "<group>"; };
 		6CCB931D17B121D400952EC1 /* UIImageView+DispatchLoad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+DispatchLoad.h"; sourceTree = "<group>"; };
 		6CCB931E17B121D400952EC1 /* UIImageView+DispatchLoad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+DispatchLoad.m"; sourceTree = "<group>"; };
 		6CCB932017B123EC00952EC1 /* PageType2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageType2ViewController.h; sourceTree = "<group>"; };
@@ -620,6 +626,10 @@
 		6CC0089517AE50BF0083FD04 /* util */ = {
 			isa = PBXGroup;
 			children = (
+				6CC76C4517D2172D00877520 /* MyUtil.h */,
+				6CC76C4617D2172D00877520 /* MyUtil.m */,
+				6CC76C4717D2172D00877520 /* NetDataPost.h */,
+				6CC76C4817D2172D00877520 /* NetDataPost.m */,
 				6CC76C3917D1D3F300877520 /* Encryption.h */,
 				6CC76C3A17D1D3F300877520 /* Encryption.m */,
 				6CC008AA17AE53C00083FD04 /* DateUtil.h */,
@@ -1174,6 +1184,8 @@
 				6C44839A17BBC10C00880746 /* WebViewController.m in Sources */,
 				6CC76C3F17D1D3F300877520 /* Encryption.m in Sources */,
 				6CC76C4417D1E8BC00877520 /* UIImage+Tint.m in Sources */,
+				6CC76C4917D2172D00877520 /* MyUtil.m in Sources */,
+				6CC76C4A17D2172D00877520 /* NetDataPost.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
