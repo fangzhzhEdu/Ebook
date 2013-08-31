@@ -189,7 +189,7 @@
                                 </connections>
                             </pageControl>
                             <view contentMode="scaleToFill" id="bNC-xs-eEg" userLabel="MCPager" customClass="MCPagerView">
-                                <rect key="frame" x="0.0" y="300" width="320" height="70"/>
+                                <rect key="frame" x="0.0" y="300" width="320" height="88"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
@@ -486,7 +486,6 @@
         <class className="PageReadAllViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PageReadAllViewController.h"/>
             <relationships>
-                <relationship kind="action" name="changePage:"/>
                 <relationship kind="outlet" name="mcPager" candidateClass="MCPagerView"/>
                 <relationship kind="outlet" name="pageControl" candidateClass="UIPageControl"/>
                 <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
