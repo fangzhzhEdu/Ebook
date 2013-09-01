@@ -7,11 +7,13 @@
 //
 #import "App.h"
 #import "PageReadAllViewController.h"
-#include "JsonUtil.h"
-#include "PageRead2ViewController.h"
-#include "PageRead3ViewController.h"
-#include "PageReadViewController.h" 
-#include "PageType1ViewController.h"
+#import "JsonUtil.h"
+#import "PageRead2ViewController.h"
+#import  "PageRead3ViewController.h"
+#import "PageReadViewController.h"
+#import "PageType1ViewController.h"
+
+#import <ShareSDK/ShareSDK.h>
 @interface PageReadAllViewController ()
 {
 
@@ -134,14 +136,23 @@
     UIButton *b2 = [[UIButton alloc] initWithFrame:CGRectMake(110, 0, 100, 40)];
     [b2 setBackgroundImage:[UIImage imageNamed :@"logo-100x44"]   forState: UIControlStateNormal ];
     //    b2.leftMargin =10 ;
-    UIButton *b3 = [[UIButton alloc] initWithFrame:CGRectMake(280, 10, 24, 24)];
-    [b3 setBackgroundImage:[UIImage imageNamed :@"btn-pagelist"]   forState: UIControlStateNormal ];
-    [b3 addTarget:self action:@selector(addBookIndexList) forControlEvents:UIControlEventTouchUpInside];
+    UIButton *b3 = [[UIButton alloc] initWithFrame:CGRectMake(250, 10, 24, 24)];
+    [b3 setBackgroundImage:[UIImage imageNamed :@"btn-link"]   forState: UIControlStateNormal ];
+    [b3 addTarget:self action:@selector(shareSNS) forControlEvents:UIControlEventTouchUpInside];
+
+    
+    UIButton *b4 = [[UIButton alloc] initWithFrame:CGRectMake(280, 10, 24, 24)];
+    [b4 setBackgroundImage:[UIImage imageNamed :@"btn-pagelist"]   forState: UIControlStateNormal ];
+    [b4 addTarget:self action:@selector(addBookIndexList) forControlEvents:UIControlEventTouchUpInside];
+    
 
     
     [headbar addSubview:b1];
     [headbar addSubview:b2];
     [headbar addSubview:b3];
+    [headbar addSubview:b4];
+    
+    
     
     self.headBar  = headbar ; 
     
@@ -190,6 +201,40 @@
   
     
     [self.view addSubview: listScrollView ] ;
+}
+-(void) shareSNS //弹出分享窗口
+{
+    [ShareSDK waitAppSettingComplete:^{
+        NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"ShareSDK"
+                                                              ofType:@"jpg"];
+        
+        //构造分享内容
+        id<ISSContent> publishContent = [ShareSDK content:@"分享内容"
+                                           defaultContent:@"默认分享内容，没内容时显示"
+                                                    image:[ShareSDK imageWithPath:imagePath]
+                                                    title:@"ShareSDK"
+                                                      url:@"http://www.sharesdk.cn"
+                                              description:@"这是一条测试信息"
+                                                mediaType:SSPublishContentMediaTypeNews];
+        
+        [ShareSDK showShareActionSheet:nil
+                             shareList:nil
+                               content:publishContent
+                         statusBarTips:YES
+                           authOptions:nil
+                          shareOptions: nil
+                                result:^(ShareType type, SSPublishContentState state, id<ISSStatusInfo> statusInfo, id<ICMErrorInfo> error, BOOL end) {
+                                    if (state == SSPublishContentStateSuccess)
+                                    {
+                                        NSLog(@"分享成功");
+                                    }
+                                    else if (state == SSPublishContentStateFail)
+                                    {
+                                        NSLog(@"分享失败,错误码:%d,错误描述:%@", [error errorCode], [error errorDescription]);
+                                    }
+                                }];
+    }];
+ 
 }
 -(void) initi
 {
