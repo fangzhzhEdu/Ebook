@@ -24,6 +24,7 @@
 @interface MainViewController () <MZDayPickerDelegate, MZDayPickerDataSource, UITableViewDataSource, UITableViewDelegate>
 {
     MGScrollView *boxScrollView ;
+    BOOL         shareViewOn;
 //    MGBox *boxImage ;
 //    MGBox *boxContent ;
 //    MGTableBoxStyled *section;
@@ -401,6 +402,14 @@
     
     
 }
+
+-(void)openShareView
+{
+    shareViewOn = YES;
+    NSDictionary *thePage = [App sharedInstance].theRecommendPages[0];
+    [self addBoxContent: thePage   ];
+}
+
 - (void)openWebView : (NSString*) linkurl
 {
     //  [[UIApplication sharedApplication] openURL:[NSURL URLWithString:linkurl]];
@@ -468,6 +477,7 @@
     head1.middleTextColor =[UIColor blueColor];
     head1.borderStyle = MGBorderNone ;
     head1.backgroundColor =[UIColor whiteColor] ;
+    head1.onTap =^{ [self openShareView];};
     [lineBox.topLines addObject:head1];
 
     
@@ -499,16 +509,44 @@
     NSLog(@"add line3 content %@",thePage[@"line3"]);
     NSLog(@"add content content %@",thePage[@"content"]);    
     
-   [boxScrollView.boxes removeAllObjects ]; 
-   [boxScrollView.boxes addObject: boxImage]; 
-   //[boxScrollView.boxes addObject:contentBox];
-    
-   [boxScrollView.boxes addObject:head1];
-   [boxScrollView.boxes addObject:line1];
-   [boxScrollView.boxes addObject:line2];
-   [boxScrollView.boxes addObject:line3];
-   [boxScrollView.boxes addObject:line4];
-    
+    [boxScrollView.boxes removeAllObjects ];
+    [boxScrollView.boxes addObject: boxImage];
+
+    if (shareViewOn) {
+        UIImage *add = [UIImage imageNamed:@"fenxiang"];
+        UIImageView *addView = [[UIImageView alloc] initWithImage:add];
+        addView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin
+        | UIViewAutoresizingFlexibleRightMargin
+        | UIViewAutoresizingFlexibleBottomMargin
+        | UIViewAutoresizingFlexibleLeftMargin;
+        addView.contentMode = UIViewContentModeScaleToFill ;
+        float  x = add.size.width ;
+        float  y = add.size.height ;
+        float y1 = 320* y / x ;
+        
+        MGBox *boxImage = [MGBox boxWithSize:(CGSize){320, y1}];
+        boxImage.leftMargin = boxImage.topMargin = 0;
+        boxImage.onTap = ^{
+            shareViewOn = NO;
+            NSDictionary *thePage = [App sharedInstance].theRecommendPages[0];
+            [self addBoxContent: thePage   ];
+        };
+        //    addView.bounds = CGRectMake(0, 0, 100,100);
+        
+        addView.frame = CGRectMake(0,0 , 320, y1);
+        
+        [boxImage addSubview:addView];
+        [boxScrollView.boxes addObject: boxImage];
+    }
+    else
+    {
+        //[boxScrollView.boxes addObject:contentBox];
+        [boxScrollView.boxes addObject:head1];
+        [boxScrollView.boxes addObject:line1];
+        [boxScrollView.boxes addObject:line2];
+        [boxScrollView.boxes addObject:line3];
+        [boxScrollView.boxes addObject:line4];
+    }
     
 //    boxScrollView.contentSize = (CGSize){320, 180};
     //[lineBox layoutWithSpeed:0.3 completion:nil];

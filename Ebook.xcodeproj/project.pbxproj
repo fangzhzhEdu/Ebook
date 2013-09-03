@@ -234,6 +234,7 @@
 		6CD48F0517B3E61000F5E28A /* btn-pagelist.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CD48F0017B3E60F00F5E28A /* btn-pagelist.png */; };
 		6CD48F0617B3E61000F5E28A /* headbar-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CD48F0117B3E61000F5E28A /* headbar-bg.png */; };
 		6CD61BC817A8024000F49438 /* PageRead2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD61BC717A8024000F49438 /* PageRead2ViewController.m */; };
+		871EF7B217D69370000195EA /* fenxiang.png in Resources */ = {isa = PBXBuildFile; fileRef = 871EF7B117D69370000195EA /* fenxiang.png */; };
 		87F02BAB17D184F400AC8DDB /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87F02BAA17D184F400AC8DDB /* SystemConfiguration.framework */; };
 		87F02BAD17D1850C00AC8DDB /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87F02BAC17D1850C00AC8DDB /* MessageUI.framework */; };
 		87F02BAF17D1851F00AC8DDB /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 87F02BAE17D1851F00AC8DDB /* libicucore.dylib */; };
@@ -524,6 +525,7 @@
 		6CD61BC617A8024000F49438 /* PageRead2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageRead2ViewController.h; sourceTree = "<group>"; };
 		6CD61BC717A8024000F49438 /* PageRead2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageRead2ViewController.m; sourceTree = "<group>"; };
 		7EAA0ADEBB704C6B83DBFEF5 /* Pods/Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		871EF7B117D69370000195EA /* fenxiang.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fenxiang.png; path = images/fenxiang.png; sourceTree = "<group>"; };
 		87F02BAA17D184F400AC8DDB /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		87F02BAC17D1850C00AC8DDB /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		87F02BAE17D1851F00AC8DDB /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
@@ -614,6 +616,7 @@
 		6C44839C17BBC25E00880746 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				871EF7B117D69370000195EA /* fenxiang.png */,
 				6CD61B7317A7E9A500F49438 /* imgpage */,
 				6CD61B6517A7E9A500F49438 /* imgicon */,
 				6CCEB78F17A92B9400F4B81D /* imgpager */,
@@ -1364,6 +1367,7 @@
 				6CA724E317D3741A00D41308 /* ShareSDKiPadSimpleShareViewUI.bundle in Resources */,
 				6CA724E617D3741A00D41308 /* ShareSDKiPhoneDefaultShareViewUI.bundle in Resources */,
 				6CA724E817D3741A00D41308 /* ShareSDKiPhoneSimpleShareViewUI.bundle in Resources */,
+				871EF7B217D69370000195EA /* fenxiang.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
